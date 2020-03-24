@@ -1,0 +1,2090 @@
+14:22:12.652 [JavaFX Application Thread] INFO  com.microchip.motorbench.db.configuration.DAOXmlConfiguration
+MSG: Creating Microchip database at: C:\Users\xoxox\AppData\Roaming\mplab_ide\dev\v5.30\modules\ext\motorBench\microchip
+14:22:12.758 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpServiceConfiguration
+MSG: Load help configuration XML.
+14:22:13.504 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:13.534 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:13.535 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:13.563 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:13.661 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type ConstantLoad
+14:22:13.661 [JavaFX Application Thread] ERROR com.microchip.motorbench.db.dao.DaoImpl
+MSG:   Failed to close directory resource for class: ConstantLoad
+java.nio.file.NoSuchFileException: C:\Users\xoxox\Desktop\motor.X\motorBench\load\constantLoad
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsDirectoryStream.<init>(WindowsDirectoryStream.java:86) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsFileSystemProvider.newDirectoryStream(WindowsFileSystemProvider.java:518) ~[?:1.8.0_181]
+	at java.nio.file.Files.newDirectoryStream(Files.java:457) ~[?:1.8.0_181]
+	at com.microchip.motorbench.db.dao.DaoImpl.loadAll(DaoImpl.java:169) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.db.service.RoutableService.loadAll(RoutableService.java:88) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.loadTreeItems(SelectControllerPane.java:415) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.loadWorkspaceTree(SelectControllerPane.java:154) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.initTree(SelectControllerPane.java:387) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.init(SelectControllerPane.java:99) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.load.LoadPageFxController.init(LoadPageFxController.java:81) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.Page.lambda$autowiredInit$0(Page.java:75) ~[motorBench-core-bin.jar!/:?]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[?:1.8.0_181]
+	at com.microchip.motorbench.ui.page.Page.autowiredInit(Page.java:73) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.PageLoader.lambda$postConstruct$1(PageLoader.java:131) ~[motorBench-core-bin.jar!/:?]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[?:1.8.0_181]
+	at com.microchip.motorbench.ui.page.PageLoader.postConstruct(PageLoader.java:121) ~[motorBench-core-bin.jar!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:349) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:300) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:322) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560.pageManagerFXController(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration.pageManagerController(ManagerConfiguration.java:66) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560.CGLIB$pageManagerController$0(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560$$FastClassBySpringCGLIB$$af7d7138.invoke(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560.pageManagerController(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.ConstructorResolver$3.run(ConstructorResolver.java:582) ~[motorBench-core-bin.jar!/:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_181]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:579) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1119) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1014) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.core.main.MainDevelopmentScene.createScreensConfigurationContext(MainDevelopmentScene.java:108) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.core.main.MainDevelopmentViewer.lambda$start$0(MainDevelopmentViewer.java:88) ~[motorBench-core-bin.jar!/:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$null$172(PlatformImpl.java:295) ~[jfxrt.jar:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_181]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$173(PlatformImpl.java:294) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177) ~[jfxrt.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
+14:22:13.669 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type ConstantLoad
+14:22:13.669 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type ConstantLoad
+14:22:13.671 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type ConstantLoad
+14:22:13.673 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:13.675 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:13.679 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:13.681 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:13.932 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:22:13.933 [JavaFX Application Thread] ERROR com.microchip.motorbench.db.dao.DaoImpl
+MSG:   Failed to close directory resource for class: PmsmIpmMotor
+java.nio.file.NoSuchFileException: C:\Users\xoxox\Desktop\motor.X\motorBench\motor\PMSM
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsDirectoryStream.<init>(WindowsDirectoryStream.java:86) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsFileSystemProvider.newDirectoryStream(WindowsFileSystemProvider.java:518) ~[?:1.8.0_181]
+	at java.nio.file.Files.newDirectoryStream(Files.java:457) ~[?:1.8.0_181]
+	at com.microchip.motorbench.db.dao.DaoImpl.loadAll(DaoImpl.java:169) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.db.service.RoutableService.loadAll(RoutableService.java:88) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.loadTreeItems(SelectControllerPane.java:415) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.loadWorkspaceTree(SelectControllerPane.java:154) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.initTree(SelectControllerPane.java:387) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.init(SelectControllerPane.java:99) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.motor.MotorPageFxController.init(MotorPageFxController.java:106) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.Page.lambda$autowiredInit$0(Page.java:75) ~[motorBench-core-bin.jar!/:?]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[?:1.8.0_181]
+	at com.microchip.motorbench.ui.page.Page.autowiredInit(Page.java:73) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.PageLoader.lambda$postConstruct$1(PageLoader.java:131) ~[motorBench-core-bin.jar!/:?]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[?:1.8.0_181]
+	at com.microchip.motorbench.ui.page.PageLoader.postConstruct(PageLoader.java:121) ~[motorBench-core-bin.jar!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:349) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:300) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:322) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560.pageManagerFXController(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration.pageManagerController(ManagerConfiguration.java:66) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560.CGLIB$pageManagerController$0(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560$$FastClassBySpringCGLIB$$af7d7138.invoke(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560.pageManagerController(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.ConstructorResolver$3.run(ConstructorResolver.java:582) ~[motorBench-core-bin.jar!/:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_181]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:579) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1119) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1014) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.core.main.MainDevelopmentScene.createScreensConfigurationContext(MainDevelopmentScene.java:108) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.core.main.MainDevelopmentViewer.lambda$start$0(MainDevelopmentViewer.java:88) ~[motorBench-core-bin.jar!/:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$null$172(PlatformImpl.java:295) ~[jfxrt.jar:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_181]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$173(PlatformImpl.java:294) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177) ~[jfxrt.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
+14:22:13.936 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:22:13.936 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:22:13.939 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:22:14.391 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:22:14.391 [JavaFX Application Thread] ERROR com.microchip.motorbench.db.dao.DaoImpl
+MSG:   Failed to close directory resource for class: HardwareBoard
+java.nio.file.NoSuchFileException: C:\Users\xoxox\Desktop\motor.X\motorBench\hardware\board
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsDirectoryStream.<init>(WindowsDirectoryStream.java:86) ~[?:1.8.0_181]
+	at sun.nio.fs.WindowsFileSystemProvider.newDirectoryStream(WindowsFileSystemProvider.java:518) ~[?:1.8.0_181]
+	at java.nio.file.Files.newDirectoryStream(Files.java:457) ~[?:1.8.0_181]
+	at com.microchip.motorbench.db.dao.DaoImpl.loadAll(DaoImpl.java:169) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.db.service.RoutableService.loadAll(RoutableService.java:88) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.loadTreeItems(SelectControllerPane.java:415) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.loadWorkspaceTree(SelectControllerPane.java:154) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.initTree(SelectControllerPane.java:387) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.select.SelectControllerPane.init(SelectControllerPane.java:99) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.hardware.board.BoardPageFxController.init(BoardPageFxController.java:93) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.Page.lambda$autowiredInit$0(Page.java:75) ~[motorBench-core-bin.jar!/:?]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[?:1.8.0_181]
+	at com.microchip.motorbench.ui.page.Page.autowiredInit(Page.java:73) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.PageLoader.lambda$postConstruct$1(PageLoader.java:131) ~[motorBench-core-bin.jar!/:?]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[?:1.8.0_181]
+	at com.microchip.motorbench.ui.page.PageLoader.postConstruct(PageLoader.java:121) ~[motorBench-core-bin.jar!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:349) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:300) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:322) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560.pageManagerFXController(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration.pageManagerController(ManagerConfiguration.java:66) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560.CGLIB$pageManagerController$0(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560$$FastClassBySpringCGLIB$$af7d7138.invoke(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.ManagerConfiguration$$EnhancerBySpringCGLIB$$cd566560.pageManagerController(<generated>) ~[motorBench-core-bin.jar!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.ConstructorResolver$3.run(ConstructorResolver.java:582) ~[motorBench-core-bin.jar!/:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_181]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:579) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1119) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1014) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[motorBench-core-bin.jar!/:?]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.core.main.MainDevelopmentScene.createScreensConfigurationContext(MainDevelopmentScene.java:108) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.core.main.MainDevelopmentViewer.lambda$start$0(MainDevelopmentViewer.java:88) ~[motorBench-core-bin.jar!/:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$null$172(PlatformImpl.java:295) ~[jfxrt.jar:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_181]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$173(PlatformImpl.java:294) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177) ~[jfxrt.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
+14:22:14.394 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:22:14.395 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:22:14.399 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:22:14.563 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Other Parameters Level BASIC HTML: other_parameters/other_parameters.html
+14:22:14.588 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: other_parameters/other_parameters.html
+14:22:14.623 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type FocAlgorithm
+14:22:14.625 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type FocAlgorithm
+14:22:14.669 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PllEstimator
+14:22:14.671 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PllEstimator
+14:22:15.828 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.PhaseStringFormatter
+MSG: toString: 1
+14:22:15.829 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.PhaseStringFormatter
+MSG: toString: 1
+14:22:15.836 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.PhaseStringFormatter
+MSG: toString: 1
+14:22:15.837 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.PhaseStringFormatter
+MSG: toString: 1
+14:22:15.839 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.PhaseStringFormatter
+MSG: toString: 1
+14:22:15.840 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.PhaseStringFormatter
+MSG: toString: 1
+14:22:16.337 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:16.340 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:16.343 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:16.345 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:16.346 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:16.349 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:16.354 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:16.356 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:16.357 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:16.360 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:16.360 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:22:16.361 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:22:16.361 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:22:16.364 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:22:16.365 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type ConstantLoad
+14:22:16.365 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type ConstantLoad
+14:22:16.365 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type ConstantLoad
+14:22:16.367 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type ConstantLoad
+14:22:16.368 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:16.370 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:16.371 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:16.376 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:16.377 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:22:16.378 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:22:16.378 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:22:16.380 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:22:16.463 [JavaFX Application Thread] INFO  com.microchip.motorbench.log.util.LogUtil
+MSG: Set Data Dump: false
+14:22:16.472 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: Workspace path C:\Users\xoxox\motorBenchWorkspace
+14:22:16.483 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace
+14:22:16.485 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\algorithm
+14:22:16.486 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\algorithm\foc
+14:22:16.487 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\application
+14:22:16.488 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\application\iteration
+14:22:16.489 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\estimator
+14:22:16.490 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\estimator\pll
+14:22:16.491 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\hardware
+14:22:16.492 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\hardware\board
+14:22:16.493 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\hardware\processor
+14:22:16.494 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\load
+14:22:16.495 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\load\constantLoad
+14:22:16.496 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\load\unloaded
+14:22:16.497 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\motor
+14:22:16.497 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: registering C:\Users\xoxox\motorBenchWorkspace\motor\PMSM
+14:22:16.546 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Application Level: Basic
+14:22:16.548 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Set Application Level: Basic
+14:22:16.549 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Application page
+14:22:16.550 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:22:16.552 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel_landing.html
+14:22:16.565 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.PageTree
+MSG: Setting the project leaf to motor
+14:22:16.580 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:16.582 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:16.584 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:22:16.584 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:22:16.587 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:22:16.587 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:22:16.587 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:22:21.398 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:22:24.071 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:22:24.121 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.application.ApplicationPageFxController
+MSG: Select Button Pressed
+14:22:32.171 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:22:32.179 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.application.ApplicationPageFxController
+MSG: Selected model used
+14:22:32.195 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:22:32.198 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:22:37.895 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:22:39.849 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: application_parameters/application_parameters.html
+14:22:39.850 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: application_parameters/application_parameters.html
+14:22:46.411 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Motor Level: Basic
+14:22:46.411 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Application validation true
+14:22:46.415 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Motor page
+14:22:46.416 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Types Level BASIC HTML: motor_types/motor_types.html
+14:22:46.416 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: motor_types/motor_types.html
+14:22:46.418 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:22:46.975 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:22:46.976 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Motor validation true
+14:22:46.977 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Load page
+14:22:46.978 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:22:46.979 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_select/load_select.html
+14:22:46.979 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:22:56.892 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Load
+14:22:56.923 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:22:59.712 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Load
+14:22:59.727 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:23:05.105 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Load
+14:23:05.109 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:23:07.498 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Load
+14:23:07.504 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:23:08.643 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:23:10.614 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: load_parameters/load_parameters.html
+14:23:10.615 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_parameters/load_parameters.html
+14:23:13.147 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:23:13.147 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_select/load_select.html
+14:23:13.194 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.load.LoadPageFxController
+MSG: Select Button Pressed
+14:23:13.195 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.load.LoadPageFxController
+MSG: Selected model used
+14:23:13.196 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:23:16.041 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:23:17.381 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Motor Level: Basic
+14:23:17.382 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Load validation true
+14:23:17.387 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Motor page
+14:23:17.387 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Types Level BASIC HTML: motor_types/motor_types.html
+14:23:17.388 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: motor_types/motor_types.html
+14:23:17.388 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:23:18.833 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:23:18.834 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:23:18.835 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:23:18.835 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:23:18.836 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:23:18.837 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:23:18.837 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:23:18.838 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:23:18.838 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:23:18.839 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:23:18.839 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Types Level BASIC HTML: motor_types/motor_types.html
+14:23:20.688 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel.html
+14:23:20.690 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel.html
+14:23:21.499 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 5.0
+14:23:21.499 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 5
+14:23:21.499 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 3.4
+14:23:21.499 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 3.4
+14:23:21.500 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 3600.084812738673
+14:23:21.500 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 3600.0848
+14:23:21.501 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 3600.084812738673
+14:23:21.501 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 3600.0848
+14:23:37.027 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Board Level: Basic
+14:23:37.027 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Motor validation true
+14:23:37.031 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Board page
+14:23:37.031 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:23:37.031 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_select/board_select.html
+14:23:37.032 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:23:37.032 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:23:37.032 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:23:37.034 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:23:37.036 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Board Parameters Level BASIC HTML: board_parameters/board_parameters.html
+14:23:37.036 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_parameters/board_parameters.html
+14:23:37.037 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:23:38.522 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:23:38.523 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_select/board_select.html
+14:23:39.485 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 4.4
+14:23:39.486 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 4.4
+14:23:39.486 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 1.0E-6
+14:23:39.486 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 1E-6
+14:23:39.486 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 10.0
+14:23:39.486 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 10
+14:23:39.486 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 16.0
+14:23:39.487 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 16
+14:23:39.487 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 26.0
+14:23:39.487 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 26
+14:23:39.487 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 24.0
+14:23:39.487 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 24
+14:24:00.324 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:24:02.028 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Board Parameters Level BASIC HTML: board_parameters/board_parameters.html
+14:24:02.029 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_parameters/board_parameters.html
+14:24:03.200 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Current Sensor Level BASIC HTML: current_sensors_parameters/current_sensor_parameters.html
+14:24:03.201 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: current_sensors_parameters/current_sensor_parameters.html
+14:24:03.924 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Inverter Level BASIC HTML: inverter_parameters/inverter_parameters.html
+14:24:03.925 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: inverter_parameters/inverter_parameters.html
+14:24:04.891 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Voltage Sensor Level BASIC HTML: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:24:04.892 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:24:05.652 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Voltage Source Level BASIC HTML: voltage_source_parameters/voltage_source_parameters.html
+14:24:05.653 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: voltage_source_parameters/voltage_source_parameters.html
+14:24:06.804 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Other Parameters Level: Basic
+14:24:06.804 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Board validation true
+14:24:06.807 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Other Parameters page
+14:24:06.808 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Other Parameters Level BASIC HTML: other_parameters/other_parameters.html
+14:24:06.808 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: other_parameters/other_parameters.html
+14:24:06.809 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Processor
+14:24:06.811 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Processor
+14:24:06.812 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 7.0E7
+14:24:06.812 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 7E7
+14:24:06.812 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 20000.0
+14:24:06.812 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 2E4
+14:24:06.813 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 2.0E-6
+14:24:06.813 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 2E-6
+14:24:06.813 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 52.359878
+14:24:06.813 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 52.3599
+14:24:06.814 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:24:07.992 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Processor Parameters Level BASIC HTML: processor_parameters/processor_parameters.html
+14:24:07.993 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: processor_parameters/processor_parameters.html
+14:24:20.564 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Algorithm Level: Basic
+14:24:20.565 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Other Parameters validation true
+14:24:20.569 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Algorithm page
+14:24:20.569 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Algorithm Level BASIC HTML: algorithm_select/algorithm_select.html
+14:24:20.570 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: algorithm_select/algorithm_select.html
+14:24:20.571 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:24:33.366 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Algorithm
+14:24:33.369 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Algorithm Level: Basic
+14:24:35.316 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Estimator Level: Basic
+14:24:35.316 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Algorithm validation true
+14:24:35.318 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Estimator page
+14:24:35.318 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Estimator Level BASIC HTML: estimator/estimator.html
+14:24:35.320 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: estimator/estimator.html
+14:24:35.320 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:24:43.658 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Estimator
+14:24:43.660 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Estimator Level: Basic
+14:24:45.593 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Calibration Level: Basic
+14:24:45.593 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Estimator validation true
+14:24:45.596 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Calibration page
+14:24:45.596 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Calibration Level BASIC HTML: selfcommissioning_calibration/selfcommissioning_calibration.html
+14:24:45.596 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: selfcommissioning_calibration/selfcommissioning_calibration.html
+14:24:45.597 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.communication.CommunicationAccess
+MSG: Load the default communication settings
+14:24:45.664 [JavaFX Application Thread] ERROR com.microchip.motorbench.comm.serial.purejava.PureJavaCommunicationChannelSerial
+MSG: The communication port, No name, can not be opened.
+Make sure that the communication setting has a valid serial port selected.
+purejavacomm.NoSuchPortException
+	at purejavacomm.CommPortIdentifier.getPortIdentifier(CommPortIdentifier.java:120) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.comm.serial.purejava.PureJavaCommunicationChannelSerial.open(PureJavaCommunicationChannelSerial.java:96) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.comm.serial.purejava.PureJavaCommunicationChannelSerial.open(PureJavaCommunicationChannelSerial.java:31) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.sc.AbstractSelfCommissionController.openCommunicationChannel(AbstractSelfCommissionController.java:363) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.sc.AbstractSelfCommissionController.checkCommunicationChannel(AbstractSelfCommissionController.java:324) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.page.sc.AbstractSelfCommissionController.load(AbstractSelfCommissionController.java:203) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController.lambda$loadPage$5(PageManagerFXController.java:366) ~[motorBench-core-bin.jar!/:?]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[?:1.8.0_181]
+	at com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController.loadPage(PageManagerFXController.java:364) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController.lambda$setViewablePage$2(PageManagerFXController.java:313) ~[motorBench-core-bin.jar!/:?]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[?:1.8.0_181]
+	at com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController.setViewablePage(PageManagerFXController.java:308) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.main.MotorBenchRootFxController.handleNavigationManagerPageEvent(MotorBenchRootFxController.java:126) ~[motorBench-core-bin.jar!/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74) ~[motorBench-core-bin.jar!/:?]
+	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47) ~[motorBench-core-bin.jar!/:?]
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322) ~[motorBench-core-bin.jar!/:?]
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304) ~[motorBench-core-bin.jar!/:?]
+	at com.google.common.eventbus.EventBus.post(EventBus.java:275) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController$1.changed(NavigationManagerFXController.java:158) ~[motorBench-core-bin.jar!/:?]
+	at com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController$1.changed(NavigationManagerFXController.java:112) ~[motorBench-core-bin.jar!/:?]
+	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:182) ~[jfxrt.jar:?]
+	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81) ~[jfxrt.jar:?]
+	at javafx.beans.property.ReadOnlyObjectPropertyBase.fireValueChangedEvent(ReadOnlyObjectPropertyBase.java:74) ~[jfxrt.jar:?]
+	at javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:102) ~[jfxrt.jar:?]
+	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112) ~[jfxrt.jar:?]
+	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:146) ~[jfxrt.jar:?]
+	at javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:102) ~[jfxrt.jar:?]
+	at javafx.scene.control.MultipleSelectionModelBase.lambda$new$34(MultipleSelectionModelBase.java:67) ~[jfxrt.jar:?]
+	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:137) ~[jfxrt.jar:?]
+	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81) ~[jfxrt.jar:?]
+	at javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:72) ~[jfxrt.jar:?]
+	at javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[jfxrt.jar:?]
+	at javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:113) ~[jfxrt.jar:?]
+	at javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:147) ~[jfxrt.jar:?]
+	at javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:68) ~[jfxrt.jar:?]
+	at javafx.scene.control.MultipleSelectionModelBase.select(MultipleSelectionModelBase.java:404) ~[jfxrt.jar:?]
+	at javafx.scene.control.MultipleSelectionModelBase.clearAndSelect(MultipleSelectionModelBase.java:356) ~[jfxrt.jar:?]
+	at javafx.scene.control.TreeView$TreeViewBitSetSelectionModel.clearAndSelect(TreeView.java:1477) ~[jfxrt.jar:?]
+	at com.sun.javafx.scene.control.behavior.CellBehaviorBase.simpleSelect(CellBehaviorBase.java:256) ~[jfxrt.jar:?]
+	at com.sun.javafx.scene.control.behavior.CellBehaviorBase.doSelect(CellBehaviorBase.java:220) ~[jfxrt.jar:?]
+	at com.sun.javafx.scene.control.behavior.CellBehaviorBase.mousePressed(CellBehaviorBase.java:150) ~[jfxrt.jar:?]
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:95) ~[jfxrt.jar:?]
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:89) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[jfxrt.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[jfxrt.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[jfxrt.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3757) ~[jfxrt.jar:?]
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485) ~[jfxrt.jar:?]
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762) ~[jfxrt.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494) ~[jfxrt.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:394) ~[jfxrt.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295) ~[jfxrt.jar:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_181]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$353(GlassViewEventHandler.java:432) ~[jfxrt.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389) ~[jfxrt.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:431) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177) ~[jfxrt.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
+14:24:47.375 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 12.0
+14:24:47.376 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 12
+14:24:47.376 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 24.0
+14:24:47.376 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 24
+14:24:47.382 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:24:58.212 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand true
+14:25:01.102 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand false
+14:25:03.490 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Generate Code Level: Basic
+14:25:03.491 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Calibration validation true
+14:25:03.495 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Generate Code page
+14:25:03.496 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Generate Code Level BASIC HTML: generate_code/generate.html
+14:25:03.496 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: generate_code/generate.html
+14:25:03.501 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:25:10.447 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:25:10.447 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Generate Code validation true
+14:25:10.454 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Load page
+14:25:10.454 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:25:10.455 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_select/load_select.html
+14:25:10.455 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:25:14.341 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Application Level: Basic
+14:25:14.341 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Load validation true
+14:25:14.353 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Application page
+14:25:14.353 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:25:14.355 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel_landing.html
+14:25:14.356 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:25:16.573 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:25:18.412 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: application_parameters/application_parameters.html
+14:25:18.412 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: application_parameters/application_parameters.html
+14:25:22.095 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: application_parameters/application_parameters.html
+14:25:27.090 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:25:27.091 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel_landing.html
+14:25:27.141 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.application.ApplicationPageFxController
+MSG: Select Button Pressed
+14:25:28.345 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:25:28.350 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.application.ApplicationPageFxController
+MSG: Selected model used
+14:25:28.353 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:25:28.354 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:25:31.739 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:25:32.766 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: application_parameters/application_parameters.html
+14:25:32.767 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: application_parameters/application_parameters.html
+14:25:33.303 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: application_parameters/application_parameters.html
+14:25:43.191 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:25:43.191 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Application validation true
+14:25:43.196 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Load page
+14:25:43.196 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:25:43.197 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_select/load_select.html
+14:25:43.198 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:25:44.903 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:25:51.489 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:25:51.509 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.load.LoadPageFxController
+MSG: Select Button Pressed
+14:25:51.509 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.load.LoadPageFxController
+MSG: Selected model used
+14:25:51.513 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:25:54.143 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: load_parameters/load_parameters.html
+14:25:54.144 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_parameters/load_parameters.html
+14:25:59.714 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:25:59.715 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_select/load_select.html
+14:26:01.028 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:26:01.049 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.load.LoadPageFxController
+MSG: Export Button pressed
+14:26:01.050 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type ConstantLoad
+14:26:01.051 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type ConstantLoad
+14:26:01.052 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: Watch Event: sun.nio.fs.AbstractWatchKey$Event@6fe549f8
+14:26:01.052 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: Watch Kind: ENTRY_CREATE
+14:26:01.052 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: Watch Event Path: Constant Load.xml
+14:26:01.054 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: Posting evt Path: Constant Load.xml Kind: ENTRY_CREATE
+14:26:01.056 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:26:01.057 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:26:01.057 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:26:01.058 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:26:01.059 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:26:01.059 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:26:01.059 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:26:01.060 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:26:01.061 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type ConstantLoad
+14:26:01.061 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type ConstantLoad
+14:26:01.062 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type ConstantLoad
+14:26:01.063 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type ConstantLoad
+14:26:01.063 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:26:01.064 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:26:01.064 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:26:01.065 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:26:01.066 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:26:01.067 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:26:01.069 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:26:01.071 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:26:01.072 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:26:01.072 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:26:03.401 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Motor Level: Basic
+14:26:03.402 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Load validation true
+14:26:03.406 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Motor page
+14:26:03.406 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Types Level BASIC HTML: motor_types/motor_types.html
+14:26:03.407 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: motor_types/motor_types.html
+14:26:03.408 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:26:04.437 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:26:04.439 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:26:04.439 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:26:04.439 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:26:04.440 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:26:04.440 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:26:04.440 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:26:04.440 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:26:04.441 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:26:04.441 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:26:04.442 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Types Level BASIC HTML: motor_types/motor_types.html
+14:26:06.011 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel.html
+14:26:06.012 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel.html
+14:26:07.378 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel.html
+14:26:07.418 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.motor.MotorPageFxController
+MSG: Select Button Pressed
+14:26:07.418 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.motor.MotorPageFxController
+MSG: New database object created
+14:26:07.419 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 0.0
+14:26:07.419 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 0E0
+14:26:07.419 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 0.0
+14:26:07.420 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 0E0
+14:26:07.420 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 0.0
+14:26:07.420 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 0E0
+14:26:07.420 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 0.0
+14:26:07.420 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 0E0
+14:26:07.429 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel.html
+14:26:09.040 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:09.041 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: motor_parameters/motor_parameters.html
+14:26:13.097 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:18.772 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:21.158 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:24.030 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:31.928 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:33.442 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 5
+14:26:33.442 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 5.0
+14:26:34.608 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:37.957 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 3
+14:26:37.958 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 3.0
+14:26:38.278 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 34
+14:26:38.278 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 34.0
+14:26:39.604 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:41.032 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 3
+14:26:41.033 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 0.3141592653589793
+14:26:41.285 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 30
+14:26:41.285 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 3.141592653589793
+14:26:41.454 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 300
+14:26:41.454 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 31.41592653589793
+14:26:41.624 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 3000
+14:26:41.624 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 314.1592653589793
+14:26:42.815 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:44.158 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 2
+14:26:44.158 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 0.20943951023931953
+14:26:44.342 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 28
+14:26:44.342 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 2.9321531433504733
+14:26:44.720 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 280
+14:26:44.720 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 29.321531433504735
+14:26:44.868 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 2800
+14:26:44.868 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 293.21531433504737
+14:26:45.926 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:52.044 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:26:56.147 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel.html
+14:26:56.148 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel.html
+14:27:01.811 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Motor
+14:27:01.814 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Motor Level: Basic
+14:27:05.026 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Motor
+14:27:05.053 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Motor Level: Basic
+14:27:14.432 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Motor
+14:27:14.461 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Motor Level: Basic
+14:27:16.708 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Parameters Level BASIC HTML: motor_parameters/motor_parameters.html
+14:27:16.709 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: motor_parameters/motor_parameters.html
+14:27:17.560 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 3
+14:27:17.561 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 0.3141592653589793
+14:27:17.796 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 30
+14:27:17.796 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 3.141592653589793
+14:27:17.997 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 300
+14:27:17.997 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 31.41592653589793
+14:27:18.149 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 3000
+14:27:18.149 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 314.1592653589793
+14:27:20.368 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:27:20.369 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Motor validation true
+14:27:20.376 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Load page
+14:27:20.377 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:27:20.377 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_select/load_select.html
+14:27:20.378 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:27:24.780 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:27:28.082 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Application Level: Basic
+14:27:28.082 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Load validation true
+14:27:28.089 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Application page
+14:27:28.090 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:27:28.091 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel_landing.html
+14:27:28.091 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:27:32.116 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Motor Level: Basic
+14:27:32.116 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Application validation true
+14:27:32.120 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Motor page
+14:27:32.122 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Types Level BASIC HTML: motor_types/motor_types.html
+14:27:32.122 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: motor_types/motor_types.html
+14:27:32.125 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:27:32.127 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:27:32.127 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:27:32.128 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:27:32.128 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:27:32.130 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:27:32.130 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:27:32.132 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:27:32.132 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:27:32.132 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:27:32.133 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:27:32.134 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:27:32.143 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 5.0
+14:27:32.144 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 5
+14:27:32.144 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 34.0
+14:27:32.144 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 34
+14:27:32.144 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 3000.0000000000005
+14:27:32.144 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 3000
+14:27:32.144 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 3000.0000000000005
+14:27:32.145 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 3000
+14:27:32.145 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:27:32.146 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:27:32.146 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:27:32.146 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:27:32.146 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:27:36.770 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Board Level: Basic
+14:27:36.770 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Motor validation true
+14:27:36.780 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Board page
+14:27:36.780 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:27:36.781 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_select/board_select.html
+14:27:36.781 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:27:36.781 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:27:36.781 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:27:36.782 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:27:36.783 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:27:38.848 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:27:41.973 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 4.4
+14:27:41.973 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 4.4
+14:27:41.973 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 1.0E-6
+14:27:41.973 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 1E-6
+14:27:41.973 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 10.0
+14:27:41.973 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 10
+14:27:41.974 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 16.0
+14:27:41.974 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 16
+14:27:41.974 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 26.0
+14:27:41.974 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 26
+14:27:41.974 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 24.0
+14:27:41.974 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 24
+14:27:47.155 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:27:47.177 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.hardware.board.BoardPageFxController
+MSG: Select Button Pressed
+14:27:47.178 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.hardware.board.BoardPageFxController
+MSG: Selected model used
+14:27:47.180 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:27:49.452 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Board Parameters Level BASIC HTML: board_parameters/board_parameters.html
+14:27:49.452 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_parameters/board_parameters.html
+14:27:53.794 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Current Sensor Level BASIC HTML: current_sensors_parameters/current_sensor_parameters.html
+14:27:53.794 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: current_sensors_parameters/current_sensor_parameters.html
+14:27:55.034 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Inverter Level BASIC HTML: inverter_parameters/inverter_parameters.html
+14:27:55.035 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: inverter_parameters/inverter_parameters.html
+14:27:57.910 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Voltage Sensor Level BASIC HTML: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:27:57.910 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:27:59.967 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Inverter Level BASIC HTML: inverter_parameters/inverter_parameters.html
+14:27:59.968 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: inverter_parameters/inverter_parameters.html
+14:28:03.534 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 1
+14:28:03.534 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 1.0
+14:28:03.698 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 11
+14:28:03.699 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 11.0
+14:28:04.594 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 114
+14:28:04.595 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 114.0
+14:28:07.202 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 11.4
+14:28:07.203 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 11.4
+14:28:09.136 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 2
+14:28:09.136 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 2.0
+14:28:09.862 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 1
+14:28:09.862 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 1.0
+14:28:10.025 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 11
+14:28:10.025 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 11.0
+14:28:10.284 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 11
+14:28:10.284 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 11.0
+14:28:10.580 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 11.4
+14:28:10.580 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 11.4
+14:28:15.018 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 1
+14:28:15.018 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 1.0
+14:28:15.182 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 18
+14:28:15.182 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 18.0
+14:28:17.210 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Voltage Sensor Level BASIC HTML: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:28:17.210 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:28:27.467 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Voltage Source Level BASIC HTML: voltage_source_parameters/voltage_source_parameters.html
+14:28:27.468 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: voltage_source_parameters/voltage_source_parameters.html
+14:28:33.133 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 1
+14:28:33.133 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 1.0
+14:28:33.295 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 11
+14:28:33.295 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 11.0
+14:28:34.089 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 114
+14:28:34.090 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 114.0
+14:28:35.904 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 11.4
+14:28:35.904 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 11.4
+14:28:37.216 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Voltage Sensor Level BASIC HTML: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:28:37.218 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:28:37.959 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Inverter Level BASIC HTML: inverter_parameters/inverter_parameters.html
+14:28:37.959 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: inverter_parameters/inverter_parameters.html
+14:28:38.519 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Current Sensor Level BASIC HTML: current_sensors_parameters/current_sensor_parameters.html
+14:28:38.519 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: current_sensors_parameters/current_sensor_parameters.html
+14:28:47.526 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 0
+14:28:47.526 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 0.0
+14:28:47.898 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 0
+14:28:47.898 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 0.0
+14:28:48.349 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 0.3
+14:28:48.349 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 0.3
+14:28:50.337 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Voltage Sensor Level BASIC HTML: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:28:50.338 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:28:51.078 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Inverter Level BASIC HTML: inverter_parameters/inverter_parameters.html
+14:28:51.079 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: inverter_parameters/inverter_parameters.html
+14:28:51.878 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Current Sensor Level BASIC HTML: current_sensors_parameters/current_sensor_parameters.html
+14:28:51.879 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: current_sensors_parameters/current_sensor_parameters.html
+14:28:52.489 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Board Parameters Level BASIC HTML: board_parameters/board_parameters.html
+14:28:52.489 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_parameters/board_parameters.html
+14:29:00.613 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Board
+14:29:00.684 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Board Level: Basic
+14:29:01.694 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Inverter Level BASIC HTML: inverter_parameters/inverter_parameters.html
+14:29:01.695 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: inverter_parameters/inverter_parameters.html
+14:29:09.588 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 0
+14:29:09.588 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 0.0
+14:29:11.624 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 1
+14:29:11.624 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 1.0
+14:29:11.745 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString: 10
+14:29:11.745 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: fromString Converter: 10.0
+14:29:14.447 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Motor Level: Basic
+14:29:14.448 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Board validation true
+14:29:14.458 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Motor page
+14:29:14.458 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Types Level BASIC HTML: motor_types/motor_types.html
+14:29:14.459 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: motor_types/motor_types.html
+14:29:14.464 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:29:14.467 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:29:14.467 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:29:14.470 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:29:14.470 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:29:14.471 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:29:14.471 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:29:14.472 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:29:14.472 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:29:14.473 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:29:14.473 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:29:14.474 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:29:14.482 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 5.0
+14:29:14.483 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 5
+14:29:14.483 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 34.0
+14:29:14.483 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 34
+14:29:14.483 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 3000.0000000000005
+14:29:14.483 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 3000
+14:29:14.483 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 3000.0000000000005
+14:29:14.483 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 3000
+14:29:14.484 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:14.484 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:14.485 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:14.485 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:14.485 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:21.447 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel.html
+14:29:21.449 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel.html
+14:29:25.508 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Board Level: Basic
+14:29:25.509 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Motor validation true
+14:29:25.519 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Board page
+14:29:25.519 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:29:25.520 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_select/board_select.html
+14:29:25.520 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:29:25.521 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:29:25.521 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:29:25.522 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:29:25.522 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 4.4
+14:29:25.523 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 4.4
+14:29:25.523 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 1.0E-6
+14:29:25.523 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 1E-6
+14:29:25.523 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 10.0
+14:29:25.524 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 10
+14:29:25.524 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 16.0
+14:29:25.524 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 16
+14:29:25.524 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 26.0
+14:29:25.524 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 26
+14:29:25.524 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 24.0
+14:29:25.524 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 24
+14:29:25.524 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:27.496 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 4.4
+14:29:27.497 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 4.4
+14:29:27.497 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 1.0E-6
+14:29:27.497 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 1E-6
+14:29:27.497 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 10.0
+14:29:27.497 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 10
+14:29:27.497 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 16.0
+14:29:27.497 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 16
+14:29:27.497 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 26.0
+14:29:27.498 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 26
+14:29:27.498 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 24.0
+14:29:27.498 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 24
+14:29:27.498 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:29:29.510 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Board Parameters Level BASIC HTML: board_parameters/board_parameters.html
+14:29:29.510 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_parameters/board_parameters.html
+14:29:30.643 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Current Sensor Level BASIC HTML: current_sensors_parameters/current_sensor_parameters.html
+14:29:30.644 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: current_sensors_parameters/current_sensor_parameters.html
+14:29:31.104 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Inverter Level BASIC HTML: inverter_parameters/inverter_parameters.html
+14:29:31.104 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: inverter_parameters/inverter_parameters.html
+14:29:31.934 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Voltage Sensor Level BASIC HTML: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:29:31.935 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: voltage_sensor_parameters/voltage_sensor_parameters.html
+14:29:32.606 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Voltage Source Level BASIC HTML: voltage_source_parameters/voltage_source_parameters.html
+14:29:32.606 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: voltage_source_parameters/voltage_source_parameters.html
+14:29:33.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 4.4
+14:29:33.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 4.4
+14:29:33.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 1.0E-6
+14:29:33.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 1E-6
+14:29:33.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 10.0
+14:29:33.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 10
+14:29:33.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 16.0
+14:29:33.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 16
+14:29:33.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 26.0
+14:29:33.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 26
+14:29:33.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 24.0
+14:29:33.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 24
+14:29:33.847 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:29:33.847 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_select/board_select.html
+14:29:36.224 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Other Parameters Level: Basic
+14:29:36.224 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Board validation true
+14:29:36.237 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Other Parameters page
+14:29:36.237 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Other Parameters Level BASIC HTML: other_parameters/other_parameters.html
+14:29:36.239 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: other_parameters/other_parameters.html
+14:29:36.239 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Processor
+14:29:36.239 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Processor
+14:29:36.239 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 7.0E7
+14:29:36.239 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 7E7
+14:29:36.241 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 20000.0
+14:29:36.241 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 2E4
+14:29:36.241 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 2.0E-6
+14:29:36.241 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 2E-6
+14:29:36.241 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 52.359878
+14:29:36.241 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 52.3599
+14:29:36.241 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:43.425 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Algorithm Level: Basic
+14:29:43.426 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Other Parameters validation true
+14:29:43.430 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Algorithm page
+14:29:43.431 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Algorithm Level BASIC HTML: algorithm_select/algorithm_select.html
+14:29:43.431 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: algorithm_select/algorithm_select.html
+14:29:43.432 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:46.729 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Algorithm
+14:29:46.730 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Algorithm Level: Basic
+14:29:48.608 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Estimator Level: Basic
+14:29:48.608 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Algorithm validation true
+14:29:48.612 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Estimator page
+14:29:48.612 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Estimator Level BASIC HTML: estimator/estimator.html
+14:29:48.613 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: estimator/estimator.html
+14:29:48.614 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:51.044 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.navigation.NavigationManagerFXController
+MSG: Loading old page Estimator
+14:29:51.045 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Estimator Level: Basic
+14:29:52.915 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Algorithm Level: Basic
+14:29:52.915 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Estimator validation true
+14:29:52.919 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Algorithm page
+14:29:52.919 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Algorithm Level BASIC HTML: algorithm_select/algorithm_select.html
+14:29:52.920 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: algorithm_select/algorithm_select.html
+14:29:52.921 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:54.189 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Other Parameters Level: Basic
+14:29:54.189 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Algorithm validation true
+14:29:54.207 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Other Parameters page
+14:29:54.208 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Other Parameters Level BASIC HTML: other_parameters/other_parameters.html
+14:29:54.208 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: other_parameters/other_parameters.html
+14:29:54.209 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 7.0E7
+14:29:54.209 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 7E7
+14:29:54.209 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 20000.0
+14:29:54.210 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 2E4
+14:29:54.210 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 2.0E-6
+14:29:54.210 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 2E-6
+14:29:54.210 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 52.359878
+14:29:54.210 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 52.3599
+14:29:54.210 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:54.830 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Board Level: Basic
+14:29:54.830 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Other Parameters validation true
+14:29:54.837 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Board page
+14:29:54.838 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: board_select/board_select.html
+14:29:54.838 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_select/board_select.html
+14:29:54.838 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:29:54.839 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:29:54.839 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type HardwareBoard
+14:29:54.840 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type HardwareBoard
+14:29:54.840 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 4.4
+14:29:54.840 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 4.4
+14:29:54.841 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 1.0E-6
+14:29:54.841 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 1E-6
+14:29:54.841 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 10.0
+14:29:54.841 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 10
+14:29:54.841 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 16.0
+14:29:54.841 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 16
+14:29:54.841 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 26.0
+14:29:54.841 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 26
+14:29:54.841 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 24.0
+14:29:54.842 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 24
+14:29:54.844 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Board Parameters Level BASIC HTML: board_parameters/board_parameters.html
+14:29:54.845 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: board_parameters/board_parameters.html
+14:29:54.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 4.4
+14:29:54.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 4.4
+14:29:54.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 1.0E-6
+14:29:54.845 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 1E-6
+14:29:54.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 10.0
+14:29:54.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 10
+14:29:54.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 16.0
+14:29:54.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 16
+14:29:54.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 26.0
+14:29:54.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 26
+14:29:54.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 24.0
+14:29:54.846 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 24
+14:29:54.847 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:55.566 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Motor Level: Basic
+14:29:55.566 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Board validation true
+14:29:55.571 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Motor page
+14:29:55.571 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Types Level BASIC HTML: motor_types/motor_types.html
+14:29:55.572 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: motor_types/motor_types.html
+14:29:55.574 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:29:55.576 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:29:55.576 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:29:55.578 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:29:55.578 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:29:55.579 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:29:55.580 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:29:55.581 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:29:55.581 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:29:55.581 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:29:55.581 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type PmsmIpmMotor
+14:29:55.582 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type PmsmIpmMotor
+14:29:55.591 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 5.0
+14:29:55.591 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 5
+14:29:55.591 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 34.0
+14:29:55.591 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 34
+14:29:55.591 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 3000.0000000000005
+14:29:55.591 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 3000
+14:29:55.592 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString Converter: 3000.0000000000005
+14:29:55.592 [JavaFX Application Thread] TRACE com.microchip.motorbench.core.ui.component.formater.NumberStringFormatter
+MSG: toString: 3000
+14:29:55.592 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:55.593 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:55.593 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:55.593 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:55.593 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:56.204 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:29:56.204 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Motor validation true
+14:29:56.210 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Load page
+14:29:56.210 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:29:56.211 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_select/load_select.html
+14:29:56.211 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:56.921 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Application Level: Basic
+14:29:56.921 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Load validation true
+14:29:56.927 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Application page
+14:29:56.928 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:29:56.928 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel_landing.html
+14:29:56.929 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:29:59.261 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Load Level: Basic
+14:29:59.262 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Application validation true
+14:29:59.267 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Load page
+14:29:59.267 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: load_select/load_select.html
+14:29:59.268 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: load_select/load_select.html
+14:29:59.268 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:30:01.842 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Application Level: Basic
+14:30:01.842 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Load validation true
+14:30:01.847 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Application page
+14:30:01.847 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Select Level BASIC HTML: select_panel/select_panel_landing.html
+14:30:01.848 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: select_panel/select_panel_landing.html
+14:30:01.849 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:30:03.758 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand true
+14:30:15.536 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Generate Code Level: Basic
+14:30:15.536 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Application validation true
+14:30:15.547 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Generate Code page
+14:30:15.547 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Generate Code Level BASIC HTML: generate_code/generate.html
+14:30:15.548 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: generate_code/generate.html
+14:30:15.549 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:30:17.868 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.codegen.GenerateCodePageController
+MSG: Export button clicked.
+14:30:17.868 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:30:17.869 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:30:19.117 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:31:00.634 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand false
+14:31:04.808 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.codegen.GenerateCodePageController
+MSG: Export button clicked.
+14:31:04.808 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:31:04.810 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:31:06.459 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:31:19.623 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.codegen.GenerateCodePageController
+MSG: Export button clicked.
+14:31:19.623 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:31:19.625 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:31:20.646 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:31:30.557 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.codegen.GenerateCodePageController
+MSG: Export button clicked.
+14:31:30.557 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Start: Loading all of class type Application
+14:31:30.559 [JavaFX Application Thread] DEBUG com.microchip.motorbench.db.dao.DaoImpl
+MSG: Finish: Loading all of class type Application
+14:31:31.517 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:31:41.372 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand true
+14:31:42.312 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand false
+14:31:43.261 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand true
+14:31:44.015 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand false
+14:31:45.309 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand true
+14:31:45.868 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.main.MotorBenchRootFxController
+MSG: Handle Event: Iteration Manager Event: Table Expand false
+14:31:46.837 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Autotuning Level: Basic
+14:31:46.839 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.at.AutoTunePageController
+MSG: Page Level: Basic
+14:31:46.839 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Generate Code validation true
+14:31:46.844 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Autotuning page
+14:31:46.845 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Autotuning Level BASIC HTML: autotuning/autotuning.html
+14:31:46.846 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: autotuning/autotuning.html
+14:31:46.846 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.at.AutoTunePageController
+MSG: The axis is valid for autotunning calculation? false
+14:31:48.590 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.page.at.AutoTunePageController
+MSG: The axis is valid for autotunning calculation? false
+14:31:48.618 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:31:51.320 [JavaFX Application Thread] INFO  com.microchip.motorbench.core.settings.level.LevelAccess
+MSG: Get Generate Code Level: Basic
+14:31:51.320 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Autotuning validation true
+14:31:51.331 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Loading Generate Code page
+14:31:51.331 [JavaFX Application Thread] INFO  com.microchip.motorbench.service.help.HelpService
+MSG: Help page: Generate Code Level BASIC HTML: generate_code/generate.html
+14:31:51.331 [JavaFX Application Thread] DEBUG com.microchip.motorbench.service.help.ui.HelpServicePane
+MSG: Loading page: generate_code/generate.html
+14:31:51.344 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:31:54.367 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: Stop watch service thread
+14:31:54.368 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.manager.parent.page.PageManagerFXController
+MSG: Clean up: save
+14:31:54.368 [Thread-25] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: Closing the watch service
+14:31:54.368 [Thread-24] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: null
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_181]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_181]
+	at java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:403) ~[?:1.8.0_181]
+	at com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher.lambda$postConstruct$1(WorkspaceWatcher.java:63) ~[motorBench-core-bin.jar!/:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
+14:31:54.369 [Thread-24] INFO  com.microchip.motorbench.ui.manager.watcher.WorkspaceWatcher
+MSG: watch UI thread shutdown
+14:31:54.370 [JavaFX Application Thread] INFO  com.microchip.motorbench.ui.ScreensConfiguration
+MSG: motorBench™ Development Suite v1.15 - motor : New Application
+14:31:54.371 [JavaFX Application Thread] INFO  com.microchip.motorbench.log.util.LogUtil
+MSG: Preparing for mB shutdown
