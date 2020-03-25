@@ -1,6 +1,3 @@
-PIC
-- rec vitesse
-
 DsPIC
 - I2C (pb)
 - OSC ?

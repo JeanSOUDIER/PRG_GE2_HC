@@ -1,9 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"52 main.c
+"54 main.c
 [c E12267 0 1 2 .. ]
 [n E12267 . S_Idle S_Data S_Check  ]
-"55 mcc_generated_files/examples/i2c_master_example.h
-[v _I2C_Read2ByteRegister `(ui ~T0 @X0 0 ef2`uc`uc ]
 "129 mcc_generated_files/pwm3.h
 [v _PWM3_LoadDutyValue `(v ~T0 @X0 0 ef1`ui ]
 "433 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
@@ -16,13 +14,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTAbits `VS28 ~T0 @X0 0 e@12 ]
 "347 mcc_generated_files/eusart.h
 [v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
-"56 mcc_generated_files/examples/i2c_master_example.h
-[v _I2C_Write1ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 "3672 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
 [v _RC1REG `Vuc ~T0 @X0 0 e@409 ]
 [p mainexit ]
 "74 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"2629 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
+[s S132 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S132 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 ]
+"2628
+[u S131 `S132 1 ]
+[n S131 . . ]
+"2638
+[v _LATAbits `VS131 ~T0 @X0 0 e@268 ]
 [v F12181 `(v ~T0 @X0 0 tf ]
 "806 mcc_generated_files/tmr2.h
 [v _TMR2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12181 ]
@@ -44,14 +48,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S25 . . . ]
 "372
 [v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"2629
-[s S132 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S132 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 ]
-"2628
-[u S131 `S132 1 ]
-[n S131 . . ]
-"2638
-[v _LATAbits `VS131 ~T0 @X0 0 e@268 ]
 [v F11946 `(v ~T0 @X0 1 tf1`ul ]
 "153 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic.h
 [v __delay `JF11946 ~T0 @X0 0 e ]
@@ -11005,7 +11001,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c_master_example.h: 59: void I2C_ReadNBytes(i2c_address_t address, uint8_t *data, size_t len);
 [; ;i2c_master_example.h: 60: void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t len);
 [; ;def.h: 18: typedef enum {S_Idle, S_Data, S_Check} state;
-"50 main.c
+"52 main.c
 [v _Vitesse `ui ~T0 @X0 1 e ]
 [i _Vitesse
 -> -> 0 `i `ui
@@ -11014,293 +11010,353 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _Angle
 -> -> 10 `i `ui
 ]
-[; ;main.c: 50: uint16_t Vitesse = 0, Angle = 10;
-"51
+[; ;main.c: 52: uint16_t Vitesse = 0, Angle = 10;
+"53
 [v _Data `uc ~T0 @X0 1 e ]
 [v _Type `uc ~T0 @X0 1 e ]
-[; ;main.c: 51: uint8_t Data, Type;
-"52
+[v _Validation `uc ~T0 @X0 1 e ]
+[i _Validation
+-> -> 4 `i `uc
+]
+[; ;main.c: 53: uint8_t Data, Type, Validation = 4;
+"54
 [v _PosUart `E12267 ~T0 @X0 1 e ]
 [i _PosUart
 . `E12267 0
 ]
-[; ;main.c: 52: state PosUart = S_Idle;
-"54
+[; ;main.c: 54: state PosUart = S_Idle;
+"56
 [v _MyTimer2ISR `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 54: void MyTimer2ISR(void) {
+[; ;main.c: 56: void MyTimer2ISR(void) {
 [e :U _MyTimer2ISR ]
 [f ]
-"55
-[v _g `ui ~T0 @X0 1 a ]
-[; ;main.c: 55: uint16_t g = I2C_Read2ByteRegister(0xE8, 0x48-1);
-[e = _g ( _I2C_Read2ByteRegister (2 , -> -> 232 `i `uc -> - -> 72 `i -> 1 `i `uc ]
-[; ;main.c: 58: PWM3_LoadDutyValue((uint8_t)(Angle/3)+31);
-"58
-[e ( _PWM3_LoadDutyValue (1 -> + -> -> / _Angle -> -> 3 `i `ui `uc `i -> 31 `i `ui ]
-[; ;main.c: 59: if(PORTAbits.RA4) {
-"59
+[; ;main.c: 62: PWM3_LoadDutyValue((uint8_t)(Angle/2)+20);
+"62
+[e ( _PWM3_LoadDutyValue (1 -> + -> -> / _Angle -> -> 2 `i `ui `uc `i -> 20 `i `ui ]
+[; ;main.c: 63: if(PORTAbits.RA4) {
+"63
 [e $ ! != -> . . _PORTAbits 0 4 `i -> -> -> 0 `i `Vuc `i 1215  ]
 {
-[; ;main.c: 60: EUSART_Write('B');
-"60
-[e ( _EUSART_Write (1 -> -> 66 `ui `uc ]
-[; ;main.c: 61: EUSART_Write('1');
-"61
-[e ( _EUSART_Write (1 -> -> 49 `ui `uc ]
-[; ;main.c: 62: EUSART_Write('s');
-"62
-[e ( _EUSART_Write (1 -> -> 115 `ui `uc ]
-[; ;main.c: 63: I2C_Write1ByteRegister(0x80, 0x01, 0x05);
-"63
-[e ( _I2C_Write1ByteRegister (3 , , -> -> 128 `i `uc -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 64: EUSART_Write('B');
 "64
+[e ( _EUSART_Write (1 -> -> 66 `ui `uc ]
+[; ;main.c: 65: EUSART_Write('1');
+"65
+[e ( _EUSART_Write (1 -> -> 49 `ui `uc ]
+[; ;main.c: 66: EUSART_Write('s');
+"66
+[e ( _EUSART_Write (1 -> -> 115 `ui `uc ]
+[; ;main.c: 67: if(Validation) {
+"67
+[e $ ! != -> _Validation `i -> -> -> 0 `i `uc `i 1216  ]
+{
+[; ;main.c: 71: Validation--;
+"71
+[e -- _Validation -> -> 1 `i `uc ]
+"72
 }
-[; ;main.c: 64: } else {
-[e $U 1216  ]
+[; ;main.c: 72: } else {
+[e $U 1217  ]
+[e :U 1216 ]
+{
+"76
+}
+[e :U 1217 ]
+"77
+}
+[; ;main.c: 76: }
+[; ;main.c: 77: } else {
+[e $U 1218  ]
 [e :U 1215 ]
 {
-[; ;main.c: 65: EUSART_Write('B');
-"65
-[e ( _EUSART_Write (1 -> -> 66 `ui `uc ]
-[; ;main.c: 66: EUSART_Write('0');
-"66
-[e ( _EUSART_Write (1 -> -> 48 `ui `uc ]
-[; ;main.c: 67: EUSART_Write('r');
-"67
-[e ( _EUSART_Write (1 -> -> 114 `ui `uc ]
-[; ;main.c: 68: I2C_Write1ByteRegister(0x80, 0x01, 0x00);
-"68
-[e ( _I2C_Write1ByteRegister (3 , , -> -> 128 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
-"69
-}
-[e :U 1216 ]
-[; ;main.c: 69: }
-[; ;main.c: 70: }
-"70
-[e :UE 1214 ]
-}
-"72
-[v _MyUART_ISR `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 72: void MyUART_ISR(void) {
-[e :U _MyUART_ISR ]
-[f ]
-"73
-[v _c `uc ~T0 @X0 1 a ]
-[; ;main.c: 73: unsigned char c = RC1REG;
-[e = _c _RC1REG ]
-[; ;main.c: 74: if(c) {
-"74
-[e $ ! != -> _c `i -> -> -> 0 `i `uc `i 1218  ]
-{
-[; ;main.c: 75: switch(PosUart) {
-"75
-[e $U 1220  ]
-{
-[; ;main.c: 76: case S_Idle:
-"76
-[e :U 1221 ]
-[; ;main.c: 77: if(c == 'V' || c == 'A' || c == 'P') {
-"77
-[e $ ! || || == -> _c `ui -> 86 `ui == -> _c `ui -> 65 `ui == -> _c `ui -> 80 `ui 1222  ]
-{
-[; ;main.c: 78: Type = c;
+[; ;main.c: 78: EUSART_Write('B');
 "78
-[e = _Type _c ]
-[; ;main.c: 79: PosUart = S_Data;
+[e ( _EUSART_Write (1 -> -> 66 `ui `uc ]
+[; ;main.c: 79: EUSART_Write('0');
 "79
-[e = _PosUart . `E12267 1 ]
+[e ( _EUSART_Write (1 -> -> 48 `ui `uc ]
+[; ;main.c: 80: EUSART_Write('r');
 "80
-}
-[e :U 1222 ]
-[; ;main.c: 80: }
-[; ;main.c: 81: break;
-"81
-[e $U 1219  ]
-[; ;main.c: 82: case S_Data:
-"82
-[e :U 1223 ]
-[; ;main.c: 83: Data = c;
-"83
-[e = _Data _c ]
-[; ;main.c: 84: PosUart = S_Check;
+[e ( _EUSART_Write (1 -> -> 114 `ui `uc ]
 "84
-[e = _PosUart . `E12267 2 ]
-[; ;main.c: 85: break;
-"85
-[e $U 1219  ]
-[; ;main.c: 86: case S_Check:
-"86
-[e :U 1224 ]
-[; ;main.c: 87: if((Type+Data)%256 == c) {
-"87
-[e $ ! == % + -> _Type `i -> _Data `i -> 256 `i -> _c `i 1225  ]
-{
-[; ;main.c: 88: if(Type == 'V') {
-"88
-[e $ ! == -> _Type `ui -> 86 `ui 1226  ]
-{
-[; ;main.c: 89: Vitesse = Data;
-"89
-[e = _Vitesse -> _Data `ui ]
-"90
-}
-[; ;main.c: 90: } else if(Type == 'A') {
-[e $U 1227  ]
-[e :U 1226 ]
-[e $ ! == -> _Type `ui -> 65 `ui 1228  ]
-{
-[; ;main.c: 91: Angle = Data;
-"91
-[e = _Angle -> _Data `ui ]
-"92
-}
-[; ;main.c: 92: } else if(Type == 'P') {
-[e $U 1229  ]
-[e :U 1228 ]
-[e $ ! == -> _Type `ui -> 80 `ui 1230  ]
-{
-[; ;main.c: 93: EUSART_Write('P');
-"93
-[e ( _EUSART_Write (1 -> -> 80 `ui `uc ]
-[; ;main.c: 94: EUSART_Write('+');
-"94
-[e ( _EUSART_Write (1 -> -> 43 `ui `uc ]
-[; ;main.c: 95: EUSART_Write('{');
-"95
-[e ( _EUSART_Write (1 -> -> 123 `ui `uc ]
-"96
-}
-[; ;main.c: 96: } else {
-[e $U 1231  ]
-[e :U 1230 ]
-{
-[; ;main.c: 97: EUSART_Write('$');
-"97
-[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
-[; ;main.c: 98: EUSART_Write('M');
-"98
-[e ( _EUSART_Write (1 -> -> 77 `ui `uc ]
-[; ;main.c: 99: EUSART_Write('q');
-"99
-[e ( _EUSART_Write (1 -> -> 113 `ui `uc ]
-"100
-}
-[e :U 1231 ]
-[e :U 1229 ]
-[e :U 1227 ]
-"101
-}
-[; ;main.c: 100: }
-[; ;main.c: 101: } else {
-[e $U 1232  ]
-[e :U 1225 ]
-{
-[; ;main.c: 102: EUSART_Write('$');
-"102
-[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
-[; ;main.c: 103: EUSART_Write('C');
-"103
-[e ( _EUSART_Write (1 -> -> 67 `ui `uc ]
-[; ;main.c: 104: EUSART_Write('g');
-"104
-[e ( _EUSART_Write (1 -> -> 103 `ui `uc ]
-"105
-}
-[e :U 1232 ]
-[; ;main.c: 105: }
-[; ;main.c: 106: PosUart = S_Idle;
-"106
-[e = _PosUart . `E12267 0 ]
-[; ;main.c: 107: break;
-"107
-[e $U 1219  ]
-[; ;main.c: 108: default:
-"108
-[e :U 1233 ]
-[; ;main.c: 109: PosUart = S_Idle;
-"109
-[e = _PosUart . `E12267 0 ]
-[; ;main.c: 110: break;
-"110
-[e $U 1219  ]
-"111
-}
-[; ;main.c: 111: }
-[e $U 1219  ]
-"75
-[e :U 1220 ]
-[e [\ _PosUart , $ . `E12267 0 1221
- , $ . `E12267 1 1223
- , $ . `E12267 2 1224
- 1233 ]
-"111
-[e :U 1219 ]
-"112
 }
 [e :U 1218 ]
-[; ;main.c: 112: }
-[; ;main.c: 113: }
+[; ;main.c: 84: }
+[; ;main.c: 85: }
+"85
+[e :UE 1214 ]
+}
+"87
+[v _MyUART_ISR `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 87: void MyUART_ISR(void) {
+[e :U _MyUART_ISR ]
+[f ]
+"88
+[v _c `uc ~T0 @X0 1 a ]
+[; ;main.c: 88: unsigned char c = RC1REG;
+[e = _c _RC1REG ]
+[; ;main.c: 89: if(c) {
+"89
+[e $ ! != -> _c `i -> -> -> 0 `i `uc `i 1220  ]
+{
+[; ;main.c: 90: switch(PosUart) {
+"90
+[e $U 1222  ]
+{
+[; ;main.c: 91: case S_Idle:
+"91
+[e :U 1223 ]
+[; ;main.c: 92: if(c == 'V' || c == 'A' || c == 'P') {
+"92
+[e $ ! || || == -> _c `ui -> 86 `ui == -> _c `ui -> 65 `ui == -> _c `ui -> 80 `ui 1224  ]
+{
+[; ;main.c: 93: Type = c;
+"93
+[e = _Type _c ]
+[; ;main.c: 94: PosUart = S_Data;
+"94
+[e = _PosUart . `E12267 1 ]
+"95
+}
+[e :U 1224 ]
+[; ;main.c: 95: }
+[; ;main.c: 96: break;
+"96
+[e $U 1221  ]
+[; ;main.c: 97: case S_Data:
+"97
+[e :U 1225 ]
+[; ;main.c: 98: Data = c;
+"98
+[e = _Data _c ]
+[; ;main.c: 99: PosUart = S_Check;
+"99
+[e = _PosUart . `E12267 2 ]
+[; ;main.c: 100: break;
+"100
+[e $U 1221  ]
+[; ;main.c: 101: case S_Check:
+"101
+[e :U 1226 ]
+[; ;main.c: 102: if((Type+Data)%256 == c) {
+"102
+[e $ ! == % + -> _Type `i -> _Data `i -> 256 `i -> _c `i 1227  ]
+{
+[; ;main.c: 103: Validation = 4;
+"103
+[e = _Validation -> -> 4 `i `uc ]
+[; ;main.c: 104: if(Type == 'V') {
+"104
+[e $ ! == -> _Type `ui -> 86 `ui 1228  ]
+{
+[; ;main.c: 105: Vitesse = Data;
+"105
+[e = _Vitesse -> _Data `ui ]
+"106
+}
+[; ;main.c: 106: } else if(Type == 'A') {
+[e $U 1229  ]
+[e :U 1228 ]
+[e $ ! == -> _Type `ui -> 65 `ui 1230  ]
+{
+[; ;main.c: 107: Angle = Data;
+"107
+[e = _Angle -> _Data `ui ]
+"108
+}
+[; ;main.c: 108: } else if(Type == 'P') {
+[e $U 1231  ]
+[e :U 1230 ]
+[e $ ! == -> _Type `ui -> 80 `ui 1232  ]
+{
+[; ;main.c: 109: EUSART_Write('P');
+"109
+[e ( _EUSART_Write (1 -> -> 80 `ui `uc ]
+[; ;main.c: 110: EUSART_Write('+');
+"110
+[e ( _EUSART_Write (1 -> -> 43 `ui `uc ]
+[; ;main.c: 111: EUSART_Write('{');
+"111
+[e ( _EUSART_Write (1 -> -> 123 `ui `uc ]
+"112
+}
+[; ;main.c: 112: } else {
+[e $U 1233  ]
+[e :U 1232 ]
+{
+[; ;main.c: 113: EUSART_Write('$');
 "113
-[e :UE 1217 ]
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+[; ;main.c: 114: EUSART_Write('M');
+"114
+[e ( _EUSART_Write (1 -> -> 77 `ui `uc ]
+[; ;main.c: 115: EUSART_Write('q');
+"115
+[e ( _EUSART_Write (1 -> -> 113 `ui `uc ]
+"116
+}
+[e :U 1233 ]
+[e :U 1231 ]
+[e :U 1229 ]
+"117
+}
+[; ;main.c: 116: }
+[; ;main.c: 117: } else {
+[e $U 1234  ]
+[e :U 1227 ]
+{
+[; ;main.c: 118: EUSART_Write('$');
+"118
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+[; ;main.c: 119: EUSART_Write('C');
+"119
+[e ( _EUSART_Write (1 -> -> 67 `ui `uc ]
+[; ;main.c: 120: EUSART_Write('g');
+"120
+[e ( _EUSART_Write (1 -> -> 103 `ui `uc ]
+"121
+}
+[e :U 1234 ]
+[; ;main.c: 121: }
+[; ;main.c: 122: PosUart = S_Idle;
+"122
+[e = _PosUart . `E12267 0 ]
+[; ;main.c: 123: break;
+"123
+[e $U 1221  ]
+[; ;main.c: 124: default:
+"124
+[e :U 1235 ]
+[; ;main.c: 125: PosUart = S_Idle;
+"125
+[e = _PosUart . `E12267 0 ]
+[; ;main.c: 126: break;
+"126
+[e $U 1221  ]
+"127
+}
+[; ;main.c: 127: }
+[e $U 1221  ]
+"90
+[e :U 1222 ]
+[e [\ _PosUart , $ . `E12267 0 1223
+ , $ . `E12267 1 1225
+ , $ . `E12267 2 1226
+ 1235 ]
+"127
+[e :U 1221 ]
+"128
+}
+[e :U 1220 ]
+[; ;main.c: 128: }
+[; ;main.c: 129: }
+"129
+[e :UE 1219 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"115
+"131
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 115: void main(void) {
+[; ;main.c: 131: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 116: SYSTEM_Initialize();
-"116
+[; ;main.c: 132: SYSTEM_Initialize();
+"132
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 118: I2C_Write1ByteRegister(0x68, 0x26, 0x02);
-"118
-[e ( _I2C_Write1ByteRegister (3 , , -> -> 104 `i `uc -> -> 38 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 119: I2C_Write1ByteRegister(0x68, 0x27, 0x10);
-"119
-[e ( _I2C_Write1ByteRegister (3 , , -> -> 104 `i `uc -> -> 39 `i `uc -> -> 16 `i `uc ]
-[; ;main.c: 121: TMR2_SetInterruptHandler(MyTimer2ISR);
-"121
-[e ( _TMR2_SetInterruptHandler (1 &U _MyTimer2ISR ]
-[; ;main.c: 122: TMR2_WriteTimer(255);
-"122
-[e ( _TMR2_WriteTimer (1 -> -> 255 `i `uc ]
-[; ;main.c: 123: TMR2_StartTimer();
-"123
-[e ( _TMR2_StartTimer ..  ]
-[; ;main.c: 125: EUSART_SetRxInterruptHandler(MyUART_ISR);
-"125
-[e ( _EUSART_SetRxInterruptHandler (1 &U _MyUART_ISR ]
-[; ;main.c: 127: (INTCONbits.PEIE = 1);
-"127
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 128: (INTCONbits.GIE = 1);
-"128
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 130: while (1) {
-"130
-[e :U 1236 ]
+[; ;main.c: 134: do { LATAbits.LATA5 = 1; } while(0);
+"134
+[e :U 1239 ]
 {
-[; ;main.c: 131: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
-"131
-[e :U 1240 ]
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 1238 ]
+[; ;main.c: 141: TMR2_SetInterruptHandler(MyTimer2ISR);
+"141
+[e ( _TMR2_SetInterruptHandler (1 &U _MyTimer2ISR ]
+[; ;main.c: 142: TMR2_WriteTimer(255);
+"142
+[e ( _TMR2_WriteTimer (1 -> -> 255 `i `uc ]
+[; ;main.c: 143: TMR2_StartTimer();
+"143
+[e ( _TMR2_StartTimer ..  ]
+[; ;main.c: 145: EUSART_SetRxInterruptHandler(MyUART_ISR);
+"145
+[e ( _EUSART_SetRxInterruptHandler (1 &U _MyUART_ISR ]
+[; ;main.c: 147: (INTCONbits.PEIE = 1);
+"147
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 148: (INTCONbits.GIE = 1);
+"148
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 150: while (1) {
+"150
+[e :U 1241 ]
+{
+[; ;main.c: 151: if(Validation) {
+"151
+[e $ ! != -> _Validation `i -> -> -> 0 `i `uc `i 1243  ]
+{
+[; ;main.c: 152: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+"152
+[e :U 1246 ]
 {
 [e = . . _LATAbits 0 5 -> ~ -> . . _LATAbits 0 5 `i `uc ]
 }
-[e :U 1239 ]
-[; ;main.c: 132: _delay((unsigned long)((500)*(4000000/4000.0)));
-"132
+[e :U 1245 ]
+[; ;main.c: 153: _delay((unsigned long)((500)*(4000000/4000.0)));
+"153
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"133
+"154
 }
-[e :U 1235 ]
-"130
-[e $U 1236  ]
-[e :U 1237 ]
-[; ;main.c: 133: }
-[; ;main.c: 134: }
-"134
-[e :UE 1234 ]
+[; ;main.c: 154: } else {
+[e $U 1247  ]
+[e :U 1243 ]
+{
+[; ;main.c: 155: if(PORTAbits.RA4) {
+"155
+[e $ ! != -> . . _PORTAbits 0 4 `i -> -> -> 0 `i `Vuc `i 1248  ]
+{
+[; ;main.c: 156: do { LATAbits.LATA5 = 1; } while(0);
+"156
+[e :U 1251 ]
+{
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 1250 ]
+"157
+}
+[; ;main.c: 157: } else {
+[e $U 1252  ]
+[e :U 1248 ]
+{
+[; ;main.c: 158: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+"158
+[e :U 1255 ]
+{
+[e = . . _LATAbits 0 5 -> ~ -> . . _LATAbits 0 5 `i `uc ]
+}
+[e :U 1254 ]
+[; ;main.c: 159: _delay((unsigned long)((100)*(4000000/4000.0)));
+"159
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"160
+}
+[e :U 1252 ]
+"161
+}
+[e :U 1247 ]
+"162
+}
+[e :U 1240 ]
+"150
+[e $U 1241  ]
+[e :U 1242 ]
+[; ;main.c: 160: }
+[; ;main.c: 161: }
+[; ;main.c: 162: }
+[; ;main.c: 163: }
+"163
+[e :UE 1236 ]
 }

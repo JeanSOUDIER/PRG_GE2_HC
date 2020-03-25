@@ -2,8 +2,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 "52 main.c
 [c E12267 0 1 2 .. ]
 [n E12267 . S_Idle S_Data S_Check  ]
-"55 mcc_generated_files/examples/i2c_master_example.h
-[v _I2C_Read2ByteRegister `(ui ~T0 @X0 0 ef2`uc`uc ]
 "129 mcc_generated_files/pwm3.h
 [v _PWM3_LoadDutyValue `(v ~T0 @X0 0 ef1`ui ]
 "433 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
@@ -16,8 +14,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTAbits `VS28 ~T0 @X0 0 e@12 ]
 "347 mcc_generated_files/eusart.h
 [v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
-"56 mcc_generated_files/examples/i2c_master_example.h
-[v _I2C_Write1ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 "3672 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
 [v _RC1REG `Vuc ~T0 @X0 0 e@409 ]
 [p mainexit ]
@@ -11031,10 +11027,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 54: void MyTimer2ISR(void) {
 [e :U _MyTimer2ISR ]
 [f ]
-"55
-[v _g `ui ~T0 @X0 1 a ]
-[; ;main.c: 55: uint16_t g = I2C_Read2ByteRegister(0xE8, 0x48-1);
-[e = _g ( _I2C_Read2ByteRegister (2 , -> -> 232 `i `uc -> - -> 72 `i -> 1 `i `uc ]
 [; ;main.c: 58: PWM3_LoadDutyValue((uint8_t)(Angle/3)+31);
 "58
 [e ( _PWM3_LoadDutyValue (1 -> + -> -> / _Angle -> -> 3 `i `ui `uc `i -> 31 `i `ui ]
@@ -11051,9 +11043,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 62: EUSART_Write('s');
 "62
 [e ( _EUSART_Write (1 -> -> 115 `ui `uc ]
-[; ;main.c: 63: I2C_Write1ByteRegister(0x80, 0x01, 0x05);
-"63
-[e ( _I2C_Write1ByteRegister (3 , , -> -> 128 `i `uc -> -> 1 `i `uc -> -> 5 `i `uc ]
 "64
 }
 [; ;main.c: 64: } else {
@@ -11069,9 +11058,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 67: EUSART_Write('r');
 "67
 [e ( _EUSART_Write (1 -> -> 114 `ui `uc ]
-[; ;main.c: 68: I2C_Write1ByteRegister(0x80, 0x01, 0x00);
-"68
-[e ( _I2C_Write1ByteRegister (3 , , -> -> 128 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
 "69
 }
 [e :U 1216 ]
@@ -11255,12 +11241,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 116: SYSTEM_Initialize();
 "116
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 118: I2C_Write1ByteRegister(0x68, 0x26, 0x02);
-"118
-[e ( _I2C_Write1ByteRegister (3 , , -> -> 104 `i `uc -> -> 38 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 119: I2C_Write1ByteRegister(0x68, 0x27, 0x10);
-"119
-[e ( _I2C_Write1ByteRegister (3 , , -> -> 104 `i `uc -> -> 39 `i `uc -> -> 16 `i `uc ]
 [; ;main.c: 121: TMR2_SetInterruptHandler(MyTimer2ISR);
 "121
 [e ( _TMR2_SetInterruptHandler (1 &U _MyTimer2ISR ]

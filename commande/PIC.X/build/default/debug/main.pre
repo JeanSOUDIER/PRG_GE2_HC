@@ -15097,7 +15097,7 @@ uint8_t Data, Type;
 state PosUart = S_Idle;
 
 void MyTimer2ISR(void) {
-uint16_t g = I2C_Read2ByteRegister(0xE8, 0x48-1);
+
 
 
 PWM3_LoadDutyValue((uint8_t)(Angle/3)+31);
@@ -15105,12 +15105,12 @@ if(PORTAbits.RA4) {
 EUSART_Write('B');
 EUSART_Write('1');
 EUSART_Write('s');
-I2C_Write1ByteRegister(0x80, 0x01, 0x05);
+
 } else {
 EUSART_Write('B');
 EUSART_Write('0');
 EUSART_Write('r');
-I2C_Write1ByteRegister(0x80, 0x01, 0x00);
+
 }
 }
 
@@ -15160,8 +15160,8 @@ break;
 void main(void) {
 SYSTEM_Initialize();
 
-I2C_Write1ByteRegister(0x68, 0x26, 0x02);
-I2C_Write1ByteRegister(0x68, 0x27, 0x10);
+
+
 
 TMR2_SetInterruptHandler(MyTimer2ISR);
 TMR2_WriteTimer(255);

@@ -15091,26 +15091,33 @@ void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t
 # 18 "def.h"
 typedef enum {S_Idle, S_Data, S_Check} state;
 
-# 50 "main.c"
+# 52 "main.c"
 uint16_t Vitesse = 0, Angle = 10;
-uint8_t Data, Type;
+uint8_t Data, Type, Validation = 4;
 state PosUart = S_Idle;
 
 void MyTimer2ISR(void) {
-uint16_t g = I2C_Read2ByteRegister(0xE8, 0x48-1);
 
-
-PWM3_LoadDutyValue((uint8_t)(Angle/3)+31);
+# 62
+PWM3_LoadDutyValue((uint8_t)(Angle/2)+20);
 if(PORTAbits.RA4) {
 EUSART_Write('B');
 EUSART_Write('1');
 EUSART_Write('s');
-I2C_Write1ByteRegister(0x80, 0x01, 0x05);
+if(Validation) {
+
+# 71
+Validation--;
+} else {
+
+# 76
+}
 } else {
 EUSART_Write('B');
 EUSART_Write('0');
 EUSART_Write('r');
-I2C_Write1ByteRegister(0x80, 0x01, 0x00);
+
+# 84
 }
 }
 
@@ -15130,6 +15137,7 @@ PosUart = S_Check;
 break;
 case S_Check:
 if((Type+Data)%256 == c) {
+Validation = 4;
 if(Type == 'V') {
 Vitesse = Data;
 } else if(Type == 'A') {
@@ -15160,9 +15168,9 @@ break;
 void main(void) {
 SYSTEM_Initialize();
 
-I2C_Write1ByteRegister(0x68, 0x26, 0x02);
-I2C_Write1ByteRegister(0x68, 0x27, 0x10);
+do { LATAbits.LATA5 = 1; } while(0);
 
+# 141
 TMR2_SetInterruptHandler(MyTimer2ISR);
 TMR2_WriteTimer(255);
 TMR2_StartTimer();
@@ -15173,8 +15181,17 @@ EUSART_SetRxInterruptHandler(MyUART_ISR);
 (INTCONbits.GIE = 1);
 
 while (1) {
+if(Validation) {
 do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
 _delay((unsigned long)((500)*(4000000/4000.0)));
+} else {
+if(PORTAbits.RA4) {
+do { LATAbits.LATA5 = 1; } while(0);
+} else {
+do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+_delay((unsigned long)((100)*(4000000/4000.0)));
+}
+}
 }
 }
 

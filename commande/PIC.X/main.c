@@ -44,28 +44,43 @@
 #include "mcc_generated_files/mcc.h"
 #include "def.h"
 
+//#define I2C
+
 /*
                          Main application
  */
 uint16_t Vitesse = 0, Angle = 10;
-uint8_t Data, Type;
+uint8_t Data, Type, Validation = 4;
 state PosUart = S_Idle;
 
 void MyTimer2ISR(void) {
+    #ifdef I2C
     uint16_t g = I2C_Read2ByteRegister(ADDR_MPU_R, GYRO_Z_REG_L-1);
+    #endif
     //gestion MPU
     //PID
-    PWM3_LoadDutyValue((uint8_t)(Angle/3)+31);  //31 - 63
+    PWM3_LoadDutyValue((uint8_t)(Angle/2)+20);  //31 - 63
     if(BAT_GetValue()) {
         EUSART_Write('B');
         EUSART_Write('1');
         EUSART_Write('s');
-        I2C_Write1ByteRegister(ADDR_DSPIC, VITESSE_REG, 0x05);
+        if(Validation) {
+            #ifdef I2C
+            I2C_Write1ByteRegister(ADDR_DSPIC, VITESSE_REG, 0x05);
+            #endif
+            Validation--;
+        } else {
+            #ifdef I2C
+            I2C_Write1ByteRegister(ADDR_DSPIC, VITESSE_REG, 0);
+            #endif
+        }
     } else {
         EUSART_Write('B');
         EUSART_Write('0');
         EUSART_Write('r');
+        #ifdef I2C
         I2C_Write1ByteRegister(ADDR_DSPIC, VITESSE_REG, 0x00);
+        #endif
     }
 }
 
@@ -85,6 +100,7 @@ void MyUART_ISR(void) {
                 break;
             case S_Check:
                 if((Type+Data)%256 == c) {
+                    Validation = 4;
                     if(Type == 'V') {
                         Vitesse = Data;
                     } else if(Type == 'A') {
@@ -115,8 +131,12 @@ void MyUART_ISR(void) {
 void main(void) {
     SYSTEM_Initialize();
     
+    STATE_SetHigh();
+    
+    #ifdef I2C
     I2C_Write1ByteRegister(ADDR_MPU_W, FILTER_REG, FILTER_92HZ);
     I2C_Write1ByteRegister(ADDR_MPU_W, GYRO_SCALE_REG, SCALE);
+    #endif
     
     TMR2_SetInterruptHandler(MyTimer2ISR);
     TMR2_WriteTimer(255);
@@ -128,8 +148,17 @@ void main(void) {
     INTERRUPT_GlobalInterruptEnable();
     
     while (1) {
-        STATE_Toggle();
-        __delay_ms(500);
+        if(Validation) {
+            STATE_Toggle();
+            __delay_ms(500);
+        } else {
+            if(BAT_GetValue()) {
+                STATE_SetHigh();
+            } else {
+                STATE_Toggle();
+                __delay_ms(100);
+            }
+        }
     }
 }
 
