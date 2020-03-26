@@ -8,8 +8,8 @@ void InitPin(void) {
     TRISC = ~(1<<STATE);
     TRISB = (1<<RET_C)|(1<<CUR);
     TRISD = (1<<RET_A)|(1<<RET_B);
-    TRISE = ~((1<<PWM1L)|(1<<PWM1H)|(1<<PWM2L)|(1<<PWM2H)|(1<<PWM3L)|(1<<PWM3H)|(1<<SCL));
-    TRISF = ~(1<<SDA);
+    TRISE = ~((1<<PWM1L)|(1<<PWM1H)|(1<<PWM2L)|(1<<PWM2H)|(1<<PWM3L)|(1<<PWM3H));
+    TRISF = (1<<SDA)|(1<<SCL);
 }
 
 void InitAdc(void) {
@@ -57,8 +57,17 @@ void InitCN(void) {
 
 void InitI2C(void) {
     I2CADD = DsPIC_I2C_ADDR;
-    I2CCON = 0x9480;
-    
+    I2CRCV = 0x0000;
+    I2CBRG = 0x0110; //30 MHz
+    I2CCON = 0x9200; //0x9480
+    IFS0bits.SI2CIF = 0;
+    IEC0bits.SI2CIE = 1;
+}
+
+void InitSPI(void) {
+    SPI1CON = 0x4080;
+    SPI1BUF = 0x0000;
+    SPI1STAT = 0x8000;
 }
 
 void Init(void) {
@@ -68,5 +77,6 @@ void Init(void) {
     InitTMR3();
     InitCN();
     InitI2C();
+    //InitSPI();
 }
 

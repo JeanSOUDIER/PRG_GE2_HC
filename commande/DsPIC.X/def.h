@@ -34,8 +34,8 @@
 #include "init.h"
 #include "ISR.h"
 
-#define Fcy 2000000
-#define __delay_ms(x) __delay32(Fcy*250/x)
+#define Fcy 32000000
+#define __delay_ms(x) __delay32(Fcy*14/x)
 #define LED_ON()        LATC = (1<<STATE)
 #define LED_OFF()       LATC = 0x0000;
 #define START_MOTOR()   PWMCON1 = 0x0777;

@@ -14611,10 +14611,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 175 "mcc_generated_files/pin_manager.h"
+# 215 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 187
+# 227
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
@@ -15090,26 +15090,43 @@ void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t
 
 # 18 "def.h"
 typedef enum {S_Idle, S_Data, S_Check} state;
+typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
 
-# 50 "main.c"
+# 53 "main.c"
 uint16_t Vitesse = 0, Angle = 10;
-uint8_t Data, Type;
+uint8_t Data, Type, Validation = 4;
 state PosUart = S_Idle;
+state_led SateLeds = S_leds_off;
 
 void MyTimer2ISR(void) {
 
+uint16_t g = I2C_Read2ByteRegister(0xE8, 0x48-1);
 
 
-PWM3_LoadDutyValue((uint8_t)(Angle/3)+31);
+
+PWM3_LoadDutyValue((uint8_t)(Angle/2)+20);
+while(I2C_BUSY == I2C_Close());
 if(PORTAbits.RA4) {
 EUSART_Write('B');
 EUSART_Write('1');
 EUSART_Write('s');
+if(Validation) {
 
+if(Vitesse > 100) {Vitesse = 100;}
+I2C_Write1ByteRegister(0x40, Vitesse, 0);
+
+Validation--;
+} else {
+
+I2C_Write1ByteRegister(0x40, 101, 0);
+
+}
 } else {
 EUSART_Write('B');
 EUSART_Write('0');
 EUSART_Write('r');
+
+I2C_Write1ByteRegister(0x40, 101, 0);
 
 }
 }
@@ -15119,7 +15136,7 @@ unsigned char c = RC1REG;
 if(c) {
 switch(PosUart) {
 case S_Idle:
-if(c == 'V' || c == 'A' || c == 'P') {
+if(c == 'V' || c == 'A' || c == 'P' || c == 'L') {
 Type = c;
 PosUart = S_Data;
 }
@@ -15130,6 +15147,7 @@ PosUart = S_Check;
 break;
 case S_Check:
 if((Type+Data)%256 == c) {
+Validation = 4;
 if(Type == 'V') {
 Vitesse = Data;
 } else if(Type == 'A') {
@@ -15138,6 +15156,31 @@ Angle = Data;
 EUSART_Write('P');
 EUSART_Write('+');
 EUSART_Write('{');
+} else if(Type == 'L') {
+SateLeds++;
+switch(SateLeds) {
+case S_leds_off:
+do { LATCbits.LATC6 = 0; } while(0);
+do { LATCbits.LATC7 = 0; } while(0);
+break;
+case S_led_r:
+do { LATCbits.LATC6 = 1; } while(0);
+do { LATCbits.LATC7 = 0; } while(0);
+break;
+case S_led_l:
+do { LATCbits.LATC6 = 0; } while(0);
+do { LATCbits.LATC7 = 1; } while(0);
+break;
+case S_leds_on:
+do { LATCbits.LATC6 = 1; } while(0);
+do { LATCbits.LATC7 = 1; } while(0);
+break;
+default:
+do { LATCbits.LATC6 = 0; } while(0);
+do { LATCbits.LATC7 = 0; } while(0);
+SateLeds = S_leds_off;
+break;
+}
 } else {
 EUSART_Write('$');
 EUSART_Write('M');
@@ -15160,7 +15203,11 @@ break;
 void main(void) {
 SYSTEM_Initialize();
 
+do { LATAbits.LATA5 = 1; } while(0);
 
+
+I2C_Write1ByteRegister(0x68, 0x26, 0x02);
+I2C_Write1ByteRegister(0x68, 0x27, 0x10);
 
 
 TMR2_SetInterruptHandler(MyTimer2ISR);
@@ -15173,8 +15220,17 @@ EUSART_SetRxInterruptHandler(MyUART_ISR);
 (INTCONbits.GIE = 1);
 
 while (1) {
+if(PORTAbits.RA4) {
+if(Validation) {
 do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
 _delay((unsigned long)((500)*(4000000/4000.0)));
+} else {
+do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+_delay((unsigned long)((100)*(4000000/4000.0)));
+}
+} else {
+do { LATAbits.LATA5 = 1; } while(0);
+}
 }
 }
 

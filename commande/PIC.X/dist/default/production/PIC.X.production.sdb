@@ -100,21 +100,28 @@ TMR2_CLC4_OUT 12
 TMR2_PWM3_OUT 13
 TMR2_PWM4_OUT 14
 ]
-"54 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"55 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [e E12267 . `uc
 S_Idle 0
 S_Data 1
 S_Check 2
 ]
+"56
+[e E12272 . `uc
+S_leds_off 0
+S_led_r 1
+S_led_l 2
+S_leds_on 3
+]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"56 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyTimer2ISR MyTimer2ISR `(v  1 e 1 0 ]
-"87
+"90
 [v _MyUART_ISR MyUART_ISR `(v  1 e 1 0 ]
-"131
+"159
 [v _main main `(v  1 e 1 0 ]
 "83 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -138,7 +145,9 @@ S_Check 2
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
 "234
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
-"142 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
+"91 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
+[v _I2C_Write1ByteRegister I2C_Write1ByteRegister `(v  1 e 1 0 ]
+"142
 [v _rd1RegCompleteHandler rd1RegCompleteHandler `(E97  1 s 1 rd1RegCompleteHandler ]
 "149
 [v _rd2RegCompleteHandler rd2RegCompleteHandler `(E97  1 s 1 rd2RegCompleteHandler ]
@@ -295,7 +304,7 @@ S_Check 2
 ]
 [u S157 . 1 `S143 1 . 1 0 `S152 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES157  1 e 1 @11 ]
-[s S1372 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1377 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -303,8 +312,8 @@ S_Check 2
 `uc 1 RA5 1 0 :1:5 
 ]
 "442
-[u S1379 . 1 `S1372 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1379  1 e 1 @12 ]
+[u S1384 . 1 `S1377 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1384  1 e 1 @12 ]
 [s S196 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -456,7 +465,7 @@ S_Check 2
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2623
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1392 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1419 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -464,12 +473,24 @@ S_Check 2
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2638
-[u S1399 . 1 `S1392 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1399  1 e 1 @268 ]
+[u S1426 . 1 `S1419 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1426  1 e 1 @268 ]
 "2673
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2712
 [v _LATC LATC `VEuc  1 e 1 @270 ]
+[s S1397 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"2729
+[u S1406 . 1 `S1397 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1406  1 e 1 @270 ]
 "3048
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3323
@@ -625,15 +646,17 @@ S_Check 2
 [v _RB6PPS RB6PPS `VEuc  1 e 1 @3742 ]
 "22973
 [v _RB7PPS RB7PPS `VEuc  1 e 1 @3743 ]
-"52 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"53 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _Vitesse Vitesse `ui  1 e 2 0 ]
 [v _Angle Angle `ui  1 e 2 0 ]
-"53
+"54
 [v _Data Data `uc  1 e 1 0 ]
 [v _Type Type `uc  1 e 1 0 ]
 [v _Validation Validation `uc  1 e 1 0 ]
-"54
+"55
 [v _PosUart PosUart `E12267  1 e 1 0 ]
+"56
+[v _SateLeds SateLeds `E12272  1 e 1 0 ]
 "63 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
 "64
@@ -662,7 +685,7 @@ S_Check 2
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
 "146 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/i2c_master.c
 [v _fsmStateTable fsmStateTable `DC[16]*.37(E12103  1 e 32 0 ]
-[s S443 . 29 `[6]*.37(E97 1 callbackTable 12 0 `[6]*.1v 1 callbackPayload 6 12 `ui 1 time_out 2 18 `ui 1 time_out_value 2 20 `uc 1 address 1 22 `*.1uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E12103 1 state 1 26 `E92 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
+[s S443 . 29 `[6]*.37(E97 1 callbackTable 12 0 `[6]*.4v 1 callbackPayload 6 12 `ui 1 time_out 2 18 `ui 1 time_out_value 2 20 `uc 1 address 1 22 `*.4uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E12103 1 state 1 26 `E92 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
 `uc 1 busy 1 28 :1:1 
 `uc 1 inUse 1 28 :1:2 
 `uc 1 bufferFree 1 28 :1:3 
@@ -671,10 +694,10 @@ S_Check 2
 [v _I2C_Status I2C_Status `S443  1 e 29 0 ]
 "58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-"131 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"159 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"163
+"191
 } 0
 "150 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_WriteTimer TMR2_WriteTimer `(v  1 e 1 0 ]
@@ -779,10 +802,10 @@ S_Check 2
 {
 "175
 } 0
-"56 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyTimer2ISR MyTimer2ISR `(v  1 e 1 0 ]
 {
-"85
+"88
 } 0
 "182 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
@@ -795,17 +818,308 @@ S_Check 2
 [v PWM3_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 0 ]
 "81
 } 0
+"91 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
+[v _I2C_Write1ByteRegister I2C_Write1ByteRegister `(v  1 e 1 0 ]
+{
+[v I2C_Write1ByteRegister@address address `uc  1 a 1 wreg ]
+[v I2C_Write1ByteRegister@address address `uc  1 a 1 wreg ]
+[v I2C_Write1ByteRegister@reg reg `uc  1 p 1 5 ]
+[v I2C_Write1ByteRegister@data data `uc  1 p 1 6 ]
+[v I2C_Write1ByteRegister@address address `uc  1 a 1 8 ]
+"99
+} 0
+"283 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/i2c_master.c
+[v _I2C_SetAddressNackCallback I2C_SetAddressNackCallback `(v  1 e 1 0 ]
+{
+[v I2C_SetAddressNackCallback@cb cb `*.37(E97  1 p 2 5 ]
+[v I2C_SetAddressNackCallback@ptr ptr `*.1v  1 p 1 7 ]
+"286
+} 0
+"176
+[v _I2C_Open I2C_Open `(E92  1 e 1 0 ]
+{
+[v I2C_Open@address address `uc  1 a 1 wreg ]
+"178
+[v I2C_Open@returnValue returnValue `E92  1 a 1 2 ]
+"176
+[v I2C_Open@address address `uc  1 a 1 wreg ]
+"178
+[v I2C_Open@address address `uc  1 a 1 1 ]
+"207
+} 0
+"543
+[v _I2C_MasterOpen I2C_MasterOpen `T(uc  1 s 1 I2C_MasterOpen ]
+{
+"555
+} 0
+"251
+[v _I2C_MasterWrite I2C_MasterWrite `(E92  1 e 1 0 ]
+{
+"254
+} 0
+"224
+[v _I2C_MasterOperation I2C_MasterOperation `(E92  1 e 1 0 ]
+{
+[v I2C_MasterOperation@read read `uc  1 a 1 wreg ]
+"226
+[v I2C_MasterOperation@returnValue returnValue `E92  1 a 1 4 ]
+"224
+[v I2C_MasterOperation@read read `uc  1 a 1 wreg ]
+"226
+[v I2C_MasterOperation@read read `uc  1 a 1 3 ]
+"244
+} 0
+"312
+[v _I2C_Poller I2C_Poller `(v  1 s 1 I2C_Poller ]
+{
+"319
+} 0
+"650
+[v _I2C_MasterWaitForEvent I2C_MasterWaitForEvent `T(v  1 s 1 I2C_MasterWaitForEvent ]
+{
+"659
+} 0
+"321
+[v _I2C_MasterFsm I2C_MasterFsm `T(v  1 s 1 I2C_MasterFsm ]
+{
+"330
+} 0
+"500
+[v _I2C_DO_ADDRESS_NACK I2C_DO_ADDRESS_NACK `(E12103  1 s 1 I2C_DO_ADDRESS_NACK ]
+{
+"512
+} 0
+"494
+[v _I2C_DO_RESET I2C_DO_RESET `(E12103  1 s 1 I2C_DO_RESET ]
+{
+"499
+} 0
+"488
+[v _I2C_DO_RX_NACK_RESTART I2C_DO_RX_NACK_RESTART `(E12103  1 s 1 I2C_DO_RX_NACK_RESTART ]
+{
+"492
+} 0
+"482
+[v _I2C_DO_RX_NACK_STOP I2C_DO_RX_NACK_STOP `(E12103  1 s 1 I2C_DO_RX_NACK_STOP ]
+{
+"486
+} 0
+"475
+[v _I2C_DO_RX_ACK I2C_DO_RX_ACK `(E12103  1 s 1 I2C_DO_RX_ACK ]
+{
+"479
+} 0
+"469
+[v _I2C_DO_SEND_STOP I2C_DO_SEND_STOP `(E12103  1 s 1 I2C_DO_SEND_STOP ]
+{
+"473
+} 0
+"463
+[v _I2C_DO_SEND_RESTART I2C_DO_SEND_RESTART `(E12103  1 s 1 I2C_DO_SEND_RESTART ]
+{
+"467
+} 0
+"456
+[v _I2C_DO_SEND_RESTART_WRITE I2C_DO_SEND_RESTART_WRITE `(E12103  1 s 1 I2C_DO_SEND_RESTART_WRITE ]
+{
+"460
+} 0
+"450
+[v _I2C_DO_SEND_RESTART_READ I2C_DO_SEND_RESTART_READ `(E12103  1 s 1 I2C_DO_SEND_RESTART_READ ]
+{
+"454
+} 0
+"402
+[v _I2C_DO_RCEN I2C_DO_RCEN `(E12103  1 s 1 I2C_DO_RCEN ]
+{
+"407
+} 0
+"378
+[v _I2C_DO_RX I2C_DO_RX `(E12103  1 s 1 I2C_DO_RX ]
+{
+"400
+} 0
+"354
+[v _I2C_DO_TX I2C_DO_TX `(E12103  1 s 1 I2C_DO_TX ]
+{
+"376
+} 0
+"347
+[v _I2C_DO_SEND_ADR_WRITE I2C_DO_SEND_ADR_WRITE `(E12103  1 s 1 I2C_DO_SEND_ADR_WRITE ]
+{
+"352
+} 0
+"340
+[v _I2C_DO_SEND_ADR_READ I2C_DO_SEND_ADR_READ `(E12103  1 s 1 I2C_DO_SEND_ADR_READ ]
+{
+"345
+} 0
+"333
+[v _I2C_DO_IDLE I2C_DO_IDLE `(E12103  1 s 1 I2C_DO_IDLE ]
+{
+"338
+} 0
+"409
+[v _I2C_DO_TX_EMPTY I2C_DO_TX_EMPTY `(E12103  1 s 1 I2C_DO_TX_EMPTY ]
+{
+"424
+} 0
+"645
+[v _I2C_MasterSetIrq I2C_MasterSetIrq `T(v  1 s 1 I2C_MasterSetIrq ]
+{
+"648
+} 0
+"598
+[v _I2C_MasterIsNack I2C_MasterIsNack `T(uc  1 s 1 I2C_MasterIsNack ]
+{
+"601
+} 0
+"568
+[v _I2C_MasterSendTxData I2C_MasterSendTxData `T(v  1 s 1 I2C_MasterSendTxData ]
+{
+[v I2C_MasterSendTxData@data data `uc  1 a 1 wreg ]
+[v I2C_MasterSendTxData@data data `uc  1 a 1 wreg ]
+"570
+[v I2C_MasterSendTxData@data data `uc  1 a 1 0 ]
+"571
+} 0
+"603
+[v _I2C_MasterSendAck I2C_MasterSendAck `T(v  1 s 1 I2C_MasterSendAck ]
+{
+"607
+} 0
+"563
+[v _I2C_MasterGetRxData I2C_MasterGetRxData `T(uc  1 s 1 I2C_MasterGetRxData ]
+{
+"566
+} 0
+"609
+[v _I2C_MasterSendNack I2C_MasterSendNack `T(v  1 s 1 I2C_MasterSendNack ]
+{
+"613
+} 0
+"583
+[v _I2C_MasterStartRx I2C_MasterStartRx `T(v  1 s 1 I2C_MasterStartRx ]
+{
+"586
+} 0
+"525
+[v _I2C_CallbackReturnReset I2C_CallbackReturnReset `(E97  1 e 1 0 ]
+{
+[v I2C_CallbackReturnReset@funPtr funPtr `*.4v  1 p 1 9 ]
+"528
+} 0
+"520
+[v _I2C_CallbackReturnStop I2C_CallbackReturnStop `(E97  1 e 1 0 ]
+{
+"523
+} 0
+"170 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
+[v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E97  1 s 1 rdBlkRegCompleteHandler ]
+{
+[v rdBlkRegCompleteHandler@ptr ptr `*.4v  1 p 1 9 ]
+"175
+} 0
+"156
+[v _wr1RegCompleteHandler wr1RegCompleteHandler `(E97  1 s 1 wr1RegCompleteHandler ]
+{
+[v wr1RegCompleteHandler@ptr ptr `*.4v  1 p 1 9 ]
+"161
+} 0
+"149
+[v _rd2RegCompleteHandler rd2RegCompleteHandler `(E97  1 s 1 rd2RegCompleteHandler ]
+{
+[v rd2RegCompleteHandler@ptr ptr `*.4v  1 p 1 9 ]
+"154
+} 0
+"142
+[v _rd1RegCompleteHandler rd1RegCompleteHandler `(E97  1 s 1 rd1RegCompleteHandler ]
+{
+[v rd1RegCompleteHandler@ptr ptr `*.4v  1 p 1 9 ]
+"147
+} 0
+"163
+[v _wr2RegCompleteHandler wr2RegCompleteHandler `(E97  1 s 1 wr2RegCompleteHandler ]
+{
+[v wr2RegCompleteHandler@ptr ptr `*.4v  1 p 1 9 ]
+"168
+} 0
+"273 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/i2c_master.c
+[v _I2C_SetDataCompleteCallback I2C_SetDataCompleteCallback `(v  1 e 1 0 ]
+{
+[v I2C_SetDataCompleteCallback@cb cb `*.37(E97  1 p 2 5 ]
+[v I2C_SetDataCompleteCallback@ptr ptr `*.4v  1 p 1 7 ]
+"276
+} 0
+"298
+[v _I2C_SetCallback I2C_SetCallback `(v  1 s 1 I2C_SetCallback ]
+{
+[v I2C_SetCallback@idx idx `E12121  1 a 1 wreg ]
+[v I2C_SetCallback@idx idx `E12121  1 a 1 wreg ]
+[v I2C_SetCallback@cb cb `*.37(E97  1 p 2 0 ]
+[v I2C_SetCallback@ptr ptr `*.4v  1 p 1 2 ]
+"300
+[v I2C_SetCallback@idx idx `E12121  1 a 1 4 ]
+"310
+} 0
+"263
+[v _I2C_SetBuffer I2C_SetBuffer `(v  1 e 1 0 ]
+{
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
+[v I2C_SetBuffer@bufferSize bufferSize `ui  1 p 2 0 ]
+"265
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 3 ]
+"271
+} 0
+"593
+[v _I2C_MasterStop I2C_MasterStop `T(v  1 s 1 I2C_MasterStop ]
+{
+"596
+} 0
+"573
+[v _I2C_MasterEnableRestart I2C_MasterEnableRestart `T(v  1 s 1 I2C_MasterEnableRestart ]
+{
+"576
+} 0
+"588
+[v _I2C_MasterStart I2C_MasterStart `T(v  1 s 1 I2C_MasterStart ]
+{
+"591
+} 0
+"209
+[v _I2C_Close I2C_Close `(E92  1 e 1 0 ]
+{
+"211
+[v I2C_Close@returnValue returnValue `E92  1 a 1 1 ]
+"222
+} 0
+"635
+[v _I2C_MasterDisableIrq I2C_MasterDisableIrq `T(v  1 s 1 I2C_MasterDisableIrq ]
+{
+"638
+} 0
+"557
+[v _I2C_MasterClose I2C_MasterClose `T(v  1 s 1 I2C_MasterClose ]
+{
+"561
+} 0
+"640
+[v _I2C_MasterClearIrq I2C_MasterClearIrq `T(v  1 s 1 I2C_MasterClearIrq ]
+{
+"643
+} 0
 "173 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
 {
 "195
 } 0
-"87 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"90 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyUART_ISR MyUART_ISR `(v  1 e 1 0 ]
 {
-"88
+"91
 [v MyUART_ISR@c c `uc  1 a 1 5 ]
-"129
+"157
 } 0
 "162 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]

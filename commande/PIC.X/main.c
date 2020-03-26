@@ -44,7 +44,8 @@
 #include "mcc_generated_files/mcc.h"
 #include "def.h"
 
-//#define I2C
+//#define I2C1
+#define I2C2
 
 /*
                          Main application
@@ -52,9 +53,10 @@
 uint16_t Vitesse = 0, Angle = 10;
 uint8_t Data, Type, Validation = 4;
 state PosUart = S_Idle;
+state_led SateLeds = S_leds_off;
 
 void MyTimer2ISR(void) {
-    #ifdef I2C
+    #ifdef I2C1
     uint16_t g = I2C_Read2ByteRegister(ADDR_MPU_R, GYRO_Z_REG_L-1);
     #endif
     //gestion MPU
@@ -65,21 +67,22 @@ void MyTimer2ISR(void) {
         EUSART_Write('1');
         EUSART_Write('s');
         if(Validation) {
-            #ifdef I2C
-            I2C_Write1ByteRegister(ADDR_DSPIC, VITESSE_REG, 0x05);
+            #ifdef I2C2
+            if(Vitesse > 100) {Vitesse = 100;}
+            I2C_Write1ByteRegister(ADDR_DSPIC, Vitesse, 0);
             #endif
             Validation--;
         } else {
-            #ifdef I2C
-            I2C_Write1ByteRegister(ADDR_DSPIC, VITESSE_REG, 0);
+            #ifdef I2C2
+            I2C_Write1ByteRegister(ADDR_DSPIC, STOP_MOTEUR, 0);
             #endif
         }
     } else {
         EUSART_Write('B');
         EUSART_Write('0');
         EUSART_Write('r');
-        #ifdef I2C
-        I2C_Write1ByteRegister(ADDR_DSPIC, VITESSE_REG, 0x00);
+        #ifdef I2C2
+        I2C_Write1ByteRegister(ADDR_DSPIC, STOP_MOTEUR, 0);
         #endif
     }
 }
@@ -89,7 +92,7 @@ void MyUART_ISR(void) {
     if(c) {
         switch(PosUart) {
             case S_Idle:
-                if(c == 'V' || c == 'A' || c == 'P') {
+                if(c == 'V' || c == 'A' || c == 'P' || c == 'L') {
                     Type = c;
                     PosUart = S_Data;
                 }
@@ -109,6 +112,31 @@ void MyUART_ISR(void) {
                         EUSART_Write('P');
                         EUSART_Write('+');
                         EUSART_Write('{');
+                    } else if(Type == 'L') {
+                        SateLeds++;
+                        switch(SateLeds) {
+                            case S_leds_off:
+                                LED_R_SetLow();
+                                LED_L_SetLow();
+                                break;
+                            case S_led_r:
+                                LED_R_SetHigh();
+                                LED_L_SetLow();
+                                break;
+                            case S_led_l:
+                                LED_R_SetLow();
+                                LED_L_SetHigh();
+                                break;
+                            case S_leds_on:
+                                LED_R_SetHigh();
+                                LED_L_SetHigh();
+                                break;
+                            default:
+                                LED_R_SetLow();
+                                LED_L_SetLow();
+                                SateLeds = S_leds_off;
+                                break;
+                        }
                     } else {
                         EUSART_Write('$');
                         EUSART_Write('M');
@@ -133,7 +161,7 @@ void main(void) {
     
     STATE_SetHigh();
     
-    #ifdef I2C
+    #ifdef I2C1
     I2C_Write1ByteRegister(ADDR_MPU_W, FILTER_REG, FILTER_92HZ);
     I2C_Write1ByteRegister(ADDR_MPU_W, GYRO_SCALE_REG, SCALE);
     #endif
@@ -148,16 +176,16 @@ void main(void) {
     INTERRUPT_GlobalInterruptEnable();
     
     while (1) {
-        if(Validation) {
-            STATE_Toggle();
-            __delay_ms(500);
-        } else {
-            if(BAT_GetValue()) {
-                STATE_SetHigh();
+        if(BAT_GetValue()) {
+            if(Validation) {
+                STATE_Toggle();
+                __delay_ms(500);
             } else {
                 STATE_Toggle();
                 __delay_ms(100);
             }
+        } else {
+            STATE_SetHigh();
         }
     }
 }

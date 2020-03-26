@@ -11,8 +11,9 @@
 #define FILTER_92HZ     0x02 //0x05
 #define SCALE           0x10
 
-#define ADDR_DSPIC      0x80
+#define ADDR_DSPIC      0x40
 
-#define VITESSE_REG     0x01
+#define STOP_MOTEUR     101
 
 typedef enum {S_Idle, S_Data, S_Check} state;
+typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;

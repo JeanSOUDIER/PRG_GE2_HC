@@ -9,7 +9,7 @@
 #define Fcy   2000000
 #define FPWM  25000
 
-#define SCL 8 //E
+#define SCL 3 //F
 #define SDA 2 //F
 #define CUR 2 //B
 #define RET_A 0 //D
@@ -25,7 +25,7 @@
 
 #define START_VALUE 100
 
-#define DsPIC_I2C_ADDR  0x0080
+#define DsPIC_I2C_ADDR  0x0040
 
 void InitPin(void);
 void InitAdc(void);
@@ -33,6 +33,7 @@ void InitPWM(void);
 void InitTMR3(void);
 void InitCN(void);
 void InitI2C(void);
+void InitSPI(void);
 void Init(void);
 
 #endif //INIT_H

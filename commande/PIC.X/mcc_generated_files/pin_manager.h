@@ -162,6 +162,46 @@
 #define RB7_SetAnalogMode()         do { ANSELBbits.ANSB7 = 1; } while(0)
 #define RB7_SetDigitalMode()        do { ANSELBbits.ANSB7 = 0; } while(0)
 
+// get/set LED_R aliases
+#define LED_R_TRIS                 TRISCbits.TRISC6
+#define LED_R_LAT                  LATCbits.LATC6
+#define LED_R_PORT                 PORTCbits.RC6
+#define LED_R_WPU                  WPUCbits.WPUC6
+#define LED_R_OD                   ODCONCbits.ODC6
+#define LED_R_ANS                  ANSELCbits.ANSC6
+#define LED_R_SetHigh()            do { LATCbits.LATC6 = 1; } while(0)
+#define LED_R_SetLow()             do { LATCbits.LATC6 = 0; } while(0)
+#define LED_R_Toggle()             do { LATCbits.LATC6 = ~LATCbits.LATC6; } while(0)
+#define LED_R_GetValue()           PORTCbits.RC6
+#define LED_R_SetDigitalInput()    do { TRISCbits.TRISC6 = 1; } while(0)
+#define LED_R_SetDigitalOutput()   do { TRISCbits.TRISC6 = 0; } while(0)
+#define LED_R_SetPullup()          do { WPUCbits.WPUC6 = 1; } while(0)
+#define LED_R_ResetPullup()        do { WPUCbits.WPUC6 = 0; } while(0)
+#define LED_R_SetPushPull()        do { ODCONCbits.ODC6 = 0; } while(0)
+#define LED_R_SetOpenDrain()       do { ODCONCbits.ODC6 = 1; } while(0)
+#define LED_R_SetAnalogMode()      do { ANSELCbits.ANSC6 = 1; } while(0)
+#define LED_R_SetDigitalMode()     do { ANSELCbits.ANSC6 = 0; } while(0)
+
+// get/set LED_L aliases
+#define LED_L_TRIS                 TRISCbits.TRISC7
+#define LED_L_LAT                  LATCbits.LATC7
+#define LED_L_PORT                 PORTCbits.RC7
+#define LED_L_WPU                  WPUCbits.WPUC7
+#define LED_L_OD                   ODCONCbits.ODC7
+#define LED_L_ANS                  ANSELCbits.ANSC7
+#define LED_L_SetHigh()            do { LATCbits.LATC7 = 1; } while(0)
+#define LED_L_SetLow()             do { LATCbits.LATC7 = 0; } while(0)
+#define LED_L_Toggle()             do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0)
+#define LED_L_GetValue()           PORTCbits.RC7
+#define LED_L_SetDigitalInput()    do { TRISCbits.TRISC7 = 1; } while(0)
+#define LED_L_SetDigitalOutput()   do { TRISCbits.TRISC7 = 0; } while(0)
+#define LED_L_SetPullup()          do { WPUCbits.WPUC7 = 1; } while(0)
+#define LED_L_ResetPullup()        do { WPUCbits.WPUC7 = 0; } while(0)
+#define LED_L_SetPushPull()        do { ODCONCbits.ODC7 = 0; } while(0)
+#define LED_L_SetOpenDrain()       do { ODCONCbits.ODC7 = 1; } while(0)
+#define LED_L_SetAnalogMode()      do { ANSELCbits.ANSC7 = 1; } while(0)
+#define LED_L_SetDigitalMode()     do { ANSELCbits.ANSC7 = 0; } while(0)
+
 /**
    @Param
     none
