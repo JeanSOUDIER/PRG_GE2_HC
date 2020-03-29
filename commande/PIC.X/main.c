@@ -53,7 +53,8 @@
 uint16_t Vitesse = 0, Angle = 10;
 uint8_t Data, Type, Validation = 4;
 state PosUart = S_Idle;
-state_led SateLeds = S_leds_off;
+state_led StateLeds = S_leds_off;
+state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
     #ifdef I2C1
@@ -63,9 +64,12 @@ void MyTimer2ISR(void) {
     //PID
     PWM3_LoadDutyValue((uint8_t)(Angle/2)+20);  //31 - 63
     if(BAT_GetValue()) {
-        EUSART_Write('B');
-        EUSART_Write('1');
-        EUSART_Write('s');
+        if(StateBat == S_bat_low) {
+            EUSART_Write('B');
+            EUSART_Write('1');
+            EUSART_Write('s');
+            StateBat = S_bat_high;
+        }
         if(Validation) {
             #ifdef I2C2
             if(Vitesse > 100) {Vitesse = 100;}
@@ -78,9 +82,12 @@ void MyTimer2ISR(void) {
             #endif
         }
     } else {
-        EUSART_Write('B');
-        EUSART_Write('0');
-        EUSART_Write('r');
+        if(StateBat == S_bat_high) {
+            EUSART_Write('B');
+            EUSART_Write('0');
+            EUSART_Write('r');
+            StateBat = S_bat_low;
+        }
         #ifdef I2C2
         I2C_Write1ByteRegister(ADDR_DSPIC, STOP_MOTEUR, 0);
         #endif
@@ -113,8 +120,8 @@ void MyUART_ISR(void) {
                         EUSART_Write('+');
                         EUSART_Write('{');
                     } else if(Type == 'L') {
-                        SateLeds++;
-                        switch(SateLeds) {
+                        StateLeds++;
+                        switch(StateLeds) {
                             case S_leds_off:
                                 LED_R_SetLow();
                                 LED_L_SetLow();
@@ -134,7 +141,7 @@ void MyUART_ISR(void) {
                             default:
                                 LED_R_SetLow();
                                 LED_L_SetLow();
-                                SateLeds = S_leds_off;
+                                StateLeds = S_leds_off;
                                 break;
                         }
                     } else {

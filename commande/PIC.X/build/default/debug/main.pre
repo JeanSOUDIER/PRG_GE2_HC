@@ -15091,25 +15091,26 @@ void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t
 # 18 "def.h"
 typedef enum {S_Idle, S_Data, S_Check} state;
 typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
+typedef enum {S_bat_low, S_bat_high} state_bat;
 
 # 53 "main.c"
 uint16_t Vitesse = 0, Angle = 10;
 uint8_t Data, Type, Validation = 4;
 state PosUart = S_Idle;
-state_led SateLeds = S_leds_off;
+state_led StateLeds = S_leds_off;
+state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
 
-uint16_t g = I2C_Read2ByteRegister(0xE8, 0x48-1);
-
-
-
+# 65
 PWM3_LoadDutyValue((uint8_t)(Angle/2)+20);
-while(I2C_BUSY == I2C_Close());
 if(PORTAbits.RA4) {
+if(StateBat == S_bat_low) {
 EUSART_Write('B');
 EUSART_Write('1');
 EUSART_Write('s');
+StateBat = S_bat_high;
+}
 if(Validation) {
 
 if(Vitesse > 100) {Vitesse = 100;}
@@ -15122,9 +15123,12 @@ I2C_Write1ByteRegister(0x40, 101, 0);
 
 }
 } else {
+if(StateBat == S_bat_high) {
 EUSART_Write('B');
 EUSART_Write('0');
 EUSART_Write('r');
+StateBat = S_bat_low;
+}
 
 I2C_Write1ByteRegister(0x40, 101, 0);
 
@@ -15157,8 +15161,8 @@ EUSART_Write('P');
 EUSART_Write('+');
 EUSART_Write('{');
 } else if(Type == 'L') {
-SateLeds++;
-switch(SateLeds) {
+StateLeds++;
+switch(StateLeds) {
 case S_leds_off:
 do { LATCbits.LATC6 = 0; } while(0);
 do { LATCbits.LATC7 = 0; } while(0);
@@ -15178,7 +15182,7 @@ break;
 default:
 do { LATCbits.LATC6 = 0; } while(0);
 do { LATCbits.LATC7 = 0; } while(0);
-SateLeds = S_leds_off;
+StateLeds = S_leds_off;
 break;
 }
 } else {
@@ -15205,11 +15209,7 @@ SYSTEM_Initialize();
 
 do { LATAbits.LATA5 = 1; } while(0);
 
-
-I2C_Write1ByteRegister(0x68, 0x26, 0x02);
-I2C_Write1ByteRegister(0x68, 0x27, 0x10);
-
-
+# 176
 TMR2_SetInterruptHandler(MyTimer2ISR);
 TMR2_WriteTimer(255);
 TMR2_StartTimer();
