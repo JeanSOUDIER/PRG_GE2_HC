@@ -10828,8 +10828,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 215: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 227: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 232: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 244: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -11464,98 +11464,105 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 167: SYSTEM_Initialize();
 "167
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 169: do { LATAbits.LATA5 = 1; } while(0);
+[; ;main.c: 169: do { LATCbits.LATC5 = 1; } while(0);
 "169
 [e :U 1281 ]
 {
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 1280 ]
-[; ;main.c: 176: TMR2_SetInterruptHandler(MyTimer2ISR);
-"176
-[e ( _TMR2_SetInterruptHandler (1 &U _MyTimer2ISR ]
-[; ;main.c: 177: TMR2_WriteTimer(255);
-"177
-[e ( _TMR2_WriteTimer (1 -> -> 255 `i `uc ]
-[; ;main.c: 178: TMR2_StartTimer();
-"178
-[e ( _TMR2_StartTimer ..  ]
-[; ;main.c: 180: EUSART_SetRxInterruptHandler(MyUART_ISR);
-"180
-[e ( _EUSART_SetRxInterruptHandler (1 &U _MyUART_ISR ]
-[; ;main.c: 182: (INTCONbits.PEIE = 1);
-"182
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 183: (INTCONbits.GIE = 1);
-"183
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 185: while (1) {
-"185
-[e :U 1283 ]
-{
-[; ;main.c: 186: if(PORTAbits.RA4) {
-"186
-[e $ ! != -> . . _PORTAbits 0 4 `i -> -> -> 0 `i `Vuc `i 1285  ]
-{
-[; ;main.c: 187: if(Validation) {
-"187
-[e $ ! != -> _Validation `i -> -> -> 0 `i `uc `i 1286  ]
-{
-[; ;main.c: 188: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
-"188
-[e :U 1289 ]
-{
-[e = . . _LATAbits 0 5 -> ~ -> . . _LATAbits 0 5 `i `uc ]
-}
-[e :U 1288 ]
-[; ;main.c: 189: _delay((unsigned long)((500)*(4000000/4000.0)));
-"189
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"190
-}
-[; ;main.c: 190: } else {
-[e $U 1290  ]
-[e :U 1286 ]
-{
-[; ;main.c: 191: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
-"191
-[e :U 1293 ]
-{
-[e = . . _LATAbits 0 5 -> ~ -> . . _LATAbits 0 5 `i `uc ]
-}
-[e :U 1292 ]
-[; ;main.c: 192: _delay((unsigned long)((100)*(4000000/4000.0)));
-"192
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"193
-}
-[e :U 1290 ]
-"194
-}
-[; ;main.c: 193: }
-[; ;main.c: 194: } else {
-[e $U 1294  ]
-[e :U 1285 ]
-{
-[; ;main.c: 195: do { LATAbits.LATA5 = 1; } while(0);
-"195
-[e :U 1297 ]
+[; ;main.c: 170: do { LATAbits.LATA5 = 1; } while(0);
+"170
+[e :U 1284 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 1296 ]
-"196
+[e :U 1283 ]
+[; ;main.c: 177: TMR2_SetInterruptHandler(MyTimer2ISR);
+"177
+[e ( _TMR2_SetInterruptHandler (1 &U _MyTimer2ISR ]
+[; ;main.c: 178: TMR2_WriteTimer(255);
+"178
+[e ( _TMR2_WriteTimer (1 -> -> 255 `i `uc ]
+[; ;main.c: 179: TMR2_StartTimer();
+"179
+[e ( _TMR2_StartTimer ..  ]
+[; ;main.c: 181: EUSART_SetRxInterruptHandler(MyUART_ISR);
+"181
+[e ( _EUSART_SetRxInterruptHandler (1 &U _MyUART_ISR ]
+[; ;main.c: 183: (INTCONbits.PEIE = 1);
+"183
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 184: (INTCONbits.GIE = 1);
+"184
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 186: while (1) {
+"186
+[e :U 1286 ]
+{
+[; ;main.c: 187: if(PORTAbits.RA4) {
+"187
+[e $ ! != -> . . _PORTAbits 0 4 `i -> -> -> 0 `i `Vuc `i 1288  ]
+{
+[; ;main.c: 188: if(Validation) {
+"188
+[e $ ! != -> _Validation `i -> -> -> 0 `i `uc `i 1289  ]
+{
+[; ;main.c: 189: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+"189
+[e :U 1292 ]
+{
+[e = . . _LATAbits 0 5 -> ~ -> . . _LATAbits 0 5 `i `uc ]
 }
-[e :U 1294 ]
+[e :U 1291 ]
+[; ;main.c: 190: _delay((unsigned long)((500)*(4000000/4000.0)));
+"190
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"191
+}
+[; ;main.c: 191: } else {
+[e $U 1293  ]
+[e :U 1289 ]
+{
+[; ;main.c: 192: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+"192
+[e :U 1296 ]
+{
+[e = . . _LATAbits 0 5 -> ~ -> . . _LATAbits 0 5 `i `uc ]
+}
+[e :U 1295 ]
+[; ;main.c: 193: _delay((unsigned long)((100)*(4000000/4000.0)));
+"193
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"194
+}
+[e :U 1293 ]
+"195
+}
+[; ;main.c: 194: }
+[; ;main.c: 195: } else {
+[e $U 1297  ]
+[e :U 1288 ]
+{
+[; ;main.c: 196: do { LATAbits.LATA5 = 1; } while(0);
+"196
+[e :U 1300 ]
+{
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 1299 ]
 "197
 }
-[e :U 1282 ]
-"185
-[e $U 1283  ]
-[e :U 1284 ]
-[; ;main.c: 196: }
+[e :U 1297 ]
+"198
+}
+[e :U 1285 ]
+"186
+[e $U 1286  ]
+[e :U 1287 ]
 [; ;main.c: 197: }
 [; ;main.c: 198: }
-"198
+[; ;main.c: 199: }
+"199
 [e :UE 1278 ]
 }

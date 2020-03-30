@@ -162,6 +162,23 @@
 #define RB7_SetAnalogMode()         do { ANSELBbits.ANSB7 = 1; } while(0)
 #define RB7_SetDigitalMode()        do { ANSELBbits.ANSB7 = 0; } while(0)
 
+// get/set CMD_EN aliases
+#define CMD_EN_TRIS                 TRISCbits.TRISC5
+#define CMD_EN_LAT                  LATCbits.LATC5
+#define CMD_EN_PORT                 PORTCbits.RC5
+#define CMD_EN_WPU                  WPUCbits.WPUC5
+#define CMD_EN_OD                   ODCONCbits.ODC5
+#define CMD_EN_SetHigh()            do { LATCbits.LATC5 = 1; } while(0)
+#define CMD_EN_SetLow()             do { LATCbits.LATC5 = 0; } while(0)
+#define CMD_EN_Toggle()             do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0)
+#define CMD_EN_GetValue()           PORTCbits.RC5
+#define CMD_EN_SetDigitalInput()    do { TRISCbits.TRISC5 = 1; } while(0)
+#define CMD_EN_SetDigitalOutput()   do { TRISCbits.TRISC5 = 0; } while(0)
+#define CMD_EN_SetPullup()          do { WPUCbits.WPUC5 = 1; } while(0)
+#define CMD_EN_ResetPullup()        do { WPUCbits.WPUC5 = 0; } while(0)
+#define CMD_EN_SetPushPull()        do { ODCONCbits.ODC5 = 0; } while(0)
+#define CMD_EN_SetOpenDrain()       do { ODCONCbits.ODC5 = 1; } while(0)
+
 // get/set LED_R aliases
 #define LED_R_TRIS                 TRISCbits.TRISC6
 #define LED_R_LAT                  LATCbits.LATC6

@@ -166,6 +166,7 @@ void MyUART_ISR(void) {
 void main(void) {
     SYSTEM_Initialize();
     
+    CMD_EN_SetHigh();
     STATE_SetHigh();
     
     #ifdef I2C1
