@@ -15094,8 +15094,8 @@ typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
 typedef enum {S_bat_low, S_bat_high} state_bat;
 
 # 53 "main.c"
-uint16_t Vitesse = 0, Angle = 10;
-uint8_t Data, Type, Validation = 4;
+uint16_t Vitesse = 0, Angle = 45;
+uint8_t Data, Type, Validation = 4, CptBat = 0;
 state PosUart = S_Idle;
 state_led StateLeds = S_leds_off;
 state_bat StateBat = S_bat_high;
@@ -15103,8 +15103,9 @@ state_bat StateBat = S_bat_high;
 void MyTimer2ISR(void) {
 
 # 65
-PWM3_LoadDutyValue((uint8_t)(Angle/2)+20);
+PWM3_LoadDutyValue((uint8_t)(Angle/6)+45);
 if(PORTAbits.RA4) {
+CptBat = 0;
 if(StateBat == S_bat_low) {
 EUSART_Write('B');
 EUSART_Write('1');
@@ -15118,6 +15119,10 @@ I2C_Write1ByteRegister(0x40, Vitesse, 0);
 
 Validation--;
 } else {
+CptBat++;
+if(CptBat > 100) {
+do { LATCbits.LATC5 = 0; } while(0);
+}
 
 I2C_Write1ByteRegister(0x40, 101, 0);
 
@@ -15210,7 +15215,7 @@ SYSTEM_Initialize();
 do { LATCbits.LATC5 = 1; } while(0);
 do { LATAbits.LATA5 = 1; } while(0);
 
-# 177
+# 182
 TMR2_SetInterruptHandler(MyTimer2ISR);
 TMR2_WriteTimer(255);
 TMR2_StartTimer();

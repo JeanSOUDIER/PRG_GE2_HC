@@ -122,11 +122,13 @@ S_bat_high 1
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "59 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyTimer2ISR MyTimer2ISR `(v  1 e 1 0 ]
-"97
+"102
 [v _MyUART_ISR MyUART_ISR `(v  1 e 1 0 ]
-"166
+"171
 [v _main main `(v  1 e 1 0 ]
 "83 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -484,7 +486,7 @@ S_bat_high 1
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2712
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S1400 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1399 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -494,8 +496,8 @@ S_bat_high 1
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2729
-[u S1409 . 1 `S1400 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1409  1 e 1 @270 ]
+[u S1408 . 1 `S1399 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1408  1 e 1 @270 ]
 "3048
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3323
@@ -658,6 +660,7 @@ S_bat_high 1
 [v _Data Data `uc  1 e 1 0 ]
 [v _Type Type `uc  1 e 1 0 ]
 [v _Validation Validation `uc  1 e 1 0 ]
+[v _CptBat CptBat `uc  1 e 1 0 ]
 "55
 [v _PosUart PosUart `E12267  1 e 1 0 ]
 "56
@@ -701,10 +704,10 @@ S_bat_high 1
 [v _I2C_Status I2C_Status `S443  1 e 29 0 ]
 "58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-"166 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"171 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"199
+"204
 } 0
 "150 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_WriteTimer TMR2_WriteTimer `(v  1 e 1 0 ]
@@ -812,17 +815,29 @@ S_bat_high 1
 "59 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyTimer2ISR MyTimer2ISR `(v  1 e 1 0 ]
 {
-"95
+"100
 } 0
 "182 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
 "185
 } 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"6
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"31
+} 0
 "74 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/pwm3.c
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
 {
-[v PWM3_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 0 ]
+[v PWM3_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 8 ]
 "81
 } 0
 "91 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
@@ -1121,12 +1136,12 @@ S_bat_high 1
 {
 "195
 } 0
-"97 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"102 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyUART_ISR MyUART_ISR `(v  1 e 1 0 ]
 {
-"98
+"103
 [v MyUART_ISR@c c `uc  1 a 1 5 ]
-"164
+"169
 } 0
 "162 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]

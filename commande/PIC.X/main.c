@@ -50,20 +50,21 @@
 /*
                          Main application
  */
-uint16_t Vitesse = 0, Angle = 10;
-uint8_t Data, Type, Validation = 4;
+uint16_t Vitesse = 0, Angle = 45;
+uint8_t Data, Type, Validation = 4, CptBat = 0;
 state PosUart = S_Idle;
 state_led StateLeds = S_leds_off;
 state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
     #ifdef I2C1
-    uint16_t g = I2C_Read2ByteRegister(ADDR_MPU_R, GYRO_Z_REG_L-1);
+    uint16_t g = I2C_Read2ByteRegister(ADDR_MPU, GYRO_Z_REG_L);
     #endif
     //gestion MPU
     //PID
-    PWM3_LoadDutyValue((uint8_t)(Angle/2)+20);  //31 - 63
+    PWM3_LoadDutyValue((uint8_t)(Angle/6)+45);  //31 - 63
     if(BAT_GetValue()) {
+        CptBat = 0;
         if(StateBat == S_bat_low) {
             EUSART_Write('B');
             EUSART_Write('1');
@@ -77,6 +78,10 @@ void MyTimer2ISR(void) {
             #endif
             Validation--;
         } else {
+            CptBat++;
+            if(CptBat > 100) {
+                CMD_EN_SetLow();
+            }
             #ifdef I2C2
             I2C_Write1ByteRegister(ADDR_DSPIC, STOP_MOTEUR, 0);
             #endif
@@ -170,8 +175,8 @@ void main(void) {
     STATE_SetHigh();
     
     #ifdef I2C1
-    I2C_Write1ByteRegister(ADDR_MPU_W, FILTER_REG, FILTER_92HZ);
-    I2C_Write1ByteRegister(ADDR_MPU_W, GYRO_SCALE_REG, SCALE);
+    I2C_Write1ByteRegister(ADDR_MPU, FILTER_REG, FILTER_92HZ);
+    I2C_Write1ByteRegister(ADDR_MPU, GYRO_SCALE_REG, SCALE);
     #endif
     
     TMR2_SetInterruptHandler(MyTimer2ISR);
