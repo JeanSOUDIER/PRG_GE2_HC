@@ -2,6 +2,7 @@
 
 #define ADDR_MPU_R      0xE8
 #define ADDR_MPU_W      0x68
+#define ADDR_MPU        0x68
 
 #define GYRO_Z_REG_H    0x47
 #define GYRO_Z_REG_L    0x48
@@ -14,6 +15,11 @@
 #define ADDR_DSPIC      0x40
 
 #define STOP_MOTEUR     101
+
+void DelayMsPerso(uint8_t temps);
+void MyTimer2ISR(void);
+void MyUART_ISR(void);
+
 
 typedef enum {S_Idle, S_Data, S_Check} state;
 typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
