@@ -168,12 +168,20 @@ void TMR2_ISR(void)
     // clear the TMR2 interrupt flag
     PIR1bits.TMR2IF = 0;
 
+    // ticker function call;
+    // ticker is 1 -> Callback function gets called everytime this ISR executes
+        TMR2_CallBack();
+    }
+
+void TMR2_CallBack(void)
+{
+    // Add your custom callback code here
+    // this code executes every TMR2_INTERRUPT_TICKER_FACTOR periods of TMR2
     if(TMR2_InterruptHandler)
     {
         TMR2_InterruptHandler();
     }
 }
-
 
 void TMR2_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR2_InterruptHandler = InterruptHandler;

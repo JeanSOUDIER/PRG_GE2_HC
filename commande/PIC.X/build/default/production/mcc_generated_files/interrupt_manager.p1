@@ -28,9 +28,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S34 . . ]
 "595
 [v _PIR1bits `VS34 ~T0 @X0 0 e@16 ]
-[v F12200 `(v ~T0 @X0 0 tf ]
+[v F12202 `(v ~T0 @X0 0 tf ]
 "94 mcc_generated_files/eusart.h
-[v _EUSART_RxDefaultInterruptHandler `*F12200 ~T0 @X0 0 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F12202 ~T0 @X0 0 e ]
 "788 mcc_generated_files/tmr2.h
 [v _TMR2_ISR `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -10944,9 +10944,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 718: void TMR2_Period8BitSet(uint8_t periodVal);
 [; ;tmr2.h: 770: void TMR2_LoadPeriodRegister(uint8_t periodVal);
 [; ;tmr2.h: 788: void TMR2_ISR(void);
-[; ;tmr2.h: 806: void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
-[; ;tmr2.h: 824: extern void (*TMR2_InterruptHandler)(void);
-[; ;tmr2.h: 842: void TMR2_DefaultInterruptHandler(void);
+[; ;tmr2.h: 806: void TMR2_CallBack(void);
+[; ;tmr2.h: 823: void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
+[; ;tmr2.h: 841: extern void (*TMR2_InterruptHandler)(void);
+[; ;tmr2.h: 859: void TMR2_DefaultInterruptHandler(void);
 [; ;eusart.h: 75: typedef union {
 [; ;eusart.h: 76: struct {
 [; ;eusart.h: 77: unsigned perr : 1;

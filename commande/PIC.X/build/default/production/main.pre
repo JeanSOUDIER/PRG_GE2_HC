@@ -15008,12 +15008,15 @@ void TMR2_LoadPeriodRegister(uint8_t periodVal);
 void TMR2_ISR(void);
 
 # 806
+void TMR2_CallBack(void);
+
+# 823
 void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
 
-# 824
+# 841
 extern void (*TMR2_InterruptHandler)(void);
 
-# 842
+# 859
 void TMR2_DefaultInterruptHandler(void);
 
 # 75 "mcc_generated_files/eusart.h"
@@ -15088,22 +15091,26 @@ void I2C_WriteNBytes(i2c_address_t address, uint8_t *data, size_t len);
 void I2C_ReadNBytes(i2c_address_t address, uint8_t *data, size_t len);
 void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t len);
 
-# 18 "def.h"
+# 19 "def.h"
+void DelayMsPerso(uint8_t temps);
+void MyTimer2ISR(void);
+void MyUART_ISR(void);
+
+
 typedef enum {S_Idle, S_Data, S_Check} state;
 typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
 typedef enum {S_bat_low, S_bat_high} state_bat;
 
 # 53 "main.c"
-uint16_t Vitesse = 0, Angle = 45;
-uint8_t Data, Type, Validation = 4, CptBat = 0;
+uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45;
 state PosUart = S_Idle;
 state_led StateLeds = S_leds_off;
 state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
 
-# 65
-PWM3_LoadDutyValue((uint8_t)(Angle/6)+45);
+# 62
+PWM3_LoadDutyValue(((Angle)>>3)+50);
 if(PORTAbits.RA4) {
 CptBat = 0;
 if(StateBat == S_bat_low) {
@@ -15215,7 +15222,7 @@ SYSTEM_Initialize();
 do { LATCbits.LATC5 = 1; } while(0);
 do { LATAbits.LATA5 = 1; } while(0);
 
-# 182
+# 179
 TMR2_SetInterruptHandler(MyTimer2ISR);
 TMR2_WriteTimer(255);
 TMR2_StartTimer();

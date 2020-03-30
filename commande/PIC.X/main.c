@@ -44,7 +44,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "def.h"
 
-#define I2C1
+//#define I2C1
 #define I2C2
 
 /*
@@ -59,10 +59,7 @@ void MyTimer2ISR(void) {
     #ifdef I2C1
     G -= I2C_Read1ByteRegister(ADDR_MPU, GYRO_Z_REG_L);
     #endif
-    //gestion MPU
-    //PID
-    //PWM3_LoadDutyValue((uint8_t)(Angle/8)+30);  //31 - 63
-    PWM3_LoadDutyValue(60);
+    PWM3_LoadDutyValue(((Angle)>>3)+50);  //31 - 63
     if(BAT_GetValue()) {
         CptBat = 0;
         if(StateBat == S_bat_low) {

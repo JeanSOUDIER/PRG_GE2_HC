@@ -100,21 +100,21 @@ TMR2_CLC4_OUT 12
 TMR2_PWM3_OUT 13
 TMR2_PWM4_OUT 14
 ]
-"55 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
-[e E12267 . `uc
+"54 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+[e E12275 . `uc
 S_Idle 0
 S_Data 1
 S_Check 2
 ]
-"56
-[e E12272 . `uc
+"55
+[e E12280 . `uc
 S_leds_off 0
 S_led_r 1
 S_led_l 2
 S_leds_on 3
 ]
-"57
-[e E12278 . `uc
+"56
+[e E12286 . `uc
 S_bat_low 0
 S_bat_high 1
 ]
@@ -122,13 +122,11 @@ S_bat_high 1
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"59 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyTimer2ISR MyTimer2ISR `(v  1 e 1 0 ]
-"102
+"99
 [v _MyUART_ISR MyUART_ISR `(v  1 e 1 0 ]
-"171
+"168
 [v _main main `(v  1 e 1 0 ]
 "83 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -290,9 +288,11 @@ S_bat_high 1
 [v _TMR2_Period8BitSet TMR2_Period8BitSet `(v  1 e 1 0 ]
 "165
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
-"178
+"176
+[v _TMR2_CallBack TMR2_CallBack `(v  1 e 1 0 ]
+"186
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
-"182
+"190
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
 [s S143 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
@@ -311,7 +311,7 @@ S_bat_high 1
 ]
 [u S157 . 1 `S143 1 . 1 0 `S152 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES157  1 e 1 @11 ]
-[s S1380 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1385 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -319,8 +319,8 @@ S_bat_high 1
 `uc 1 RA5 1 0 :1:5 
 ]
 "442
-[u S1387 . 1 `S1380 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1387  1 e 1 @12 ]
+[u S1392 . 1 `S1385 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1392  1 e 1 @12 ]
 [s S196 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -472,7 +472,7 @@ S_bat_high 1
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2623
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1422 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1427 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -480,13 +480,13 @@ S_bat_high 1
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2638
-[u S1429 . 1 `S1422 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1429  1 e 1 @268 ]
+[u S1434 . 1 `S1427 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1434  1 e 1 @268 ]
 "2673
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2712
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S1399 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1404 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -496,8 +496,8 @@ S_bat_high 1
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2729
-[u S1408 . 1 `S1399 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1408  1 e 1 @270 ]
+[u S1413 . 1 `S1404 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1413  1 e 1 @270 ]
 "3048
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3323
@@ -654,19 +654,18 @@ S_bat_high 1
 "22973
 [v _RB7PPS RB7PPS `VEuc  1 e 1 @3743 ]
 "53 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
-[v _Vitesse Vitesse `ui  1 e 2 0 ]
-[v _Angle Angle `ui  1 e 2 0 ]
-"54
 [v _Data Data `uc  1 e 1 0 ]
 [v _Type Type `uc  1 e 1 0 ]
 [v _Validation Validation `uc  1 e 1 0 ]
 [v _CptBat CptBat `uc  1 e 1 0 ]
+[v _Vitesse Vitesse `uc  1 e 1 0 ]
+[v _Angle Angle `uc  1 e 1 0 ]
+"54
+[v _PosUart PosUart `E12275  1 e 1 0 ]
 "55
-[v _PosUart PosUart `E12267  1 e 1 0 ]
+[v _StateLeds StateLeds `E12280  1 e 1 0 ]
 "56
-[v _StateLeds StateLeds `E12272  1 e 1 0 ]
-"57
-[v _StateBat StateBat `E12278  1 e 1 0 ]
+[v _StateBat StateBat `E12286  1 e 1 0 ]
 "63 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
 "64
@@ -704,10 +703,10 @@ S_bat_high 1
 [v _I2C_Status I2C_Status `S443  1 e 29 0 ]
 "58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-"171 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"168 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"204
+"201
 } 0
 "150 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_WriteTimer TMR2_WriteTimer `(v  1 e 1 0 ]
@@ -747,11 +746,11 @@ S_bat_high 1
 {
 "94
 } 0
-"178
+"186
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
-"180
+"188
 } 0
 "58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
@@ -810,34 +809,27 @@ S_bat_high 1
 "165 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
 {
-"175
+"174
 } 0
-"59 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"176
+[v _TMR2_CallBack TMR2_CallBack `(v  1 e 1 0 ]
+{
+"184
+} 0
+"58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyTimer2ISR MyTimer2ISR `(v  1 e 1 0 ]
 {
-"100
+"97
 } 0
-"182 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
+"190 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"185
-} 0
-"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-{
-"11
-[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
-"12
-[v ___lwdiv@counter counter `uc  1 a 1 7 ]
-"6
-[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
-[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
-"31
+"193
 } 0
 "74 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/pwm3.c
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
 {
-[v PWM3_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 8 ]
+[v PWM3_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 0 ]
 "81
 } 0
 "91 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
@@ -1136,12 +1128,12 @@ S_bat_high 1
 {
 "195
 } 0
-"102 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"99 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyUART_ISR MyUART_ISR `(v  1 e 1 0 ]
 {
-"103
+"100
 [v MyUART_ISR@c c `uc  1 a 1 5 ]
-"169
+"166
 } 0
 "162 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]

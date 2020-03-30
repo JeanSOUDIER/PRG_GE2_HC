@@ -14611,10 +14611,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 215 "mcc_generated_files/pin_manager.h"
+# 232 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 227
+# 244
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
@@ -15008,12 +15008,15 @@ void TMR2_LoadPeriodRegister(uint8_t periodVal);
 void TMR2_ISR(void);
 
 # 806
+void TMR2_CallBack(void);
+
+# 823
 void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
 
-# 824
+# 841
 extern void (*TMR2_InterruptHandler)(void);
 
-# 842
+# 859
 void TMR2_DefaultInterruptHandler(void);
 
 # 75 "mcc_generated_files/eusart.h"
@@ -15088,23 +15091,28 @@ void I2C_WriteNBytes(i2c_address_t address, uint8_t *data, size_t len);
 void I2C_ReadNBytes(i2c_address_t address, uint8_t *data, size_t len);
 void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t len);
 
-# 18 "def.h"
+# 23 "def.h"
+void DelayMsPerso(uint8_t temps);
+void MyTimer2ISR(void);
+void MyUART_ISR(void);
+
+
 typedef enum {S_Idle, S_Data, S_Check} state;
 typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
 typedef enum {S_bat_low, S_bat_high} state_bat;
 
 # 53 "main.c"
-uint16_t Vitesse = 0, Angle = 10;
-uint8_t Data, Type, Validation = 4;
+uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, TestState = 0, Pos;
 state PosUart = S_Idle;
 state_led StateLeds = S_leds_off;
 state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
-
-# 65
-PWM3_LoadDutyValue((uint8_t)(Angle/2)+20);
+TestState = ~TestState;
+if(TestState) {
+PWM3_LoadDutyValue(((Pos)>>4)+45);
 if(PORTAbits.RA4) {
+CptBat = 0;
 if(StateBat == S_bat_low) {
 EUSART_Write('B');
 EUSART_Write('1');
@@ -15118,6 +15126,10 @@ I2C_Write1ByteRegister(0x40, Vitesse, 0);
 
 Validation--;
 } else {
+CptBat++;
+if(CptBat > 100) {
+do { LATCbits.LATC5 = 0; } while(0);
+}
 
 I2C_Write1ByteRegister(0x40, 101, 0);
 
@@ -15132,6 +15144,13 @@ StateBat = S_bat_low;
 
 I2C_Write1ByteRegister(0x40, 101, 0);
 
+}
+} else {
+
+G -= I2C_Read1ByteRegister(0x68, 0x48);
+
+Pos = Angle-G;
+PWM3_LoadDutyValue(((Pos)>>4)+45);
 }
 }
 
@@ -15207,9 +15226,14 @@ break;
 void main(void) {
 SYSTEM_Initialize();
 
+do { LATCbits.LATC5 = 1; } while(0);
 do { LATAbits.LATA5 = 1; } while(0);
 
-# 176
+
+I2C_Write1ByteRegister(0x68, 0x26, 0x02);
+I2C_Write1ByteRegister(0x68, 0x27, 0x10);
+
+
 TMR2_SetInterruptHandler(MyTimer2ISR);
 TMR2_WriteTimer(255);
 TMR2_StartTimer();

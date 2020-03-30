@@ -14867,12 +14867,15 @@ void TMR2_LoadPeriodRegister(uint8_t periodVal);
 void TMR2_ISR(void);
 
 # 806
+void TMR2_CallBack(void);
+
+# 823
 void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
 
-# 824
+# 841
 extern void (*TMR2_InterruptHandler)(void);
 
-# 842
+# 859
 void TMR2_DefaultInterruptHandler(void);
 
 # 58 "mcc_generated_files/tmr2.c"
@@ -14986,12 +14989,20 @@ void TMR2_ISR(void)
 
 PIR1bits.TMR2IF = 0;
 
+
+
+TMR2_CallBack();
+}
+
+void TMR2_CallBack(void)
+{
+
+
 if(TMR2_InterruptHandler)
 {
 TMR2_InterruptHandler();
 }
 }
-
 
 void TMR2_SetInterruptHandler(void (* InterruptHandler)(void)){
 TMR2_InterruptHandler = InterruptHandler;
