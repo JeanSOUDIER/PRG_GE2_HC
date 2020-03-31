@@ -81,22 +81,22 @@ xc16-ld 1.34 (A)
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x100               0x19c           0x26a  (618)
-.const                       0x29c                0x10            0x18  (24)
-.text                        0x2ac               0x10e           0x195  (405)
-.init.delay32                0x3ba                0x1c            0x2a  (42)
-.dinit                       0x3d6                 0x8             0xc  (12)
+.text                        0x100               0x1a6           0x279  (633)
+.const                       0x2a6                0x10            0x18  (24)
+.text                        0x2b6               0x10e           0x195  (405)
+.init.delay32                0x3c4                0x1c            0x2a  (42)
+.dinit                       0x3e0                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x44d  (1101) 9%
+                 Total "program" memory used (bytes):          0x45c  (1116) 9%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x200]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0             0xc  (12)
+.nbss                        0x800                   0             0xa  (10)
 
-                 Total "data" memory used (bytes):            0xc  (12) 2%
+                 Total "data" memory used (bytes):            0xa  (10) 1%
 
 
 Dynamic Memory Usage
@@ -104,9 +104,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x80c                               0x1f4  (500)
+stack                        0x80a                               0x1f6  (502)
 
-                 Maximum dynamic memory (bytes):          0x1f4  (500)
+                 Maximum dynamic memory (bytes):          0x1f6  (502)
 
 
 External Symbols in Data Memory (by address):
@@ -115,19 +115,17 @@ External Symbols in Data Memory (by address):
                     0x0802                  _Current
                     0x0804                  _Vitesse
                     0x0805                  _Validation
-                    0x0806                  _speed
-                    0x0808                  _State
-                    0x080a                  _test
+                    0x0806                  _State
+                    0x0808                  _test
 
 External Symbols in Data Memory (by name):
 
                     0x0802                  _Current
                     0x0800                  _HallValue
-                    0x0808                  _State
+                    0x0806                  _State
                     0x0805                  _Validation
                     0x0804                  _Vitesse
-                    0x0806                  _speed
-                    0x080a                  _test
+                    0x0808                  _test
 
 External Symbols in Program Memory (by address):
 
@@ -137,45 +135,45 @@ External Symbols in Program Memory (by address):
                   0x000152                  __data_init
                   0x0001c8                  __CNInterrupt
                   0x0001f6                  __ADCInterrupt
-                  0x000220                  __T3Interrupt
-                  0x000256                  __SI2CInterrupt
-                  0x000296                  __DefaultInterrupt
-                  0x00029c                  _StateLoTable
-                  0x0002ac                  _InitPin
-                  0x0002ca                  _InitAdc
-                  0x0002ea                  _InitPWM
-                  0x000314                  _InitTMR3
-                  0x00032a                  _InitCN
-                  0x000338                  _InitI2C
-                  0x000350                  _InitSPI
-                  0x000360                  _Init
-                  0x000372                  _main
-                  0x0003ba                  ___delay32
+                  0x00020e                  __T3Interrupt
+                  0x000262                  __SI2CInterrupt
+                  0x0002a0                  __DefaultInterrupt
+                  0x0002a6                  _StateLoTable
+                  0x0002b6                  _InitPin
+                  0x0002d4                  _InitAdc
+                  0x0002f4                  _InitPWM
+                  0x00031e                  _InitTMR3
+                  0x000334                  _InitCN
+                  0x000342                  _InitI2C
+                  0x00035a                  _InitSPI
+                  0x00036a                  _Init
+                  0x00037c                  _main
+                  0x0003c4                  ___delay32
                   0xf8000a                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x000360                  _Init
-                  0x0002ca                  _InitAdc
-                  0x00032a                  _InitCN
-                  0x000338                  _InitI2C
-                  0x0002ea                  _InitPWM
-                  0x0002ac                  _InitPin
-                  0x000350                  _InitSPI
-                  0x000314                  _InitTMR3
-                  0x00029c                  _StateLoTable
+                  0x00036a                  _Init
+                  0x0002d4                  _InitAdc
+                  0x000334                  _InitCN
+                  0x000342                  _InitI2C
+                  0x0002f4                  _InitPWM
+                  0x0002b6                  _InitPin
+                  0x00035a                  _InitSPI
+                  0x00031e                  _InitTMR3
+                  0x0002a6                  _StateLoTable
                   0x0001f6                  __ADCInterrupt
                   0x0001c8                  __CNInterrupt
-                  0x000296                  __DefaultInterrupt
+                  0x0002a0                  __DefaultInterrupt
                   0xf8000a                  __FGS.sec
-                  0x000256                  __SI2CInterrupt
-                  0x000220                  __T3Interrupt
-                  0x0003ba                  ___delay32
+                  0x000262                  __SI2CInterrupt
+                  0x00020e                  __T3Interrupt
+                  0x0003c4                  ___delay32
                   0x000152                  __data_init
                   0x000152                  __data_init_standard
                   0x00013c                  __psv_init
                   0x000100                  __resetPRI
-                  0x000372                  _main
+                  0x00037c                  _main
 
 Memory Configuration
 
@@ -233,7 +231,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000100        0x19c
+.text             0x000100        0x1a6
  *(.init)
  .init            0x000100         0x4c c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
                   0x000100                  __resetPRI
@@ -245,21 +243,21 @@ LOAD c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\libfx-elf.a
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr.text        0x0001c8         0xce build/default/production/main.o
+ .isr.text        0x0001c8         0xd8 build/default/production/main.o
                   0x0001c8                  __CNInterrupt
                   0x0001f6                  __ADCInterrupt
-                  0x000220                  __T3Interrupt
-                  0x000256                  __SI2CInterrupt
- .isr             0x000296          0x4 default_isr
-                  0x000296                  __DefaultInterrupt
+                  0x00020e                  __T3Interrupt
+                  0x000262                  __SI2CInterrupt
+ .isr             0x0002a0          0x4 default_isr
+                  0x0002a0                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x00029a          0x2 c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normal.Leo)
-                  0x00029a                  __crt_start_mode
-                  0x00029a                  __crt_start_mode_normal
+                  0x0002a4          0x2 c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normal.Leo)
+                  0x0002a4                  __crt_start_mode
+                  0x0002a4                  __crt_start_mode_normal
 
 usercode
  *(usercode)
@@ -293,7 +291,7 @@ __RESERVED2
 
 __FGS             0xf8000a          0x2
  *(__FGS.sec*)
- __FGS.sec        0xf8000a          0x2 /CW/_FGSêÙ°
+ __FGS.sec        0xf8000a          0x2 /CW/_FGS‡îò
                   0xf8000a                  __FGS.sec
 
 __FICD
@@ -308,10 +306,10 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x1156
+.debug_info       0x000000       0x1142
  *(.debug_info)
- .debug_info      0x000000        0x5db build/default/production/main.o
- .debug_info      0x0005db        0xb7b build/default/production/init.o
+ .debug_info      0x000000        0x5c7 build/default/production/main.o
+ .debug_info      0x0005c7        0xb7b build/default/production/init.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x22a
@@ -319,15 +317,15 @@ userdata
  .debug_abbrev    0x000000        0x165 build/default/production/main.o
  .debug_abbrev    0x000165         0xc5 build/default/production/init.o
 
-.debug_line       0x000000        0x250
+.debug_line       0x000000        0x256
  *(.debug_line)
- .debug_line      0x000000        0x12f build/default/production/main.o
- .debug_line      0x00012f        0x121 build/default/production/init.o
+ .debug_line      0x000000        0x135 build/default/production/main.o
+ .debug_line      0x000135        0x121 build/default/production/init.o
 
-.debug_frame      0x000000        0x1d4
+.debug_frame      0x000000        0x1cc
  *(.debug_frame)
- .debug_frame     0x000000         0xe0 build/default/production/main.o
- .debug_frame     0x0000e0         0xf4 build/default/production/init.o
+ .debug_frame     0x000000         0xd8 build/default/production/main.o
+ .debug_frame     0x0000d8         0xf4 build/default/production/init.o
 
 .debug_str        0x000000         0x5b
  *(.debug_str)
@@ -341,12 +339,12 @@ userdata
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x134
+                  0x000000        0x12a
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0xc5 build/default/production/main.o
+                  0x000000         0xbb build/default/production/main.o
  .debug_pubnames
-                  0x0000c5         0x6f build/default/production/init.o
+                  0x0000bb         0x6f build/default/production/init.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -797,7 +795,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
 OUTPUT(dist/default/production/DsPIC.X.production.elf elf32-pic30)
-LOAD /CW/_FGSêÙ°
+LOAD /CW/_FGS‡îò
 LOAD default_isr
 LOAD data_init
 
@@ -821,15 +819,14 @@ __c30_signature
  __c30_signature
                   0x000127          0x6 c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
 
-.nbss               0x0800          0xc
- .nbss              0x0800          0xc build/default/production/main.o
+.nbss               0x0800          0xa
+ .nbss              0x0800          0xa build/default/production/main.o
                     0x0800                  _HallValue
                     0x0802                  _Current
                     0x0804                  _Vitesse
                     0x0805                  _Validation
-                    0x0806                  _speed
-                    0x0808                  _State
-                    0x080a                  _test
+                    0x0806                  _State
+                    0x0808                  _test
 
 .config_ICS       0xf8000c          0x2
  .config_ICS      0xf8000c          0x2 build/default/production/main.o
@@ -865,26 +862,26 @@ __c30_signature
  .ivt._SI2CInterrupt
                   0x00002e          0x2 build/default/production/main.o
 
-.const              0x829c         0x10 load address 0x00029c  
- .const             0x829c         0x10 build/default/production/main.o
-                    0x829c                  _StateLoTable
+.const              0x82a6         0x10 load address 0x0002a6  
+ .const             0x82a6         0x10 build/default/production/main.o
+                    0x82a6                  _StateLoTable
 
-.text             0x0002ac        0x10e
- .text            0x0002ac         0xc6 build/default/production/init.o
-                  0x0002ac                  _InitPin
-                  0x0002ca                  _InitAdc
-                  0x0002ea                  _InitPWM
-                  0x000314                  _InitTMR3
-                  0x00032a                  _InitCN
-                  0x000338                  _InitI2C
-                  0x000350                  _InitSPI
-                  0x000360                  _Init
- .text            0x000372         0x48 build/default/production/main.o
-                  0x000372                  _main
+.text             0x0002b6        0x10e
+ .text            0x0002b6         0xc6 build/default/production/init.o
+                  0x0002b6                  _InitPin
+                  0x0002d4                  _InitAdc
+                  0x0002f4                  _InitPWM
+                  0x00031e                  _InitTMR3
+                  0x000334                  _InitCN
+                  0x000342                  _InitI2C
+                  0x00035a                  _InitSPI
+                  0x00036a                  _Init
+ .text            0x00037c         0x48 build/default/production/main.o
+                  0x00037c                  _main
 
-.init.delay32     0x0003ba         0x1c
- .init.delay32    0x0003ba         0x1c c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                  0x0003ba                  ___delay32
+.init.delay32     0x0003c4         0x1c
+ .init.delay32    0x0003c4         0x1c c:/program files (x86)/microchip/xc16/v1.34/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
+                  0x0003c4                  ___delay32
 
-.dinit            0x0003d6          0x8
- .dinit           0x0003d6          0x8 data_init
+.dinit            0x0003e0          0x8
+ .dinit           0x0003e0          0x8 data_init

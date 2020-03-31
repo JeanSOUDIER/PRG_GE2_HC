@@ -6,7 +6,7 @@
 
 const unsigned int StateLoTable[] = {0x0000, 0x0210, 0x2004, 0x0204, 0x0801, 0x0810, 0x2001, 0x0000};
 unsigned int HallValue = 0, Current = 0;
-unsigned char Vitesse = 0, Validation = 0, speed;
+unsigned char Vitesse = 0, Validation = 0;
 state State = Idle;
 
 int test = 0;
@@ -43,29 +43,29 @@ void __attribute__((__interrupt__, __auto_psv__)) _CNInterrupt(void) {
 void __attribute__((__interrupt__, __auto_psv__)) _ADCInterrupt(void) {
     IFS0bits.ADIF = 0;
     Current = ADCBUF0;
-    PDC1 = Vitesse;
+    /*PDC1 = Vitesse;
     PDC3 = Vitesse;
-    PDC3 = Vitesse;
+    PDC3 = Vitesse;*/
 }
 
 void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void) {
 	IFS0bits.T3IF = 0;
     if(Current > LIM_CUR) {
-        /*PDC1 = 0;
+        PDC1 = 0;
         PDC3 = 0;
-        PDC3 = 0;*/
+        PDC3 = 0;
         State = ErrCur;
     } else {
         if(Validation) {
-            /*PDC1 = Vitesse;
+            PDC1 = Vitesse;
             PDC3 = Vitesse;
-            PDC3 = Vitesse;*/
+            PDC3 = Vitesse;
             Validation--;
             State = Idle;
         } else {
-            /*PDC1 = 0;
+            PDC1 = 0;
             PDC3 = 0;
-            PDC3 = 0;*/
+            PDC3 = 0;
             State = ErrRec;
         }
     }
@@ -78,7 +78,7 @@ void __attribute__((__interrupt__, __auto_psv__)) _SI2CInterrupt(void) {
         if(temp == 101) {
             Vitesse = 0;
         } else {
-            Vitesse = temp;
+            Vitesse = (100-temp)<<1;
         }
         Validation = 4;
     }

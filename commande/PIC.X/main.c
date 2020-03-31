@@ -57,7 +57,7 @@ state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
     #ifdef I2C1
-    G -= I2C_Read1ByteRegister(ADDR_MPU, GYRO_Z_REG_L);
+    //G -= I2C_Read1ByteRegister(ADDR_MPU, GYRO_Z_REG_L);
     #endif
     PWM3_LoadDutyValue(((Angle)>>3)+50);  //31 - 63
     if(BAT_GetValue()) {
@@ -172,8 +172,8 @@ void main(void) {
     STATE_SetHigh();
     
     #ifdef I2C1
-    I2C_Write1ByteRegister(ADDR_MPU, FILTER_REG, FILTER_92HZ);
-    I2C_Write1ByteRegister(ADDR_MPU, GYRO_SCALE_REG, SCALE);
+    //I2C_Write1ByteRegister(ADDR_MPU, FILTER_REG, FILTER_92HZ);
+    //I2C_Write1ByteRegister(ADDR_MPU, GYRO_SCALE_REG, SCALE);
     #endif
     
     TMR2_SetInterruptHandler(MyTimer2ISR);
