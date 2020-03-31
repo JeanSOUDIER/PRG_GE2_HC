@@ -44,52 +44,53 @@
 #include "mcc_generated_files/mcc.h"
 #include "def.h"
 
-#define I2C1
+#define I2C1  //allumage des commandes I2C (1 = IMU, 2 = DsPIC)
 #define I2C2
 
 /*
                          Main application
  */
+//déclaration des varaibles
 uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, StateToggle = 0, Pos;
 state PosUart = S_Idle;
 state_led StateLeds = S_leds_off;
 state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
-    StateToggle = ~StateToggle;
+    StateToggle = ~StateToggle; //changement de l'état test tout les 20 ms
     if(StateToggle) {
-        PWM3_LoadDutyValue(((Pos)>>3)+50);  //31 - 63
+        PWM3_LoadDutyValue(((Pos)>>3)+50);  //changement du rapport cyclique (environ entre 31 - 63)
         #ifdef I2C1
-        G -= I2C_Read1ByteRegister(ADDR_MPU, GYRO_Z_REG_H);
+        G -= I2C_Read1ByteRegister(ADDR_MPU, GYRO_Z_REG_H); //lecture du registre haut du capteur
         #endif
-        MATHACC_PIDController(Angle,G);
+        MATHACC_PIDController(Angle,G); //lancement du PID interne
     } else {
-        PWM3_LoadDutyValue(((Pos)>>3)+50);  //31 - 63
-        if(BAT_GetValue()) {
-            CptBat = 0;
-            if(StateBat == S_bat_low) {
-                EUSART_Write('B');
+        PWM3_LoadDutyValue(((Pos)>>3)+50);
+        if(BAT_GetValue()) { //si batterrie chargé
+            CptBat = 0;      //compteur batterie = 0
+            if(StateBat == S_bat_low) { //si l'état batterie est à bas (front montant sur l'état baterrie)
+                EUSART_Write('B');      //on actualise l'information sur l'app Type/Donnée/Checksum
                 EUSART_Write('1');
                 EUSART_Write('s');
-                StateBat = S_bat_high;
+                StateBat = S_bat_high;  //on met à jour la variable
             }
-            if(Validation) {
+            if(Validation) {            //si on à eu récement un message
                 #ifdef I2C2
-                if(Vitesse > 100) {Vitesse = 100;}
-                I2C_Write1ByteRegister(ADDR_DSPIC, Vitesse, 0);
+                if(Vitesse > 100) {Vitesse = 100;}  //on sature la vitesse envoyée
+                I2C_Write1ByteRegister(ADDR_DSPIC, Vitesse, 0); //on envoi la vitesse au DsPIC
                 #endif
-                Validation--;
+                Validation--;   //on décémente le temps depuis le dernier message reçu
             } else {
-                CptBat++;
+                CptBat++;       //on incrémente le compteur batterrie
                 if(CptBat > 100) {
-                    CMD_EN_SetLow();
+                    CMD_EN_SetLow();   //si on atteint le seuil, on éteint le régulateur 5V
                 }
                 #ifdef I2C2
-                I2C_Write1ByteRegister(ADDR_DSPIC, STOP_MOTEUR, 0);
+                I2C_Write1ByteRegister(ADDR_DSPIC, STOP_MOTEUR, 0); //on envoi une commande d'arrêt au DsPIC
                 #endif
             }
         } else {
-            if(StateBat == S_bat_high) {
+            if(StateBat == S_bat_high) {    //on actualise l'état de la batterrie sur l'app
                 EUSART_Write('B');
                 EUSART_Write('0');
                 EUSART_Write('r');
@@ -103,23 +104,23 @@ void MyTimer2ISR(void) {
 }
 
 void MyUART_ISR(void) {
-    unsigned char c = RC1REG;
-    if(c) {
-        switch(PosUart) {
-            case S_Idle:
-                if(c == 'V' || c == 'A' || c == 'P' || c == 'L') {
+    unsigned char c = RC1REG;       //lecture du caractère reçu en UART
+    if(c) {                         //s'il n'est pas nul
+        switch(PosUart) {           //on test l'état de réception
+            case S_Idle:            //récéption du type
+                if(c == 'V' || c == 'A' || c == 'P' || c == 'L') { //Vitesse, Angle, Ping, Lumière
                     Type = c;
-                    PosUart = S_Data;
+                    PosUart = S_Data;   //on passe à l'état de récéption de la donnée
                 }
                 break;
             case S_Data:
-                Data = c;
+                Data = c;               //récéption de la donnée
                 PosUart = S_Check;
                 break;
             case S_Check:
-                if((Type+Data)%256 == c) {
-                    Validation = 4;
-                    if(Type == 'V') {
+                if((Type+Data)%256 == c) {  //on vérifie le checksum
+                    Validation = 4;         //on remet le compteur à 0
+                    if(Type == 'V') {       //on traite le message
                         Vitesse = Data;
                     } else if(Type == 'A') {
                         Angle = Data;
@@ -153,7 +154,7 @@ void MyUART_ISR(void) {
                                 break;
                         }
                     } else {
-                        EUSART_Write('$');
+                        EUSART_Write('$');  //on envoi des messages d'erreur en retour
                         EUSART_Write('M');
                         EUSART_Write('q');
                     }
@@ -172,36 +173,36 @@ void MyUART_ISR(void) {
 }
 
 void main(void) {
-    SYSTEM_Initialize();
+    SYSTEM_Initialize();    //initialisation du système
     
-    CMD_EN_SetHigh();
-    STATE_SetHigh();
+    CMD_EN_SetHigh();       //allumage du régulateur
+    STATE_SetHigh();        //allumage de la LED utilisateur
     
     #ifdef I2C1
-    I2C_Write1ByteRegister(ADDR_MPU, FILTER_REG, FILTER_92HZ);
+    I2C_Write1ByteRegister(ADDR_MPU, FILTER_REG, FILTER_92HZ);   //réglage de l'IMU
     I2C_Write1ByteRegister(ADDR_MPU, GYRO_SCALE_REG, SCALE);
     #endif
     
-    TMR2_SetInterruptHandler(MyTimer2ISR);
+    TMR2_SetInterruptHandler(MyTimer2ISR);  //définition de la fonction 'MyTimer2ISR' comme celle d'interruption du timer 2
     TMR2_WriteTimer(255);
-    TMR2_StartTimer();
+    TMR2_StartTimer();                      //démarrage du timer 2
     
-    EUSART_SetRxInterruptHandler(MyUART_ISR);
+    EUSART_SetRxInterruptHandler(MyUART_ISR); //définition de la fonction 'MyUART_ISR' comme celle d'interruption de l'UART
     
-    INTERRUPT_PeripheralInterruptEnable();
-    INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();      //allumage des interruptions périphériques
+    INTERRUPT_GlobalInterruptEnable();          //allumage des interruption globales
     
     while (1) {
-        if(BAT_GetValue()) {
-            if(Validation) {
-                STATE_Toggle();
+        if(BAT_GetValue()) {       //test batterrie
+            if(Validation) {       //test du compteur de messages
+                STATE_Toggle();    //si tout vas bien clignotement lent
                 __delay_ms(500);
             } else {
-                STATE_Toggle();
+                STATE_Toggle();   //non connecté, clignotement rapide
                 __delay_ms(100);
             }
         } else {
-            STATE_SetHigh();
+            STATE_SetHigh();      //pas de batterrie, allumé fixe
         }
     }
 }

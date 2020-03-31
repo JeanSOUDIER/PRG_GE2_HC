@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.45 build -152302408 
-                                                                                               Tue Mar 31 14:12:31 2020
+                                                                                               Tue Mar 31 14:31:55 2020
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1                           	processor	16F1619
@@ -5469,7 +5469,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5455 ;;
   5456 ;; *************** function _main *****************
   5457 ;; Defined at:
-  5458 ;;		line 174 in file "main.c"
+  5458 ;;		line 175 in file "main.c"
   5459 ;; Parameters:    Size  Location     Type
   5460 ;;		None
   5461 ;; Auto vars:     Size  Location     Type
@@ -5510,21 +5510,21 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5491                           ;psect for function _main
   5492  01AB                     _main:	
   5493                           
-  5494                           ;main.c: 175: SYSTEM_Initialize();
+  5494                           ;main.c: 176: SYSTEM_Initialize();
   5495                           
   5496                           ;incstack = 0
   5497 ;; hardware stack exceeded
   5498                           ; Regs used in _main: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   5499  01AB  3187  275F  3181   	fcall	_SYSTEM_Initialize
   5500                           
-  5501                           ;main.c: 177: do { LATCbits.LATC5 = 1; } while(0);
+  5501                           ;main.c: 178: do { LATCbits.LATC5 = 1; } while(0);
   5502  01AE  0022               	movlb	2	; select bank2
   5503  01AF  168E               	bsf	14,5	;volatile
   5504                           
-  5505                           ;main.c: 178: do { LATAbits.LATA5 = 1; } while(0);
+  5505                           ;main.c: 179: do { LATAbits.LATA5 = 1; } while(0);
   5506  01B0  168C               	bsf	12,5	;volatile
   5507                           
-  5508                           ;main.c: 181: I2C_Write1ByteRegister(0x68, 0x26, 0x02);
+  5508                           ;main.c: 182: I2C_Write1ByteRegister(0x68, 0x26, 0x02);
   5509  01B1  3026               	movlw	38
   5510  01B2  0021               	movlb	1	; select bank1
   5511  01B3  00C8               	movwf	??_main^(0+128)
@@ -5537,7 +5537,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5518  01BA  3068               	movlw	104
   5519  01BB  3184  244A  3181   	fcall	_I2C_Write1ByteRegister
   5520                           
-  5521                           ;main.c: 182: I2C_Write1ByteRegister(0x68, 0x27, 0x10);
+  5521                           ;main.c: 183: I2C_Write1ByteRegister(0x68, 0x27, 0x10);
   5522  01BE  3027               	movlw	39
   5523  01BF  0021               	movlb	1	; select bank1
   5524  01C0  00C8               	movwf	??_main^(0+128)
@@ -5550,7 +5550,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5531  01C7  3068               	movlw	104
   5532  01C8  3184  244A  3181   	fcall	_I2C_Write1ByteRegister
   5533                           
-  5534                           ;main.c: 185: TMR2_SetInterruptHandler(MyTimer2ISR);
+  5534                           ;main.c: 186: TMR2_SetInterruptHandler(MyTimer2ISR);
   5535  01CB  300B               	movlw	low _MyTimer2ISR
   5536  01CC  0020               	movlb	0	; select bank0
   5537  01CD  00CB               	movwf	TMR2_SetInterruptHandler@InterruptHandler
@@ -5558,14 +5558,14 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5539  01CF  00CC               	movwf	TMR2_SetInterruptHandler@InterruptHandler+1
   5540  01D0  318E  26CB  3181   	fcall	_TMR2_SetInterruptHandler
   5541                           
-  5542                           ;main.c: 186: TMR2_WriteTimer(255);
+  5542                           ;main.c: 187: TMR2_WriteTimer(255);
   5543  01D3  30FF               	movlw	255
   5544  01D4  318E  26D1  3181   	fcall	_TMR2_WriteTimer
   5545                           
-  5546                           ;main.c: 187: TMR2_StartTimer();
+  5546                           ;main.c: 188: TMR2_StartTimer();
   5547  01D7  318E  2636  3181   	fcall	_TMR2_StartTimer
   5548                           
-  5549                           ;main.c: 189: EUSART_SetRxInterruptHandler(MyUART_ISR);
+  5549                           ;main.c: 190: EUSART_SetRxInterruptHandler(MyUART_ISR);
   5550  01DA  3059               	movlw	low _MyUART_ISR
   5551  01DB  0020               	movlb	0	; select bank0
   5552  01DC  00CB               	movwf	EUSART_SetRxInterruptHandler@interruptHandler
@@ -5573,20 +5573,20 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5554  01DE  00CC               	movwf	EUSART_SetRxInterruptHandler@interruptHandler+1
   5555  01DF  318E  26C5  3181   	fcall	_EUSART_SetRxInterruptHandler
   5556                           
-  5557                           ;main.c: 191: (INTCONbits.PEIE = 1);
+  5557                           ;main.c: 192: (INTCONbits.PEIE = 1);
   5558  01E2  170B               	bsf	11,6	;volatile
   5559                           
-  5560                           ;main.c: 192: (INTCONbits.GIE = 1);
+  5560                           ;main.c: 193: (INTCONbits.GIE = 1);
   5561  01E3  178B               	bsf	11,7	;volatile
   5562  01E4  2A15               	goto	l6471
   5563  01E5                     l6473:	
   5564                           
-  5565                           ;main.c: 196: if(Validation) {
+  5565                           ;main.c: 197: if(Validation) {
   5566  01E5  0861               	movf	_Validation,w
   5567  01E6  1903               	btfsc	3,2
   5568  01E7  2A01               	goto	l6479
   5569                           
-  5570                           ;main.c: 197: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+  5570                           ;main.c: 198: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
   5571  01E8  1003               	clrc
   5572  01E9  0022               	movlb	2	; select bank2
   5573  01EA  1E8C               	btfss	12,5	;volatile
@@ -5601,7 +5601,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5582  01F2  128C               	bcf	12,5	;volatile
   5583  01F3                     l6477:	
   5584                           
-  5585                           ;main.c: 198: _delay((unsigned long)((500)*(4000000/4000.0)));
+  5585                           ;main.c: 199: _delay((unsigned long)((500)*(4000000/4000.0)));
   5586  01F3  3003               	movlw	3
   5587  01F4  0021               	movlb	1	; select bank1
   5588  01F5  00C9               	movwf	(??_main^(0+128)+1)
@@ -5617,10 +5617,10 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5598  01FE  29F9               	goto	u4377
   5599  01FF  3200               	nop2
   5600                           
-  5601                           ;main.c: 199: } else {
+  5601                           ;main.c: 200: } else {
   5602  0200  2A15               	goto	l6471
   5603  0201                     l6479:	
-  5604                           ;main.c: 200: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+  5604                           ;main.c: 201: do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
   5605                           
   5606  0201  1003               	clrc
   5607  0202  0022               	movlb	2	; select bank2
@@ -5636,7 +5636,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5617  020B  128C               	bcf	12,5	;volatile
   5618  020C                     l6481:	
   5619                           
-  5620                           ;main.c: 201: _delay((unsigned long)((100)*(4000000/4000.0)));
+  5620                           ;main.c: 202: _delay((unsigned long)((100)*(4000000/4000.0)));
   5621  020C  3082               	movlw	130
   5622  020D  0021               	movlb	1	; select bank1
   5623  020E  00C8               	movwf	??_main^(0+128)
@@ -5648,18 +5648,18 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5629  0213  2A10               	goto	u4387
   5630  0214  3200               	nop2
   5631  0215                     l6471:	
-  5632                           ;main.c: 194: while (1) {
+  5632                           ;main.c: 195: while (1) {
   5633                           
-  5634                           ;main.c: 202: }
-  5635                           ;main.c: 203: } else {
+  5634                           ;main.c: 203: }
+  5635                           ;main.c: 204: } else {
   5636                           
   5637                           
-  5638                           ;main.c: 195: if(PORTAbits.RA4) {
+  5638                           ;main.c: 196: if(PORTAbits.RA4) {
   5639  0215  0020               	movlb	0	; select bank0
   5640  0216  1A0C               	btfsc	12,4	;volatile
   5641  0217  29E5               	goto	l6473
   5642                           
-  5643                           ;main.c: 204: do { LATAbits.LATA5 = 1; } while(0);
+  5643                           ;main.c: 205: do { LATAbits.LATA5 = 1; } while(0);
   5644  0218  0022               	movlb	2	; select bank2
   5645  0219  168C               	bsf	12,5	;volatile
   5646  021A  2A15               	goto	l6471
@@ -10960,7 +10960,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10570  010B                     __ptext70:	
  10571 ;; *************** function _MyTimer2ISR *****************
  10572 ;; Defined at:
- 10573 ;;		line 58 in file "main.c"
+ 10573 ;;		line 59 in file "main.c"
  10574 ;; Parameters:    Size  Location     Type
  10575 ;;		None
  10576 ;; Auto vars:     Size  Location     Type
@@ -11002,7 +11002,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10607                           ;psect for function _MyTimer2ISR
  10608  010B                     _MyTimer2ISR:	
  10609                           
- 10610                           ;main.c: 59: StateToggle = ~StateToggle;
+ 10610                           ;main.c: 60: StateToggle = ~StateToggle;
  10611                           
  10612                           ;incstack = 0
  10613 ;; hardware stack exceeded
@@ -11010,12 +11010,12 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10615  010B  0020               	movlb	0	; select bank0
  10616  010C  09B3               	comf	_StateToggle,f
  10617                           
- 10618                           ;main.c: 60: if(StateToggle) {
+ 10618                           ;main.c: 61: if(StateToggle) {
  10619  010D  0833               	movf	_StateToggle,w
  10620  010E  1903               	btfsc	3,2
  10621  010F  293E               	goto	i1l6239
  10622                           
- 10623                           ;main.c: 61: PWM3_LoadDutyValue(((Pos)>>3)+50);
+ 10623                           ;main.c: 62: PWM3_LoadDutyValue(((Pos)>>3)+50);
  10624  0110  0832               	movf	_Pos,w
  10625  0111  00C6               	movwf	??_MyTimer2ISR
  10626  0112  3003               	movlw	3
@@ -11032,7 +11032,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10637  011C  00F1               	movwf	PWM3_LoadDutyValue@dutyValue+1
  10638  011D  3187  2749  3181   	fcall	_PWM3_LoadDutyValue
  10639                           
- 10640                           ;main.c: 63: G -= I2C_Read1ByteRegister(0x68, 0x47);
+ 10640                           ;main.c: 64: G -= I2C_Read1ByteRegister(0x68, 0x47);
  10641  0120  3047               	movlw	71
  10642  0121  0020               	movlb	0	; select bank0
  10643  0122  00C6               	movwf	??_MyTimer2ISR
@@ -11045,7 +11045,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10650  012B  0847               	movf	??_MyTimer2ISR+1,w
  10651  012C  02B5               	subwf	_G,f
  10652                           
- 10653                           ;main.c: 65: MATHACC_PIDController(Angle,G);
+ 10653                           ;main.c: 66: MATHACC_PIDController(Angle,G);
  10654  012D  0860               	movf	_Angle,w
  10655  012E  00C6               	movwf	??_MyTimer2ISR
  10656  012F  01C7               	clrf	??_MyTimer2ISR+1
@@ -11062,11 +11062,11 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10667  013A  00F3               	movwf	MATHACC_PIDController@input+1
  10668  013B  318F  2761         	fcall	_MATHACC_PIDController
  10669                           
- 10670                           ;main.c: 66: } else {
+ 10670                           ;main.c: 67: } else {
  10671  013D  0008               	return
  10672  013E                     i1l6239:	
  10673                           
- 10674                           ;main.c: 67: PWM3_LoadDutyValue(((Pos)>>3)+50);
+ 10674                           ;main.c: 68: PWM3_LoadDutyValue(((Pos)>>3)+50);
  10675  013E  0020               	movlb	0	; select bank0
  10676  013F  0832               	movf	_Pos,w
  10677  0140  00C6               	movwf	??_MyTimer2ISR
@@ -11084,44 +11084,44 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10689  014B  00F1               	movwf	PWM3_LoadDutyValue@dutyValue+1
  10690  014C  3187  2749  3181   	fcall	_PWM3_LoadDutyValue
  10691                           
- 10692                           ;main.c: 68: if(PORTAbits.RA4) {
+ 10692                           ;main.c: 69: if(PORTAbits.RA4) {
  10693  014F  0020               	movlb	0	; select bank0
  10694  0150  1E0C               	btfss	12,4	;volatile
  10695  0151  2990               	goto	i1l6267
  10696                           
- 10697                           ;main.c: 69: CptBat = 0;
+ 10697                           ;main.c: 70: CptBat = 0;
  10698  0152  01B6               	clrf	_CptBat
  10699                           
- 10700                           ;main.c: 70: if(StateBat == S_bat_low) {
+ 10700                           ;main.c: 71: if(StateBat == S_bat_low) {
  10701  0153  085F               	movf	_StateBat,w
  10702  0154  1D03               	btfss	3,2
  10703  0155  2965               	goto	i1l6251
  10704                           
- 10705                           ;main.c: 71: EUSART_Write('B');
+ 10705                           ;main.c: 72: EUSART_Write('B');
  10706  0156  3042               	movlw	66
  10707  0157  318E  26EB  3181   	fcall	_EUSART_Write
  10708                           
- 10709                           ;main.c: 72: EUSART_Write('1');
+ 10709                           ;main.c: 73: EUSART_Write('1');
  10710  015A  3031               	movlw	49
  10711  015B  318E  26EB  3181   	fcall	_EUSART_Write
  10712                           
- 10713                           ;main.c: 73: EUSART_Write('s');
+ 10713                           ;main.c: 74: EUSART_Write('s');
  10714  015E  3073               	movlw	115
  10715  015F  318E  26EB  3181   	fcall	_EUSART_Write
  10716                           
- 10717                           ;main.c: 74: StateBat = S_bat_high;
+ 10717                           ;main.c: 75: StateBat = S_bat_high;
  10718  0162  0020               	movlb	0	; select bank0
  10719  0163  01DF               	clrf	_StateBat
  10720  0164  0ADF               	incf	_StateBat,f
  10721  0165                     i1l6251:	
  10722                           
- 10723                           ;main.c: 75: }
- 10724                           ;main.c: 76: if(Validation) {
+ 10723                           ;main.c: 76: }
+ 10724                           ;main.c: 77: if(Validation) {
  10725  0165  0861               	movf	_Validation,w
  10726  0166  1903               	btfsc	3,2
  10727  0167  297C               	goto	i1l6261
  10728                           
- 10729                           ;main.c: 78: if(Vitesse > 100) {Vitesse = 100;}
+ 10729                           ;main.c: 79: if(Vitesse > 100) {Vitesse = 100;}
  10730  0168  3065               	movlw	101
  10731  0169  0234               	subwf	_Vitesse,w
  10732  016A  1C03               	skipc
@@ -11132,7 +11132,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10737  016F  00B4               	movwf	_Vitesse
  10738  0170                     i1l6257:	
  10739                           
- 10740                           ;main.c: 79: I2C_Write1ByteRegister(0x40, Vitesse, 0);
+ 10740                           ;main.c: 80: I2C_Write1ByteRegister(0x40, Vitesse, 0);
  10741  0170  0834               	movf	_Vitesse,w
  10742  0171  00C6               	movwf	??_MyTimer2ISR
  10743  0172  0846               	movf	??_MyTimer2ISR,w
@@ -11141,34 +11141,34 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10746  0175  3040               	movlw	64
  10747  0176  3184  24AF         	fcall	i1_I2C_Write1ByteRegister
  10748                           
- 10749                           ;main.c: 81: Validation--;
+ 10749                           ;main.c: 82: Validation--;
  10750  0178  3001               	movlw	1
  10751  0179  0020               	movlb	0	; select bank0
  10752  017A  02E1               	subwf	_Validation,f
  10753                           
- 10754                           ;main.c: 82: } else {
+ 10754                           ;main.c: 83: } else {
  10755  017B  0008               	return
  10756  017C                     i1l6261:	
  10757                           
- 10758                           ;main.c: 83: CptBat++;
+ 10758                           ;main.c: 84: CptBat++;
  10759  017C  3001               	movlw	1
  10760  017D  00C6               	movwf	??_MyTimer2ISR
  10761  017E  0846               	movf	??_MyTimer2ISR,w
  10762  017F  07B6               	addwf	_CptBat,f
  10763                           
- 10764                           ;main.c: 84: if(CptBat > 100) {
+ 10764                           ;main.c: 85: if(CptBat > 100) {
  10765  0180  3065               	movlw	101
  10766  0181  0236               	subwf	_CptBat,w
  10767  0182  1C03               	skipc
  10768  0183  2986               	goto	i1l6265
  10769                           
- 10770                           ;main.c: 85: do { LATCbits.LATC5 = 0; } while(0);
+ 10770                           ;main.c: 86: do { LATCbits.LATC5 = 0; } while(0);
  10771  0184  0022               	movlb	2	; select bank2
  10772  0185  128E               	bcf	14,5	;volatile
  10773  0186                     i1l6265:	
  10774                           
- 10775                           ;main.c: 86: }
- 10776                           ;main.c: 88: I2C_Write1ByteRegister(0x40, 101, 0);
+ 10775                           ;main.c: 87: }
+ 10776                           ;main.c: 89: I2C_Write1ByteRegister(0x40, 101, 0);
  10777  0186  3065               	movlw	101
  10778  0187  0020               	movlb	0	; select bank0
  10779  0188  00C6               	movwf	??_MyTimer2ISR
@@ -11178,36 +11178,36 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  10783  018C  3040               	movlw	64
  10784  018D  3184  24AF         	fcall	i1_I2C_Write1ByteRegister
  10785                           
- 10786                           ;main.c: 90: }
- 10787                           ;main.c: 91: } else {
+ 10786                           ;main.c: 91: }
+ 10787                           ;main.c: 92: } else {
  10788  018F  0008               	return
  10789  0190                     i1l6267:	
  10790                           
- 10791                           ;main.c: 92: if(StateBat == S_bat_high) {
+ 10791                           ;main.c: 93: if(StateBat == S_bat_high) {
  10792  0190  0020               	movlb	0	; select bank0
  10793  0191  035F               	decf	_StateBat,w
  10794  0192  1D03               	btfss	3,2
  10795  0193  29A2               	goto	i1l6273
  10796                           
- 10797                           ;main.c: 93: EUSART_Write('B');
+ 10797                           ;main.c: 94: EUSART_Write('B');
  10798  0194  3042               	movlw	66
  10799  0195  318E  26EB  3181   	fcall	_EUSART_Write
  10800                           
- 10801                           ;main.c: 94: EUSART_Write('0');
+ 10801                           ;main.c: 95: EUSART_Write('0');
  10802  0198  3030               	movlw	48
  10803  0199  318E  26EB  3181   	fcall	_EUSART_Write
  10804                           
- 10805                           ;main.c: 95: EUSART_Write('r');
+ 10805                           ;main.c: 96: EUSART_Write('r');
  10806  019C  3072               	movlw	114
  10807  019D  318E  26EB  3181   	fcall	_EUSART_Write
  10808                           
- 10809                           ;main.c: 96: StateBat = S_bat_low;
+ 10809                           ;main.c: 97: StateBat = S_bat_low;
  10810  01A0  0020               	movlb	0	; select bank0
  10811  01A1  01DF               	clrf	_StateBat
  10812  01A2                     i1l6273:	
  10813                           
- 10814                           ;main.c: 97: }
- 10815                           ;main.c: 99: I2C_Write1ByteRegister(0x40, 101, 0);
+ 10814                           ;main.c: 98: }
+ 10815                           ;main.c: 100: I2C_Write1ByteRegister(0x40, 101, 0);
  10816  01A2  3065               	movlw	101
  10817  01A3  00C6               	movwf	??_MyTimer2ISR
  10818  01A4  0846               	movf	??_MyTimer2ISR,w
@@ -15190,7 +15190,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  14498  0059                     __ptext125:	
  14499 ;; *************** function _MyUART_ISR *****************
  14500 ;; Defined at:
- 14501 ;;		line 105 in file "main.c"
+ 14501 ;;		line 106 in file "main.c"
  14502 ;; Parameters:    Size  Location     Type
  14503 ;;		None
  14504 ;; Auto vars:     Size  Location     Type
@@ -15228,7 +15228,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  14531                           ;psect for function _MyUART_ISR
  14532  0059                     _MyUART_ISR:	
  14533                           
- 14534                           ;main.c: 106: unsigned char c = RC1REG;
+ 14534                           ;main.c: 107: unsigned char c = RC1REG;
  14535                           
  14536                           ;incstack = 0
  14537                           ; Regs used in _MyUART_ISR: [wreg-fsr0h+status,2+status,0+pclath+cstack]
@@ -15238,18 +15238,18 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  14541  005C  0871               	movf	??_MyUART_ISR,w
  14542  005D  00F5               	movwf	MyUART_ISR@c
  14543                           
- 14544                           ;main.c: 107: if(c) {
+ 14544                           ;main.c: 108: if(c) {
  14545  005E  0875               	movf	MyUART_ISR@c,w
  14546  005F  1903               	btfsc	3,2
  14547  0060  0008               	return
  14548  0061  28FE               	goto	i1l3851
  14549  0062                     i1l3801:	
- 14550                           ;main.c: 109: case S_Idle:
+ 14550                           ;main.c: 110: case S_Idle:
  14551                           
- 14552                           ;main.c: 108: switch(PosUart) {
+ 14552                           ;main.c: 109: switch(PosUart) {
  14553                           
  14554                           
- 14555                           ;main.c: 110: if(c == 'V' || c == 'A' || c == 'P' || c == 'L') {
+ 14555                           ;main.c: 111: if(c == 'V' || c == 'A' || c == 'P' || c == 'L') {
  14556  0062  3056               	movlw	86
  14557  0063  0675               	xorwf	MyUART_ISR@c,w
  14558  0064  1903               	btfsc	3,2
@@ -15268,43 +15268,43 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  14571  0071  0008               	return
  14572  0072                     i1l3809:	
  14573                           
- 14574                           ;main.c: 111: Type = c;
+ 14574                           ;main.c: 112: Type = c;
  14575  0072  0875               	movf	MyUART_ISR@c,w
  14576  0073  00F1               	movwf	??_MyUART_ISR
  14577  0074  0871               	movf	??_MyUART_ISR,w
  14578  0075  0020               	movlb	0	; select bank0
  14579  0076  00B7               	movwf	_Type
  14580                           
- 14581                           ;main.c: 112: PosUart = S_Data;
+ 14581                           ;main.c: 113: PosUart = S_Data;
  14582  0077  01B1               	clrf	_PosUart
  14583  0078  0AB1               	incf	_PosUart,f
  14584                           
- 14585                           ;main.c: 113: }
- 14586                           ;main.c: 114: break;
+ 14585                           ;main.c: 114: }
+ 14586                           ;main.c: 115: break;
  14587  0079  0008               	return
  14588  007A                     i1l3813:	
- 14589                           ;main.c: 115: case S_Data:
+ 14589                           ;main.c: 116: case S_Data:
  14590                           
  14591                           
- 14592                           ;main.c: 116: Data = c;
+ 14592                           ;main.c: 117: Data = c;
  14593  007A  0875               	movf	MyUART_ISR@c,w
  14594  007B  00F1               	movwf	??_MyUART_ISR
  14595  007C  0871               	movf	??_MyUART_ISR,w
  14596  007D  00B8               	movwf	_Data
  14597                           
- 14598                           ;main.c: 117: PosUart = S_Check;
+ 14598                           ;main.c: 118: PosUart = S_Check;
  14599  007E  3002               	movlw	2
  14600  007F  00F1               	movwf	??_MyUART_ISR
  14601  0080  0871               	movf	??_MyUART_ISR,w
  14602  0081  00B1               	movwf	_PosUart
  14603                           
- 14604                           ;main.c: 118: break;
+ 14604                           ;main.c: 119: break;
  14605  0082  0008               	return
  14606  0083                     i1l3815:	
- 14607                           ;main.c: 119: case S_Check:
+ 14607                           ;main.c: 120: case S_Check:
  14608                           
  14609                           
- 14610                           ;main.c: 120: if((Type+Data)%256 == c) {
+ 14610                           ;main.c: 121: if((Type+Data)%256 == c) {
  14611  0083  0837               	movf	_Type,w
  14612  0084  0738               	addwf	_Data,w
  14613  0085  00F1               	movwf	??_MyUART_ISR
@@ -15322,25 +15322,25 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  14625  0091  1D03               	skipz
  14626  0092  28EE               	goto	i1l3843
  14627                           
- 14628                           ;main.c: 121: Validation = 4;
+ 14628                           ;main.c: 122: Validation = 4;
  14629  0093  3004               	movlw	4
  14630  0094  00F1               	movwf	??_MyUART_ISR
  14631  0095  0871               	movf	??_MyUART_ISR,w
  14632  0096  00E1               	movwf	_Validation
  14633                           
- 14634                           ;main.c: 122: if(Type == 'V') {
+ 14634                           ;main.c: 123: if(Type == 'V') {
  14635  0097  3056               	movlw	86
  14636  0098  0637               	xorwf	_Type,w
  14637  0099  1D03               	btfss	3,2
  14638  009A  28A0               	goto	i1l3823
  14639                           
- 14640                           ;main.c: 123: Vitesse = Data;
+ 14640                           ;main.c: 124: Vitesse = Data;
  14641  009B  0838               	movf	_Data,w
  14642  009C  00F1               	movwf	??_MyUART_ISR
  14643  009D  0871               	movf	??_MyUART_ISR,w
  14644  009E  00B4               	movwf	_Vitesse
  14645                           
- 14646                           ;main.c: 124: } else if(Type == 'A') {
+ 14646                           ;main.c: 125: } else if(Type == 'A') {
  14647  009F  28F9               	goto	i1l3845
  14648  00A0                     i1l3823:	
  14649  00A0  3041               	movlw	65
@@ -15348,13 +15348,13 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  14651  00A2  1D03               	btfss	3,2
  14652  00A3  28A9               	goto	i1l3827
  14653                           
- 14654                           ;main.c: 125: Angle = Data;
+ 14654                           ;main.c: 126: Angle = Data;
  14655  00A4  0838               	movf	_Data,w
  14656  00A5  00F1               	movwf	??_MyUART_ISR
  14657  00A6  0871               	movf	??_MyUART_ISR,w
  14658  00A7  00E0               	movwf	_Angle
  14659                           
- 14660                           ;main.c: 126: } else if(Type == 'P') {
+ 14660                           ;main.c: 127: } else if(Type == 'P') {
  14661  00A8  28F9               	goto	i1l3845
  14662  00A9                     i1l3827:	
  14663  00A9  3050               	movlw	80
@@ -15362,19 +15362,19 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  14665  00AB  1D03               	btfss	3,2
  14666  00AC  28B7               	goto	i1l3831
  14667                           
- 14668                           ;main.c: 127: EUSART_Write('P');
+ 14668                           ;main.c: 128: EUSART_Write('P');
  14669  00AD  3050               	movlw	80
  14670  00AE  318E  26EB  3180   	fcall	_EUSART_Write
  14671                           
- 14672                           ;main.c: 128: EUSART_Write('+');
+ 14672                           ;main.c: 129: EUSART_Write('+');
  14673  00B1  302B               	movlw	43
  14674  00B2  318E  26EB  3180   	fcall	_EUSART_Write
  14675                           
- 14676                           ;main.c: 129: EUSART_Write('{');
+ 14676                           ;main.c: 130: EUSART_Write('{');
  14677  00B5  307B               	movlw	123
  14678  00B6  28F7               	goto	L3
  14679  00B7                     i1l3831:	
- 14680                           ;main.c: 130: } else if(Type == 'L') {
+ 14680                           ;main.c: 131: } else if(Type == 'L') {
  14681                           
  14682  00B7  304C               	movlw	76
  14683  00B8  0020               	movlb	0	; select bank0
@@ -15382,84 +15382,84 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  14685  00BA  1D03               	btfss	3,2
  14686  00BB  28E4               	goto	i1l3841
  14687                           
- 14688                           ;main.c: 131: StateLeds++;
+ 14688                           ;main.c: 132: StateLeds++;
  14689  00BC  3001               	movlw	1
  14690  00BD  00F1               	movwf	??_MyUART_ISR
  14691  00BE  0871               	movf	??_MyUART_ISR,w
  14692  00BF  07B0               	addwf	_StateLeds,f
  14693                           
- 14694                           ;main.c: 132: switch(StateLeds) {
+ 14694                           ;main.c: 133: switch(StateLeds) {
  14695  00C0  28D5               	goto	i1l3839
  14696  00C1                     i1l877:	
- 14697                           ;main.c: 134: do { LATCbits.LATC6 = 0; } while(0);
+ 14697                           ;main.c: 135: do { LATCbits.LATC6 = 0; } while(0);
  14698                           
- 14699                           ;main.c: 133: case S_leds_off:
+ 14699                           ;main.c: 134: case S_leds_off:
  14700                           
  14701  00C1  0022               	movlb	2	; select bank2
  14702  00C2  130E               	bcf	14,6	;volatile
  14703  00C3  28C6               	goto	i1l885
  14704  00C4                     i1l883:	
- 14705                           ;main.c: 138: do { LATCbits.LATC6 = 1; } while(0);
+ 14705                           ;main.c: 139: do { LATCbits.LATC6 = 1; } while(0);
  14706                           
- 14707                           ;main.c: 137: case S_led_r:
+ 14707                           ;main.c: 138: case S_led_r:
  14708                           
- 14709                           ;main.c: 136: break;
+ 14709                           ;main.c: 137: break;
  14710                           
- 14711                           ;main.c: 135: do { LATCbits.LATC7 = 0; } while(0);
+ 14711                           ;main.c: 136: do { LATCbits.LATC7 = 0; } while(0);
  14712                           
  14713  00C4  0022               	movlb	2	; select bank2
  14714  00C5  170E               	bsf	14,6	;volatile
  14715  00C6                     i1l885:	
- 14716                           ;main.c: 139: do { LATCbits.LATC7 = 0; } while(0);
+ 14716                           ;main.c: 140: do { LATCbits.LATC7 = 0; } while(0);
  14717                           
  14718  00C6  138E               	bcf	14,7	;volatile
  14719                           
- 14720                           ;main.c: 140: break;
+ 14720                           ;main.c: 141: break;
  14721  00C7  28F9               	goto	i1l3845
  14722  00C8                     i1l888:	
- 14723                           ;main.c: 142: do { LATCbits.LATC6 = 0; } while(0);
+ 14723                           ;main.c: 143: do { LATCbits.LATC6 = 0; } while(0);
  14724                           
- 14725                           ;main.c: 141: case S_led_l:
+ 14725                           ;main.c: 142: case S_led_l:
  14726                           
  14727  00C8  0022               	movlb	2	; select bank2
  14728  00C9  130E               	bcf	14,6	;volatile
  14729  00CA  28CD               	goto	i1l895
  14730  00CB                     i1l893:	
- 14731                           ;main.c: 146: do { LATCbits.LATC6 = 1; } while(0);
+ 14731                           ;main.c: 147: do { LATCbits.LATC6 = 1; } while(0);
  14732                           
- 14733                           ;main.c: 145: case S_leds_on:
+ 14733                           ;main.c: 146: case S_leds_on:
  14734                           
- 14735                           ;main.c: 144: break;
+ 14735                           ;main.c: 145: break;
  14736                           
- 14737                           ;main.c: 143: do { LATCbits.LATC7 = 1; } while(0);
+ 14737                           ;main.c: 144: do { LATCbits.LATC7 = 1; } while(0);
  14738                           
  14739  00CB  0022               	movlb	2	; select bank2
  14740  00CC  170E               	bsf	14,6	;volatile
  14741  00CD                     i1l895:	
- 14742                           ;main.c: 147: do { LATCbits.LATC7 = 1; } while(0);
+ 14742                           ;main.c: 148: do { LATCbits.LATC7 = 1; } while(0);
  14743                           
  14744  00CD  178E               	bsf	14,7	;volatile
  14745                           
- 14746                           ;main.c: 148: break;
+ 14746                           ;main.c: 149: break;
  14747  00CE  28F9               	goto	i1l3845
  14748  00CF                     i1l898:	
- 14749                           ;main.c: 150: do { LATCbits.LATC6 = 0; } while(0);
+ 14749                           ;main.c: 151: do { LATCbits.LATC6 = 0; } while(0);
  14750                           
- 14751                           ;main.c: 149: default:
+ 14751                           ;main.c: 150: default:
  14752                           
  14753  00CF  0022               	movlb	2	; select bank2
  14754  00D0  130E               	bcf	14,6	;volatile
  14755                           
- 14756                           ;main.c: 151: do { LATCbits.LATC7 = 0; } while(0);
+ 14756                           ;main.c: 152: do { LATCbits.LATC7 = 0; } while(0);
  14757  00D1  138E               	bcf	14,7	;volatile
  14758                           
- 14759                           ;main.c: 152: StateLeds = S_leds_off;
+ 14759                           ;main.c: 153: StateLeds = S_leds_off;
  14760  00D2  0020               	movlb	0	; select bank0
  14761  00D3  01B0               	clrf	_StateLeds
  14762                           
- 14763                           ;main.c: 154: }
+ 14763                           ;main.c: 155: }
  14764                           
- 14765                           ;main.c: 153: break;
+ 14765                           ;main.c: 154: break;
  14766  00D4  28F9               	goto	i1l3845
  14767  00D5                     i1l3839:	
  14768  00D5  0830               	movf	_StateLeds,w
@@ -15486,57 +15486,57 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
  14789  00E1  28CB               	goto	i1l893
  14790  00E2  28CF               	goto	i1l898
  14791                           
- 14792                           ;main.c: 155: } else {
+ 14792                           ;main.c: 156: } else {
  14793  00E3  28F9               	goto	i1l3845
  14794  00E4                     i1l3841:	
  14795                           
- 14796                           ;main.c: 156: EUSART_Write('$');
+ 14796                           ;main.c: 157: EUSART_Write('$');
  14797  00E4  3024               	movlw	36
  14798  00E5  318E  26EB  3180   	fcall	_EUSART_Write
  14799                           
- 14800                           ;main.c: 157: EUSART_Write('M');
+ 14800                           ;main.c: 158: EUSART_Write('M');
  14801  00E8  304D               	movlw	77
  14802  00E9  318E  26EB  3180   	fcall	_EUSART_Write
  14803                           
- 14804                           ;main.c: 158: EUSART_Write('q');
+ 14804                           ;main.c: 159: EUSART_Write('q');
  14805  00EC  3071               	movlw	113
  14806  00ED  28F7               	goto	L3
  14807  00EE                     i1l3843:	
- 14808                           ;main.c: 159: }
- 14809                           ;main.c: 160: } else {
+ 14808                           ;main.c: 160: }
+ 14809                           ;main.c: 161: } else {
  14810                           
  14811                           
- 14812                           ;main.c: 161: EUSART_Write('$');
+ 14812                           ;main.c: 162: EUSART_Write('$');
  14813  00EE  3024               	movlw	36
  14814  00EF  318E  26EB  3180   	fcall	_EUSART_Write
  14815                           
- 14816                           ;main.c: 162: EUSART_Write('C');
+ 14816                           ;main.c: 163: EUSART_Write('C');
  14817  00F2  3043               	movlw	67
  14818  00F3  318E  26EB  3180   	fcall	_EUSART_Write
  14819                           
- 14820                           ;main.c: 163: EUSART_Write('g');
+ 14820                           ;main.c: 164: EUSART_Write('g');
  14821  00F6  3067               	movlw	103
  14822  00F7                     L3:	
  14823  00F7  318E  26EB         	fcall	_EUSART_Write
  14824  00F9                     i1l3845:	
  14825                           
- 14826                           ;main.c: 164: }
- 14827                           ;main.c: 165: PosUart = S_Idle;
+ 14826                           ;main.c: 165: }
+ 14827                           ;main.c: 166: PosUart = S_Idle;
  14828  00F9  0020               	movlb	0	; select bank0
  14829  00FA  01B1               	clrf	_PosUart
  14830                           
- 14831                           ;main.c: 166: break;
+ 14831                           ;main.c: 167: break;
  14832  00FB  0008               	return
  14833  00FC                     i1l3847:	
- 14834                           ;main.c: 167: default:
+ 14834                           ;main.c: 168: default:
  14835                           
  14836                           
- 14837                           ;main.c: 168: PosUart = S_Idle;
+ 14837                           ;main.c: 169: PosUart = S_Idle;
  14838  00FC  01B1               	clrf	_PosUart
  14839                           
- 14840                           ;main.c: 170: }
+ 14840                           ;main.c: 171: }
  14841                           
- 14842                           ;main.c: 169: break;
+ 14842                           ;main.c: 170: break;
  14843  00FD  0008               	return
  14844  00FE                     i1l3851:	
  14845  00FE  0020               	movlb	0	; select bank0
@@ -17619,7 +17619,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Tue Mar 31 14:12:31 2020
+Symbol Table                                                                                   Tue Mar 31 14:31:55 2020
 
                 ?_EUSART_SetRxInterruptHandler 004B                         ??_I2C_DO_SEND_ADR_READ 004B  
                                   MyUART_ISR@c 0075                    __size_of_I2C_MasterSendNack 0004  

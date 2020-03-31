@@ -16,7 +16,6 @@
 
 #define STOP_MOTEUR     101
 
-void DelayMsPerso(uint8_t temps);
 void MyTimer2ISR(void);
 void MyUART_ISR(void);
 

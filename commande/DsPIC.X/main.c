@@ -4,6 +4,7 @@
 
 #include "def.h"
 
+//déclaration des variables
 const unsigned int StateLoTable[] = {0x0000, 0x0210, 0x2004, 0x0204, 0x0801, 0x0810, 0x2001, 0x0000};
 unsigned int HallValue = 0, Current = 0;
 unsigned char Vitesse = 0, Validation = 0;
@@ -16,15 +17,15 @@ int main(int argc, char** argv) {
     START_MOTOR();
     LED_OFF();
     while(1) {
-        if(State == ErrCur) {
+        if(State == ErrCur) {   //clignotement rapide si le courant est trop élevé
             __delay_ms(100);
             LED_ON();
             __delay_ms(100);
             LED_OFF();
-        } else if(State == ErrRec) {
+        } else if(State == ErrRec) { //allumé si on ne recoit rien
             LED_ON();
         } else {
-            __delay_ms(500);
+            __delay_ms(500);     //clignotement lent si tout vas bien
             LED_ON();
             __delay_ms(500);
             LED_OFF();
@@ -42,15 +43,12 @@ void __attribute__((__interrupt__, __auto_psv__)) _CNInterrupt(void) {
 
 void __attribute__((__interrupt__, __auto_psv__)) _ADCInterrupt(void) {
     IFS0bits.ADIF = 0;
-    Current = ADCBUF0;
-    /*PDC1 = Vitesse;
-    PDC3 = Vitesse;
-    PDC3 = Vitesse;*/
+    Current = ADCBUF0;  //lecture du resultat
 }
 
 void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void) {
 	IFS0bits.T3IF = 0;
-    if(Current > LIM_CUR) {
+    if(Current > LIM_CUR) { //gestion des états
         PDC1 = 0;
         PDC3 = 0;
         PDC3 = 0;
@@ -74,7 +72,7 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void) {
 void __attribute__((__interrupt__, __auto_psv__)) _SI2CInterrupt(void) {
     IFS0bits.SI2CIF = 0;
     unsigned char temp = I2CRCV;
-    if(temp < 102 && temp > 0) {
+    if(temp < 102 && temp > 0) { //récéption des messages et décodage
         if(temp == 101) {
             Vitesse = 0;
         } else {

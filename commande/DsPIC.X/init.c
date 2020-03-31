@@ -3,9 +3,9 @@
 #include "init.h"
 
 void InitPin(void) {
-    LATC = 0x0000;
+    LATC = 0x0000;      //on eteint les sorties des PORTC et E
     LATE = 0x0000;
-    TRISC = ~(1<<STATE);
+    TRISC = ~(1<<STATE);    //on affecte les entrées et sorties
     TRISB = (1<<RET_C)|(1<<CUR);
     TRISD = (1<<RET_A)|(1<<RET_B);
     TRISE = ~((1<<PWM1L)|(1<<PWM1H)|(1<<PWM2L)|(1<<PWM2H)|(1<<PWM3L)|(1<<PWM3H));
@@ -13,8 +13,8 @@ void InitPin(void) {
 }
 
 void InitAdc(void) {
-    ADPCFG = 0xFFFB;
-    ADCON1 = 0x0064;
+    ADPCFG = 0xFFFB;    //seul RB2 en analogique
+    ADCON1 = 0x0064;    //suit la PWM, RC interne, interruption
     ADCON2 = 0x0200;
     ADCON3 = 0x0080;
     ADCHS = 0x0002;
@@ -26,11 +26,11 @@ void InitAdc(void) {
 }
 
 void InitPWM(void) {
-    PTPER = Fcy/FPWM - 1;
+    PTPER = Fcy/FPWM - 1; //25kHz
     
-    PWMCON1 = 0x0700;
+    PWMCON1 = 0x0700;   //activation de la PWM
     //OVDCON = 0x0000;
-    OVDCON = 0x0210;
+    OVDCON = 0x0210;    //module moteur avec capteurs
     PDC1 = START_VALUE;
     PDC3 = START_VALUE;
     PDC3 = START_VALUE;
@@ -50,7 +50,7 @@ void InitTMR3(void) {
 }
 
 void InitCN(void) {
-    CNEN1 = 0x00E0;
+    CNEN1 = 0x00E0;  //CN 5, 6 et 7
     IFS0bits.CNIF = 0;
     IEC0bits.CNIE = 1;
 }
@@ -58,9 +58,9 @@ void InitCN(void) {
 void InitI2C(void) {
     I2CADD = DsPIC_I2C_ADDR;
     I2CRCV = 0x0000;
-    I2CBRG = 0x0110; //30 MHz
-    I2CCON = 0x9200; //0x9480
-    IFS0bits.SI2CIF = 0;
+    I2CBRG = 0x0110; // pour 30 MHz
+    I2CCON = 0x9200;
+    IFS0bits.SI2CIF = 0; //interruption
     IEC0bits.SI2CIE = 1;
 }
 
