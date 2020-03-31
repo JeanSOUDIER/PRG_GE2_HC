@@ -44,59 +44,62 @@
 #include "mcc_generated_files/mcc.h"
 #include "def.h"
 
-//#define I2C1
+#define I2C1
 #define I2C2
 
 /*
                          Main application
  */
-uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, TestBlink = 0, Pos;
+uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, StateToggle = 0, Pos;
 state PosUart = S_Idle;
 state_led StateLeds = S_leds_off;
 state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
-    TestBlink = ~TestBlink;
-    if(TestBlink) {
-    PWM3_LoadDutyValue(((Pos)>>3)+50);  //31 - 63
-    G -= I2C_Read1ByteRegister(ADDR_MPU, GYRO_Z_REG_H);
-    MATHACC_PIDController(Angle,G);
+    StateToggle = ~StateToggle;
+    if(StateToggle) {
+        PWM3_LoadDutyValue(((Pos)>>3)+50);  //31 - 63
+        #ifdef I2C1
+        G -= I2C_Read1ByteRegister(ADDR_MPU, GYRO_Z_REG_H);
+        #endif
+        MATHACC_PIDController(Angle,G);
     } else {
-    PWM3_LoadDutyValue(((Pos)>>3)+50);  //31 - 63
-    if(BAT_GetValue()) {
-        CptBat = 0;
-        if(StateBat == S_bat_low) {
-            EUSART_Write('B');
-            EUSART_Write('1');
-            EUSART_Write('s');
-            StateBat = S_bat_high;
-        }
-        if(Validation) {
-            #ifdef I2C2
-            if(Vitesse > 100) {Vitesse = 100;}
-            I2C_Write1ByteRegister(ADDR_DSPIC, Vitesse, 0);
-            #endif
-            Validation--;
+        PWM3_LoadDutyValue(((Pos)>>3)+50);  //31 - 63
+        if(BAT_GetValue()) {
+            CptBat = 0;
+            if(StateBat == S_bat_low) {
+                EUSART_Write('B');
+                EUSART_Write('1');
+                EUSART_Write('s');
+                StateBat = S_bat_high;
+            }
+            if(Validation) {
+                #ifdef I2C2
+                if(Vitesse > 100) {Vitesse = 100;}
+                I2C_Write1ByteRegister(ADDR_DSPIC, Vitesse, 0);
+                #endif
+                Validation--;
+            } else {
+                CptBat++;
+                if(CptBat > 100) {
+                    CMD_EN_SetLow();
+                }
+                #ifdef I2C2
+                I2C_Write1ByteRegister(ADDR_DSPIC, STOP_MOTEUR, 0);
+                #endif
+            }
         } else {
-            CptBat++;
-            if(CptBat > 100) {
-                CMD_EN_SetLow();
+            if(StateBat == S_bat_high) {
+                EUSART_Write('B');
+                EUSART_Write('0');
+                EUSART_Write('r');
+                StateBat = S_bat_low;
             }
             #ifdef I2C2
             I2C_Write1ByteRegister(ADDR_DSPIC, STOP_MOTEUR, 0);
             #endif
         }
-    } else {
-        if(StateBat == S_bat_high) {
-            EUSART_Write('B');
-            EUSART_Write('0');
-            EUSART_Write('r');
-            StateBat = S_bat_low;
-        }
-        #ifdef I2C2
-        I2C_Write1ByteRegister(ADDR_DSPIC, STOP_MOTEUR, 0);
-        #endif
-    }}
+    }
 }
 
 void MyUART_ISR(void) {
@@ -174,8 +177,10 @@ void main(void) {
     CMD_EN_SetHigh();
     STATE_SetHigh();
     
+    #ifdef I2C1
     I2C_Write1ByteRegister(ADDR_MPU, FILTER_REG, FILTER_92HZ);
     I2C_Write1ByteRegister(ADDR_MPU, GYRO_SCALE_REG, SCALE);
+    #endif
     
     TMR2_SetInterruptHandler(MyTimer2ISR);
     TMR2_WriteTimer(255);
