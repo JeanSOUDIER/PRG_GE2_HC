@@ -3,12 +3,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _I2C_Initialize `(v ~T0 @X0 0 ef ]
 "232 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"87 mcc_generated_files/mcc.h
+"88 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
 "102 mcc_generated_files/pwm3.h
 [v _PWM3_Initialize `(v ~T0 @X0 0 ef ]
 "325 mcc_generated_files/tmr2.h
 [v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
+"122 mcc_generated_files/mathacc.h
+[v _MATHACC_Initialize `(v ~T0 @X0 0 ef ]
 "116 mcc_generated_files/eusart.h
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "2254 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
@@ -10932,6 +10934,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 823: void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
 [; ;tmr2.h: 841: extern void (*TMR2_InterruptHandler)(void);
 [; ;tmr2.h: 859: void TMR2_DefaultInterruptHandler(void);
+[; ;mathacc.h: 74: typedef struct
+[; ;mathacc.h: 75: {
+[; ;mathacc.h: 76: uint8_t byteLL;
+[; ;mathacc.h: 77: uint8_t byteLH;
+[; ;mathacc.h: 78: uint8_t byteHL;
+[; ;mathacc.h: 79: uint8_t byteHH;
+[; ;mathacc.h: 80: uint8_t byteU;
+[; ;mathacc.h: 81: } MATHACCResult;
+[; ;mathacc.h: 122: void MATHACC_Initialize(void);
+[; ;mathacc.h: 149: void MATHACC_PIDController(int16_t setpoint, int16_t input);
+[; ;mathacc.h: 172: uint32_t MATHACC_Z1Get(void);
+[; ;mathacc.h: 195: uint32_t MATHACC_Z2Get(void);
+[; ;mathacc.h: 218: void MATHACC_LoadZ1(uint32_t value);
+[; ;mathacc.h: 241: void MATHACC_LoadZ2(uint32_t value);
+[; ;mathacc.h: 264: MATHACCResult MATHACC_ResultGet(void);
+[; ;mathacc.h: 287: void MATHACC_ClearResult(void);
+[; ;mathacc.h: 296: void MATHACC_Error_ISR( void );
+[; ;mathacc.h: 305: void MATHACC_PID_ISR( void );
 [; ;eusart.h: 75: typedef union {
 [; ;eusart.h: 76: struct {
 [; ;eusart.h: 77: unsigned perr : 1;
@@ -10957,8 +10977,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 426: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 444: void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 465: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-[; ;mcc.h: 74: void SYSTEM_Initialize(void);
-[; ;mcc.h: 87: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 75: void SYSTEM_Initialize(void);
+[; ;mcc.h: 88: void OSCILLATOR_Initialize(void);
 "50 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "51
@@ -10982,31 +11002,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 56: TMR2_Initialize();
 "56
 [e ( _TMR2_Initialize ..  ]
-[; ;mcc.c: 57: EUSART_Initialize();
+[; ;mcc.c: 57: MATHACC_Initialize();
 "57
-[e ( _EUSART_Initialize ..  ]
-[; ;mcc.c: 58: }
+[e ( _MATHACC_Initialize ..  ]
+[; ;mcc.c: 58: EUSART_Initialize();
 "58
-[e :UE 1214 ]
+[e ( _EUSART_Initialize ..  ]
+[; ;mcc.c: 59: }
+"59
+[e :UE 1215 ]
 }
-"60
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "61
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"62
 {
-[; ;mcc.c: 60: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 61: {
+[; ;mcc.c: 61: void OSCILLATOR_Initialize(void)
+[; ;mcc.c: 62: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 63: OSCCON = 0x6A;
-"63
+[; ;mcc.c: 64: OSCCON = 0x6A;
+"64
 [e = _OSCCON -> -> 106 `i `uc ]
-[; ;mcc.c: 65: OSCTUNE = 0x00;
-"65
+[; ;mcc.c: 66: OSCTUNE = 0x00;
+"66
 [e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 67: BORCON = 0x00;
-"67
-[e = _BORCON -> -> 0 `i `uc ]
-[; ;mcc.c: 68: }
+[; ;mcc.c: 68: BORCON = 0x00;
 "68
-[e :UE 1215 ]
+[e = _BORCON -> -> 0 `i `uc ]
+[; ;mcc.c: 69: }
+"69
+[e :UE 1216 ]
 }

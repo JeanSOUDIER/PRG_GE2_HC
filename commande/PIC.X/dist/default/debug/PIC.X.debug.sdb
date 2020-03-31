@@ -101,20 +101,20 @@ TMR2_PWM3_OUT 13
 TMR2_PWM4_OUT 14
 ]
 "54 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
-[e E12275 . `uc
+[e E12303 . `uc
 S_Idle 0
 S_Data 1
 S_Check 2
 ]
 "55
-[e E12280 . `uc
+[e E12308 . `uc
 S_leds_off 0
 S_led_r 1
 S_led_l 2
 S_leds_on 3
 ]
 "56
-[e E12286 . `uc
+[e E12314 . `uc
 S_bat_low 0
 S_bat_high 1
 ]
@@ -124,9 +124,9 @@ S_bat_high 1
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
 "58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyTimer2ISR MyTimer2ISR `(v  1 e 1 0 ]
-"105
+"102
 [v _MyUART_ISR MyUART_ISR `(v  1 e 1 0 ]
-"174
+"171
 [v _main main `(v  1 e 1 0 ]
 "83 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -311,9 +311,17 @@ S_bat_high 1
 [v i1_I2C_MasterWaitForEvent I2C_MasterWaitForEvent `T(v  1 s 1 i1_I2C_MasterWaitForEvent ]
 "52 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"60 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/mathacc.c
+[v _MATHACC_Initialize MATHACC_Initialize `(v  1 e 1 0 ]
+"80
+[v _MATHACC_PIDController MATHACC_PIDController `(v  1 e 1 0 ]
+"147
+[v _MATHACC_Error_ISR MATHACC_Error_ISR `(v  1 e 1 0 ]
+"154
+[v _MATHACC_PID_ISR MATHACC_PID_ISR `(v  1 e 1 0 ]
 "50 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"60
+"61
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "55 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
@@ -362,7 +370,7 @@ S_bat_high 1
 ]
 [u S157 . 1 `S143 1 . 1 0 `S152 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES157  1 e 1 @11 ]
-[s S1385 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1462 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -370,8 +378,8 @@ S_bat_high 1
 `uc 1 RA5 1 0 :1:5 
 ]
 "442
-[u S1392 . 1 `S1385 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1392  1 e 1 @12 ]
+[u S1469 . 1 `S1462 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1469  1 e 1 @12 ]
 [s S196 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -384,7 +392,7 @@ S_bat_high 1
 "595
 [u S205 . 1 `S196 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES205  1 e 1 @16 ]
-[s S640 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[s S710 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 TMR4IF 1 0 :1:1 
 `uc 1 TMR6IF 1 0 :1:2 
 `uc 1 BCL1IF 1 0 :1:3 
@@ -394,8 +402,20 @@ S_bat_high 1
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "657
-[u S649 . 1 `S640 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES649  1 e 1 @17 ]
+[u S719 . 1 `S710 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES719  1 e 1 @17 ]
+[s S244 . 1 `uc 1 PID1DIF 1 0 :1:0 
+`uc 1 PID1EIF 1 0 :1:1 
+`uc 1 AT1IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TMR5IF 1 0 :1:4 
+`uc 1 TMR5GIF 1 0 :1:5 
+`uc 1 TMR3IF 1 0 :1:6 
+`uc 1 TMR3GIF 1 0 :1:7 
+]
+"826
+[u S253 . 1 `S244 1 . 1 0 ]
+[v _PIR5bits PIR5bits `VES253  1 e 1 @20 ]
 "1070
 [v _T2TMR T2TMR `VEuc  1 e 1 @26 ]
 "1075
@@ -406,12 +426,12 @@ S_bat_high 1
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
 "1178
 [v _T2CON T2CON `VEuc  1 e 1 @28 ]
-[s S1264 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S1334 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "1214
-[s S1268 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1338 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -419,11 +439,11 @@ S_bat_high 1
 `uc 1 CKPS1 1 0 :1:5 
 `uc 1 CKPS2 1 0 :1:6 
 ]
-[s S1276 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S1346 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S1280 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S1350 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -432,56 +452,56 @@ S_bat_high 1
 `uc 1 T2CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S1289 . 1 `S1264 1 . 1 0 `S1268 1 . 1 0 `S1276 1 . 1 0 `S1280 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES1289  1 e 1 @28 ]
+[u S1359 . 1 `S1334 1 . 1 0 `S1338 1 . 1 0 `S1346 1 . 1 0 `S1350 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1359  1 e 1 @28 ]
 "1324
 [v _T2HLT T2HLT `VEuc  1 e 1 @29 ]
-[s S1164 . 1 `uc 1 MODE 1 0 :5:0 
+[s S1234 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "1357
-[s S1169 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1239 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 `uc 1 MODE4 1 0 :1:4 
 ]
-[s S1175 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S1245 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CKSYNC 1 0 :1:5 
 `uc 1 T2CKPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S1180 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S1250 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S1186 . 1 `S1164 1 . 1 0 `S1169 1 . 1 0 `S1175 1 . 1 0 `S1180 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES1186  1 e 1 @29 ]
+[u S1256 . 1 `S1234 1 . 1 0 `S1239 1 . 1 0 `S1245 1 . 1 0 `S1250 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES1256  1 e 1 @29 ]
 "1452
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @30 ]
 "1532
 [v _T2RST T2RST `VEuc  1 e 1 @31 ]
-[s S1230 . 1 `uc 1 RSEL 1 0 :4:0 
+[s S1300 . 1 `uc 1 RSEL 1 0 :4:0 
 ]
 "1557
-[s S1232 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S1302 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 ]
-[s S1237 . 1 `uc 1 T2RSEL 1 0 :4:0 
+[s S1307 . 1 `uc 1 T2RSEL 1 0 :4:0 
 ]
-[s S1239 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S1309 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 ]
-[u S1244 . 1 `S1230 1 . 1 0 `S1232 1 . 1 0 `S1237 1 . 1 0 `S1239 1 . 1 0 ]
-[v _T2RSTbits T2RSTbits `VES1244  1 e 1 @31 ]
+[u S1314 . 1 `S1300 1 . 1 0 `S1302 1 . 1 0 `S1307 1 . 1 0 `S1309 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES1314  1 e 1 @31 ]
 "1612
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1662
@@ -500,7 +520,19 @@ S_bat_high 1
 "1780
 [u S184 . 1 `S175 1 . 1 0 ]
 [v _PIE1bits PIE1bits `VES184  1 e 1 @144 ]
-[s S294 . 1 `uc 1 PS 1 0 :3:0 
+[s S223 . 1 `uc 1 PID1DIE 1 0 :1:0 
+`uc 1 PID1EIE 1 0 :1:1 
+`uc 1 AT1IE 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TMR5IE 1 0 :1:4 
+`uc 1 TMR5GIE 1 0 :1:5 
+`uc 1 TMR3IE 1 0 :1:6 
+`uc 1 TMR3GIE 1 0 :1:7 
+]
+"2011
+[u S232 . 1 `S223 1 . 1 0 ]
+[v _PIE5bits PIE5bits `VES232  1 e 1 @148 ]
+[s S364 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 TMR0SE 1 0 :1:4 
 `uc 1 TMR0CS 1 0 :1:5 
@@ -508,22 +540,22 @@ S_bat_high 1
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "2074
-[s S301 . 1 `uc 1 PS0 1 0 :1:0 
+[s S371 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S308 . 1 `S294 1 . 1 0 `S301 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES308  1 e 1 @149 ]
+[u S378 . 1 `S364 1 . 1 0 `S371 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES378  1 e 1 @149 ]
 "2196
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
 "2254
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2623
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1428 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1504 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -531,13 +563,13 @@ S_bat_high 1
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2638
-[u S1435 . 1 `S1428 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1435  1 e 1 @268 ]
+[u S1511 . 1 `S1504 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1511  1 e 1 @268 ]
 "2673
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2712
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S1404 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1481 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -547,8 +579,8 @@ S_bat_high 1
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2729
-[u S1413 . 1 `S1404 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1413  1 e 1 @270 ]
+[u S1490 . 1 `S1481 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1490  1 e 1 @270 ]
 "3048
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3323
@@ -567,7 +599,7 @@ S_bat_high 1
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
 "3911
 [v _RC1STA RC1STA `VEuc  1 e 1 @413 ]
-[s S967 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S1037 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -577,11 +609,11 @@ S_bat_high 1
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3937
-[u S976 . 1 `S967 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES976  1 e 1 @413 ]
+[u S1046 . 1 `S1037 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES1046  1 e 1 @413 ]
 "4091
 [v _TX1STA TX1STA `VEuc  1 e 1 @414 ]
-[s S945 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1015 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -591,8 +623,8 @@ S_bat_high 1
 `uc 1 CSRC 1 0 :1:7 
 ]
 "4117
-[u S954 . 1 `S945 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES954  1 e 1 @414 ]
+[u S1024 . 1 `S1015 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES1024  1 e 1 @414 ]
 "4271
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @415 ]
 "4517
@@ -607,7 +639,7 @@ S_bat_high 1
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
 "5446
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
-[s S661 . 1 `uc 1 BF 1 0 :1:0 
+[s S731 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -617,27 +649,27 @@ S_bat_high 1
 `uc 1 SMP 1 0 :1:7 
 ]
 "5468
-[u S670 . 1 `S661 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES670  1 e 1 @532 ]
+[u S740 . 1 `S731 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES740  1 e 1 @532 ]
 "5568
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S468 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S538 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "5601
-[s S474 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S544 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S479 . 1 `S468 1 . 1 0 `S474 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES479  1 e 1 @533 ]
+[u S549 . 1 `S538 1 . 1 0 `S544 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES549  1 e 1 @533 ]
 "5838
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
-[s S619 . 1 `uc 1 SEN 1 0 :1:0 
+[s S689 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -647,21 +679,21 @@ S_bat_high 1
 `uc 1 GCEN 1 0 :1:7 
 ]
 "5860
-[u S628 . 1 `S619 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES628  1 e 1 @534 ]
+[u S698 . 1 `S689 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES698  1 e 1 @534 ]
 "6082
 [v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
 "6127
 [v _ODCONB ODCONB `VEuc  1 e 1 @653 ]
 "6166
 [v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
-[s S1062 . 1 `uc 1 CCP1TSEL 1 0 :2:0 
+[s S1132 . 1 `uc 1 CCP1TSEL 1 0 :2:0 
 `uc 1 CCP2TSEL 1 0 :2:2 
 `uc 1 P3TSEL 1 0 :2:4 
 `uc 1 P4TSEL 1 0 :2:6 
 ]
 "6735
-[s S1067 . 1 `uc 1 CCP1TSEL0 1 0 :1:0 
+[s S1137 . 1 `uc 1 CCP1TSEL0 1 0 :1:0 
 `uc 1 CCP1TSEL1 1 0 :1:1 
 `uc 1 CCP2TSEL0 1 0 :1:2 
 `uc 1 CCP2TSEL1 1 0 :1:3 
@@ -670,8 +702,8 @@ S_bat_high 1
 `uc 1 P4TSEL0 1 0 :1:6 
 `uc 1 P4TSEL1 1 0 :1:7 
 ]
-[u S1076 . 1 `S1062 1 . 1 0 `S1067 1 . 1 0 ]
-[v _CCPTMRSbits CCPTMRSbits `VES1076  1 e 1 @670 ]
+[u S1146 . 1 `S1132 1 . 1 0 `S1137 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES1146  1 e 1 @670 ]
 "6800
 [v _SLRCONA SLRCONA `VEuc  1 e 1 @780 ]
 "6845
@@ -684,6 +716,50 @@ S_bat_high 1
 [v _INLVLB INLVLB `VEuc  1 e 1 @909 ]
 "7035
 [v _INLVLC INLVLC `VEuc  1 e 1 @910 ]
+"9046
+[v _PID1SETL PID1SETL `VEuc  1 e 1 @1420 ]
+"9158
+[v _PID1SETH PID1SETH `VEuc  1 e 1 @1421 ]
+"9277
+[v _PID1INL PID1INL `VEuc  1 e 1 @1422 ]
+"9389
+[v _PID1INH PID1INH `VEuc  1 e 1 @1423 ]
+"9508
+[v _PID1K1L PID1K1L `VEuc  1 e 1 @1424 ]
+"9620
+[v _PID1K1H PID1K1H `VEuc  1 e 1 @1425 ]
+"9739
+[v _PID1K2L PID1K2L `VEuc  1 e 1 @1426 ]
+"9851
+[v _PID1K2H PID1K2H `VEuc  1 e 1 @1427 ]
+"9970
+[v _PID1K3L PID1K3L `VEuc  1 e 1 @1428 ]
+"10082
+[v _PID1K3H PID1K3H `VEuc  1 e 1 @1429 ]
+"10200
+[v _PID1OUTLL PID1OUTLL `VEuc  1 e 1 @1430 ]
+"10312
+[v _PID1OUTLH PID1OUTLH `VEuc  1 e 1 @1431 ]
+"10424
+[v _PID1OUTHL PID1OUTHL `VEuc  1 e 1 @1432 ]
+"10536
+[v _PID1OUTHH PID1OUTHH `VEuc  1 e 1 @1433 ]
+"10648
+[v _PID1OUTU PID1OUTU `VEuc  1 e 1 @1434 ]
+"10721
+[v _PID1Z1L PID1Z1L `VEuc  1 e 1 @1435 ]
+"10833
+[v _PID1Z1H PID1Z1H `VEuc  1 e 1 @1436 ]
+"10945
+[v _PID1Z1U PID1Z1U `VEuc  1 e 1 @1437 ]
+"10982
+[v _PID1Z2L PID1Z2L `VEuc  1 e 1 @1548 ]
+"11094
+[v _PID1Z2H PID1Z2H `VEuc  1 e 1 @1549 ]
+"11206
+[v _PID1Z2U PID1Z2U `VEuc  1 e 1 @1550 ]
+"11740
+[v _PID1CON PID1CON `VEuc  1 e 1 @1556 ]
 "11834
 [v _PWM3DCL PWM3DCL `VEuc  1 e 1 @1559 ]
 "11900
@@ -712,32 +788,32 @@ S_bat_high 1
 [v _G G `uc  1 e 1 0 ]
 [v _Vitesse Vitesse `uc  1 e 1 0 ]
 [v _Angle Angle `uc  1 e 1 0 ]
-[v _TestState TestState `uc  1 e 1 0 ]
+[v _TestBlink TestBlink `uc  1 e 1 0 ]
 [v _Pos Pos `uc  1 e 1 0 ]
 "54
-[v _PosUart PosUart `E12275  1 e 1 0 ]
+[v _PosUart PosUart `E12303  1 e 1 0 ]
 "55
-[v _StateLeds StateLeds `E12280  1 e 1 0 ]
+[v _StateLeds StateLeds `E12308  1 e 1 0 ]
 "56
-[v _StateBat StateBat `E12286  1 e 1 0 ]
+[v _StateBat StateBat `E12314  1 e 1 0 ]
 "63 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
 "64
 [v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
 "65
 [v _eusartRxBuffer eusartRxBuffer `VE[8]uc  1 e 8 0 ]
-[s S864 . 1 `uc 1 perr 1 0 :1:0 
+[s S934 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "66
-[u S869 . 1 `S864 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S869  1 e 8 0 ]
+[u S939 . 1 `S934 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S939  1 e 8 0 ]
 "67
 [v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
 "68
-[v _eusartRxLastError eusartRxLastError `VES869  1 e 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES939  1 e 1 0 ]
 "73
 [v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
 "75
@@ -748,19 +824,19 @@ S_bat_high 1
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
 "146 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/i2c_master.c
 [v _fsmStateTable fsmStateTable `DC[16]*.37(E12103  1 e 32 0 ]
-[s S443 . 29 `[6]*.37(E97 1 callbackTable 12 0 `[6]*.4v 1 callbackPayload 6 12 `ui 1 time_out 2 18 `ui 1 time_out_value 2 20 `uc 1 address 1 22 `*.4uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E12103 1 state 1 26 `E92 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
+[s S513 . 29 `[6]*.37(E97 1 callbackTable 12 0 `[6]*.4v 1 callbackPayload 6 12 `ui 1 time_out 2 18 `ui 1 time_out_value 2 20 `uc 1 address 1 22 `*.4uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E12103 1 state 1 26 `E92 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
 `uc 1 busy 1 28 :1:1 
 `uc 1 inUse 1 28 :1:2 
 `uc 1 bufferFree 1 28 :1:3 
 ]
 "165
-[v _I2C_Status I2C_Status `S443  1 e 29 0 ]
+[v _I2C_Status I2C_Status `S513  1 e 29 0 ]
 "58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-"174 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"171 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"207
+"202
 } 0
 "150 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_WriteTimer TMR2_WriteTimer `(v  1 e 1 0 ]
@@ -768,7 +844,7 @@ S_bat_high 1
 [v TMR2_WriteTimer@timerVal timerVal `uc  1 a 1 wreg ]
 [v TMR2_WriteTimer@timerVal timerVal `uc  1 a 1 wreg ]
 "152
-[v TMR2_WriteTimer@timerVal timerVal `uc  1 a 1 13 ]
+[v TMR2_WriteTimer@timerVal timerVal `uc  1 a 1 15 ]
 "153
 } 0
 "144
@@ -777,7 +853,7 @@ S_bat_high 1
 [v TMR2_Counter8BitSet@timerVal timerVal `uc  1 a 1 wreg ]
 [v TMR2_Counter8BitSet@timerVal timerVal `uc  1 a 1 wreg ]
 "147
-[v TMR2_Counter8BitSet@timerVal timerVal `uc  1 a 1 12 ]
+[v TMR2_Counter8BitSet@timerVal timerVal `uc  1 a 1 14 ]
 "148
 } 0
 "114
@@ -793,7 +869,7 @@ S_bat_high 1
 "50 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"58
+"59
 } 0
 "64 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
@@ -803,7 +879,7 @@ S_bat_high 1
 "186
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 12 ]
+[v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 14 ]
 "188
 } 0
 "58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/pwm3.c
@@ -816,10 +892,15 @@ S_bat_high 1
 {
 "121
 } 0
-"60 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/mcc.c
+"61 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"68
+"69
+} 0
+"60 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/mathacc.c
+[v _MATHACC_Initialize MATHACC_Initialize `(v  1 e 1 0 ]
+{
+"78
 } 0
 "167 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/i2c_master.c
 [v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
@@ -834,25 +915,25 @@ S_bat_high 1
 "234
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 12 ]
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 14 ]
 "236
 } 0
 "225
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 12 ]
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 14 ]
 "227
 } 0
 "221
 [v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 12 ]
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 14 ]
 "223
 } 0
 "229
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 12 ]
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 14 ]
 "231
 } 0
 "91 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
@@ -860,16 +941,16 @@ S_bat_high 1
 {
 [v I2C_Write1ByteRegister@address address `uc  1 a 1 wreg ]
 [v I2C_Write1ByteRegister@address address `uc  1 a 1 wreg ]
-[v I2C_Write1ByteRegister@reg reg `uc  1 p 1 5 ]
-[v I2C_Write1ByteRegister@data data `uc  1 p 1 6 ]
-[v I2C_Write1ByteRegister@address address `uc  1 a 1 8 ]
+[v I2C_Write1ByteRegister@reg reg `uc  1 p 1 7 ]
+[v I2C_Write1ByteRegister@data data `uc  1 p 1 8 ]
+[v I2C_Write1ByteRegister@address address `uc  1 a 1 10 ]
 "99
 } 0
 "283 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/i2c_master.c
 [v _I2C_SetAddressNackCallback I2C_SetAddressNackCallback `(v  1 e 1 0 ]
 {
-[v I2C_SetAddressNackCallback@cb cb `*.37(E97  1 p 2 17 ]
-[v I2C_SetAddressNackCallback@ptr ptr `*.1v  1 p 1 19 ]
+[v I2C_SetAddressNackCallback@cb cb `*.37(E97  1 p 2 19 ]
+[v I2C_SetAddressNackCallback@ptr ptr `*.1v  1 p 1 21 ]
 "286
 } 0
 "176
@@ -877,11 +958,11 @@ S_bat_high 1
 {
 [v I2C_Open@address address `uc  1 a 1 wreg ]
 "178
-[v I2C_Open@returnValue returnValue `E92  1 a 1 14 ]
+[v I2C_Open@returnValue returnValue `E92  1 a 1 16 ]
 "176
 [v I2C_Open@address address `uc  1 a 1 wreg ]
 "178
-[v I2C_Open@address address `uc  1 a 1 13 ]
+[v I2C_Open@address address `uc  1 a 1 15 ]
 "207
 } 0
 "543
@@ -899,11 +980,11 @@ S_bat_high 1
 {
 [v I2C_MasterOperation@read read `uc  1 a 1 wreg ]
 "226
-[v I2C_MasterOperation@returnValue returnValue `E92  1 a 1 4 ]
+[v I2C_MasterOperation@returnValue returnValue `E92  1 a 1 6 ]
 "224
 [v I2C_MasterOperation@read read `uc  1 a 1 wreg ]
 "226
-[v I2C_MasterOperation@read read `uc  1 a 1 3 ]
+[v I2C_MasterOperation@read read `uc  1 a 1 5 ]
 "244
 } 0
 "312
@@ -1017,7 +1098,7 @@ S_bat_high 1
 [v I2C_MasterSendTxData@data data `uc  1 a 1 wreg ]
 [v I2C_MasterSendTxData@data data `uc  1 a 1 wreg ]
 "570
-[v I2C_MasterSendTxData@data data `uc  1 a 1 12 ]
+[v I2C_MasterSendTxData@data data `uc  1 a 1 14 ]
 "571
 } 0
 "603
@@ -1043,7 +1124,7 @@ S_bat_high 1
 "525
 [v _I2C_CallbackReturnReset I2C_CallbackReturnReset `(E97  1 e 1 0 ]
 {
-[v I2C_CallbackReturnReset@funPtr funPtr `*.4v  1 p 1 21 ]
+[v I2C_CallbackReturnReset@funPtr funPtr `*.4v  1 p 1 23 ]
 "528
 } 0
 "520
@@ -1054,38 +1135,38 @@ S_bat_high 1
 "170 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
 [v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E97  1 s 1 rdBlkRegCompleteHandler ]
 {
-[v rdBlkRegCompleteHandler@ptr ptr `*.4v  1 p 1 21 ]
+[v rdBlkRegCompleteHandler@ptr ptr `*.4v  1 p 1 23 ]
 "175
 } 0
 "156
 [v _wr1RegCompleteHandler wr1RegCompleteHandler `(E97  1 s 1 wr1RegCompleteHandler ]
 {
-[v wr1RegCompleteHandler@ptr ptr `*.4v  1 p 1 21 ]
+[v wr1RegCompleteHandler@ptr ptr `*.4v  1 p 1 23 ]
 "161
 } 0
 "149
 [v _rd2RegCompleteHandler rd2RegCompleteHandler `(E97  1 s 1 rd2RegCompleteHandler ]
 {
-[v rd2RegCompleteHandler@ptr ptr `*.4v  1 p 1 21 ]
+[v rd2RegCompleteHandler@ptr ptr `*.4v  1 p 1 23 ]
 "154
 } 0
 "142
 [v _rd1RegCompleteHandler rd1RegCompleteHandler `(E97  1 s 1 rd1RegCompleteHandler ]
 {
-[v rd1RegCompleteHandler@ptr ptr `*.4v  1 p 1 21 ]
+[v rd1RegCompleteHandler@ptr ptr `*.4v  1 p 1 23 ]
 "147
 } 0
 "163
 [v _wr2RegCompleteHandler wr2RegCompleteHandler `(E97  1 s 1 wr2RegCompleteHandler ]
 {
-[v wr2RegCompleteHandler@ptr ptr `*.4v  1 p 1 21 ]
+[v wr2RegCompleteHandler@ptr ptr `*.4v  1 p 1 23 ]
 "168
 } 0
 "273 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/i2c_master.c
 [v _I2C_SetDataCompleteCallback I2C_SetDataCompleteCallback `(v  1 e 1 0 ]
 {
-[v I2C_SetDataCompleteCallback@cb cb `*.37(E97  1 p 2 17 ]
-[v I2C_SetDataCompleteCallback@ptr ptr `*.4v  1 p 1 19 ]
+[v I2C_SetDataCompleteCallback@cb cb `*.37(E97  1 p 2 19 ]
+[v I2C_SetDataCompleteCallback@ptr ptr `*.4v  1 p 1 21 ]
 "276
 } 0
 "298
@@ -1093,10 +1174,10 @@ S_bat_high 1
 {
 [v I2C_SetCallback@idx idx `E12121  1 a 1 wreg ]
 [v I2C_SetCallback@idx idx `E12121  1 a 1 wreg ]
-[v I2C_SetCallback@cb cb `*.37(E97  1 p 2 12 ]
-[v I2C_SetCallback@ptr ptr `*.4v  1 p 1 14 ]
+[v I2C_SetCallback@cb cb `*.37(E97  1 p 2 14 ]
+[v I2C_SetCallback@ptr ptr `*.4v  1 p 1 16 ]
 "300
-[v I2C_SetCallback@idx idx `E12121  1 a 1 16 ]
+[v I2C_SetCallback@idx idx `E12121  1 a 1 18 ]
 "310
 } 0
 "263
@@ -1104,9 +1185,9 @@ S_bat_high 1
 {
 [v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
 [v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
-[v I2C_SetBuffer@bufferSize bufferSize `ui  1 p 2 12 ]
+[v I2C_SetBuffer@bufferSize bufferSize `ui  1 p 2 14 ]
 "265
-[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 15 ]
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 17 ]
 "271
 } 0
 "593
@@ -1128,7 +1209,7 @@ S_bat_high 1
 [v _I2C_Close I2C_Close `(E92  1 e 1 0 ]
 {
 "211
-[v I2C_Close@returnValue returnValue `E92  1 a 1 13 ]
+[v I2C_Close@returnValue returnValue `E92  1 a 1 15 ]
 "222
 } 0
 "635
@@ -1149,7 +1230,7 @@ S_bat_high 1
 "52 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"74
+"82
 } 0
 "165 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
@@ -1164,7 +1245,7 @@ S_bat_high 1
 "58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyTimer2ISR MyTimer2ISR `(v  1 e 1 0 ]
 {
-"103
+"100
 } 0
 "190 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
@@ -1186,6 +1267,13 @@ S_bat_high 1
 {
 [v PWM3_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 0 ]
 "81
+} 0
+"80 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/mathacc.c
+[v _MATHACC_PIDController MATHACC_PIDController `(v  1 e 1 0 ]
+{
+[v MATHACC_PIDController@setpoint setpoint `i  1 p 2 0 ]
+[v MATHACC_PIDController@input input `i  1 p 2 2 ]
+"86
 } 0
 "63 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
 [v _I2C_Read1ByteRegister I2C_Read1ByteRegister `(uc  1 e 1 0 ]
@@ -1481,12 +1569,12 @@ S_bat_high 1
 {
 "195
 } 0
-"105 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"102 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _MyUART_ISR MyUART_ISR `(v  1 e 1 0 ]
 {
-"106
+"103
 [v MyUART_ISR@c c `uc  1 a 1 5 ]
-"172
+"169
 } 0
 "162 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
@@ -1496,7 +1584,17 @@ S_bat_high 1
 [v EUSART_Write@txData txData `uc  1 a 1 0 ]
 "169
 } 0
-"209
+"154 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/mathacc.c
+[v _MATHACC_PID_ISR MATHACC_PID_ISR `(v  1 e 1 0 ]
+{
+"159
+} 0
+"147
+[v _MATHACC_Error_ISR MATHACC_Error_ISR `(v  1 e 1 0 ]
+{
+"152
+} 0
+"209 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
 {
 "215

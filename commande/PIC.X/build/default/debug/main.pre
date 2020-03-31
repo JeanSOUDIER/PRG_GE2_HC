@@ -15019,6 +15019,46 @@ extern void (*TMR2_InterruptHandler)(void);
 # 859
 void TMR2_DefaultInterruptHandler(void);
 
+# 74 "mcc_generated_files/mathacc.h"
+typedef struct
+{
+uint8_t byteLL;
+uint8_t byteLH;
+uint8_t byteHL;
+uint8_t byteHH;
+uint8_t byteU;
+} MATHACCResult;
+
+# 122
+void MATHACC_Initialize(void);
+
+# 149
+void MATHACC_PIDController(int16_t setpoint, int16_t input);
+
+# 172
+uint32_t MATHACC_Z1Get(void);
+
+# 195
+uint32_t MATHACC_Z2Get(void);
+
+# 218
+void MATHACC_LoadZ1(uint32_t value);
+
+# 241
+void MATHACC_LoadZ2(uint32_t value);
+
+# 264
+MATHACCResult MATHACC_ResultGet(void);
+
+# 287
+void MATHACC_ClearResult(void);
+
+# 296
+void MATHACC_Error_ISR( void );
+
+# 305
+void MATHACC_PID_ISR( void );
+
 # 75 "mcc_generated_files/eusart.h"
 typedef union {
 struct {
@@ -15076,10 +15116,10 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 465
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
-# 74 "mcc_generated_files/mcc.h"
+# 75 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 87
+# 88
 void OSCILLATOR_Initialize(void);
 
 # 54 "mcc_generated_files/examples/i2c_master_example.h"
@@ -15091,7 +15131,7 @@ void I2C_WriteNBytes(i2c_address_t address, uint8_t *data, size_t len);
 void I2C_ReadNBytes(i2c_address_t address, uint8_t *data, size_t len);
 void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t len);
 
-# 23 "def.h"
+# 19 "def.h"
 void DelayMsPerso(uint8_t temps);
 void MyTimer2ISR(void);
 void MyUART_ISR(void);
@@ -15102,15 +15142,19 @@ typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
 typedef enum {S_bat_low, S_bat_high} state_bat;
 
 # 53 "main.c"
-uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, TestState = 0, Pos;
+uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, TestBlink = 0, Pos;
 state PosUart = S_Idle;
 state_led StateLeds = S_leds_off;
 state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
-TestState = ~TestState;
-if(TestState) {
-PWM3_LoadDutyValue(((Pos)>>4)+45);
+TestBlink = ~TestBlink;
+if(TestBlink) {
+PWM3_LoadDutyValue(((Pos)>>3)+50);
+G -= I2C_Read1ByteRegister(0x68, 0x48);
+MATHACC_PIDController(Angle,G);
+} else {
+PWM3_LoadDutyValue(((Pos)>>3)+50);
 if(PORTAbits.RA4) {
 CptBat = 0;
 if(StateBat == S_bat_low) {
@@ -15144,14 +15188,7 @@ StateBat = S_bat_low;
 
 I2C_Write1ByteRegister(0x40, 101, 0);
 
-}
-} else {
-
-G -= I2C_Read1ByteRegister(0x68, 0x48);
-
-Pos = Angle-G;
-PWM3_LoadDutyValue(((Pos)>>4)+45);
-}
+}}
 }
 
 void MyUART_ISR(void) {
@@ -15229,10 +15266,8 @@ SYSTEM_Initialize();
 do { LATCbits.LATC5 = 1; } while(0);
 do { LATAbits.LATA5 = 1; } while(0);
 
-
 I2C_Write1ByteRegister(0x68, 0x26, 0x02);
 I2C_Write1ByteRegister(0x68, 0x27, 0x10);
-
 
 TMR2_SetInterruptHandler(MyTimer2ISR);
 TMR2_WriteTimer(255);

@@ -10965,9 +10965,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.c: 75: T2RST = 0x00;
 "75
 [e = _T2RST -> -> 0 `i `uc ]
-[; ;tmr2.c: 78: T2PR = 0xF9;
+[; ;tmr2.c: 78: T2PR = 0x9B;
 "78
-[e = _T2PR -> -> 249 `i `uc ]
+[e = _T2PR -> -> 155 `i `uc ]
 [; ;tmr2.c: 81: T2TMR = 0x00;
 "81
 [e = _T2TMR -> -> 0 `i `uc ]

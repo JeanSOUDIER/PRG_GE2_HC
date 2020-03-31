@@ -28,11 +28,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S34 . . ]
 "595
 [v _PIR1bits `VS34 ~T0 @X0 0 e@16 ]
-[v F12202 `(v ~T0 @X0 0 tf ]
+[v F12230 `(v ~T0 @X0 0 tf ]
 "94 mcc_generated_files/eusart.h
-[v _EUSART_RxDefaultInterruptHandler `*F12202 ~T0 @X0 0 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F12230 ~T0 @X0 0 e ]
 "788 mcc_generated_files/tmr2.h
 [v _TMR2_ISR `(v ~T0 @X0 0 ef ]
+"2000 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
+[s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S103 . PID1DIE PID1EIE AT1IE . TMR5IE TMR5GIE TMR3IE TMR3GIE ]
+"1999
+[u S102 `S103 1 ]
+[n S102 . . ]
+"2011
+[v _PIE5bits `VS102 ~T0 @X0 0 e@148 ]
+"815
+[s S43 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S43 . PID1DIF PID1EIF AT1IF . TMR5IF TMR5GIF TMR3IF TMR3GIF ]
+"814
+[u S42 `S43 1 ]
+[n S42 . . ]
+"826
+[v _PIR5bits `VS42 ~T0 @X0 0 e@20 ]
+"305 mcc_generated_files/mathacc.h
+[v _MATHACC_PID_ISR `(v ~T0 @X0 0 ef ]
+"296
+[v _MATHACC_Error_ISR `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -10948,6 +10968,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 823: void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
 [; ;tmr2.h: 841: extern void (*TMR2_InterruptHandler)(void);
 [; ;tmr2.h: 859: void TMR2_DefaultInterruptHandler(void);
+[; ;mathacc.h: 74: typedef struct
+[; ;mathacc.h: 75: {
+[; ;mathacc.h: 76: uint8_t byteLL;
+[; ;mathacc.h: 77: uint8_t byteLH;
+[; ;mathacc.h: 78: uint8_t byteHL;
+[; ;mathacc.h: 79: uint8_t byteHH;
+[; ;mathacc.h: 80: uint8_t byteU;
+[; ;mathacc.h: 81: } MATHACCResult;
+[; ;mathacc.h: 122: void MATHACC_Initialize(void);
+[; ;mathacc.h: 149: void MATHACC_PIDController(int16_t setpoint, int16_t input);
+[; ;mathacc.h: 172: uint32_t MATHACC_Z1Get(void);
+[; ;mathacc.h: 195: uint32_t MATHACC_Z2Get(void);
+[; ;mathacc.h: 218: void MATHACC_LoadZ1(uint32_t value);
+[; ;mathacc.h: 241: void MATHACC_LoadZ2(uint32_t value);
+[; ;mathacc.h: 264: MATHACCResult MATHACC_ResultGet(void);
+[; ;mathacc.h: 287: void MATHACC_ClearResult(void);
+[; ;mathacc.h: 296: void MATHACC_Error_ISR( void );
+[; ;mathacc.h: 305: void MATHACC_PID_ISR( void );
 [; ;eusart.h: 75: typedef union {
 [; ;eusart.h: 76: struct {
 [; ;eusart.h: 77: unsigned perr : 1;
@@ -10973,8 +11011,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 426: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 444: void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 465: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-[; ;mcc.h: 74: void SYSTEM_Initialize(void);
-[; ;mcc.h: 87: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 75: void SYSTEM_Initialize(void);
+[; ;mcc.h: 88: void OSCILLATOR_Initialize(void);
 [v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
 "52 mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager `(v ~T7 @X0 1 ef ]
@@ -10986,13 +11024,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;interrupt_manager.c: 55: if(INTCONbits.PEIE == 1)
 "55
-[e $ ! == -> . . _INTCONbits 0 6 `i -> 1 `i 1215  ]
+[e $ ! == -> . . _INTCONbits 0 6 `i -> 1 `i 1216  ]
 [; ;interrupt_manager.c: 56: {
 "56
 {
 [; ;interrupt_manager.c: 57: if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
 "57
-[e $ ! && == -> . . _PIE1bits 0 5 `i -> 1 `i == -> . . _PIR1bits 0 5 `i -> 1 `i 1216  ]
+[e $ ! && == -> . . _PIE1bits 0 5 `i -> 1 `i == -> . . _PIR1bits 0 5 `i -> 1 `i 1217  ]
 [; ;interrupt_manager.c: 58: {
 "58
 {
@@ -11002,11 +11040,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "60
 }
 [; ;interrupt_manager.c: 60: }
-[e $U 1217  ]
+[e $U 1218  ]
 "61
-[e :U 1216 ]
+[e :U 1217 ]
 [; ;interrupt_manager.c: 61: else if(PIE1bits.TMR2IE == 1 && PIR1bits.TMR2IF == 1)
-[e $ ! && == -> . . _PIE1bits 0 1 `i -> 1 `i == -> . . _PIR1bits 0 1 `i -> 1 `i 1218  ]
+[e $ ! && == -> . . _PIE1bits 0 1 `i -> 1 `i == -> . . _PIR1bits 0 1 `i -> 1 `i 1219  ]
 [; ;interrupt_manager.c: 62: {
 "62
 {
@@ -11016,33 +11054,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 "64
 }
 [; ;interrupt_manager.c: 64: }
-[e $U 1219  ]
+[e $U 1220  ]
 "65
-[e :U 1218 ]
-[; ;interrupt_manager.c: 65: else
+[e :U 1219 ]
+[; ;interrupt_manager.c: 65: else if(PIE5bits.PID1DIE == 1 && PIR5bits.PID1DIF == 1)
+[e $ ! && == -> . . _PIE5bits 0 0 `i -> 1 `i == -> . . _PIR5bits 0 0 `i -> 1 `i 1221  ]
 [; ;interrupt_manager.c: 66: {
 "66
 {
+[; ;interrupt_manager.c: 67: MATHACC_PID_ISR();
+"67
+[e ( _MATHACC_PID_ISR ..  ]
 "68
 }
-[e :U 1219 ]
-[e :U 1217 ]
-"69
-}
 [; ;interrupt_manager.c: 68: }
-[; ;interrupt_manager.c: 69: }
-[e $U 1220  ]
+[e $U 1222  ]
+"69
+[e :U 1221 ]
+[; ;interrupt_manager.c: 69: else if(PIE5bits.PID1EIE == 1 && PIR5bits.PID1EIF == 1)
+[e $ ! && == -> . . _PIE5bits 0 1 `i -> 1 `i == -> . . _PIR5bits 0 1 `i -> 1 `i 1223  ]
+[; ;interrupt_manager.c: 70: {
 "70
-[e :U 1215 ]
-[; ;interrupt_manager.c: 70: else
-[; ;interrupt_manager.c: 71: {
-"71
 {
-"73
+[; ;interrupt_manager.c: 71: MATHACC_Error_ISR();
+"71
+[e ( _MATHACC_Error_ISR ..  ]
+"72
 }
-[e :U 1220 ]
-[; ;interrupt_manager.c: 73: }
-[; ;interrupt_manager.c: 74: }
+[; ;interrupt_manager.c: 72: }
+[e $U 1224  ]
+"73
+[e :U 1223 ]
+[; ;interrupt_manager.c: 73: else
+[; ;interrupt_manager.c: 74: {
 "74
-[e :UE 1214 ]
+{
+"76
+}
+[e :U 1224 ]
+[e :U 1222 ]
+[e :U 1220 ]
+[e :U 1218 ]
+"77
+}
+[; ;interrupt_manager.c: 76: }
+[; ;interrupt_manager.c: 77: }
+[e $U 1225  ]
+"78
+[e :U 1216 ]
+[; ;interrupt_manager.c: 78: else
+[; ;interrupt_manager.c: 79: {
+"79
+{
+"81
+}
+[e :U 1225 ]
+[; ;interrupt_manager.c: 81: }
+[; ;interrupt_manager.c: 82: }
+"82
+[e :UE 1215 ]
 }

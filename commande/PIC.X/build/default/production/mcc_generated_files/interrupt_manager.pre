@@ -15019,6 +15019,46 @@ extern void (*TMR2_InterruptHandler)(void);
 # 859
 void TMR2_DefaultInterruptHandler(void);
 
+# 74 "mcc_generated_files/mathacc.h"
+typedef struct
+{
+uint8_t byteLL;
+uint8_t byteLH;
+uint8_t byteHL;
+uint8_t byteHH;
+uint8_t byteU;
+} MATHACCResult;
+
+# 122
+void MATHACC_Initialize(void);
+
+# 149
+void MATHACC_PIDController(int16_t setpoint, int16_t input);
+
+# 172
+uint32_t MATHACC_Z1Get(void);
+
+# 195
+uint32_t MATHACC_Z2Get(void);
+
+# 218
+void MATHACC_LoadZ1(uint32_t value);
+
+# 241
+void MATHACC_LoadZ2(uint32_t value);
+
+# 264
+MATHACCResult MATHACC_ResultGet(void);
+
+# 287
+void MATHACC_ClearResult(void);
+
+# 296
+void MATHACC_Error_ISR( void );
+
+# 305
+void MATHACC_PID_ISR( void );
+
 # 75 "mcc_generated_files/eusart.h"
 typedef union {
 struct {
@@ -15076,10 +15116,10 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 465
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
-# 74 "mcc_generated_files/mcc.h"
+# 75 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 87
+# 88
 void OSCILLATOR_Initialize(void);
 
 # 52 "mcc_generated_files/interrupt_manager.c"
@@ -15095,6 +15135,14 @@ EUSART_RxDefaultInterruptHandler();
 else if(PIE1bits.TMR2IE == 1 && PIR1bits.TMR2IF == 1)
 {
 TMR2_ISR();
+}
+else if(PIE5bits.PID1DIE == 1 && PIR5bits.PID1DIF == 1)
+{
+MATHACC_PID_ISR();
+}
+else if(PIE5bits.PID1EIE == 1 && PIR5bits.PID1EIF == 1)
+{
+MATHACC_Error_ISR();
 }
 else
 {

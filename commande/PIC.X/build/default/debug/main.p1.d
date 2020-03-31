@@ -11,4 +11,5 @@ mcc_generated_files/examples/i2c_master_example.h  \
 mcc_generated_files/eusart.h  \
 mcc_generated_files/pin_manager.h  \
 def.h  \
+mcc_generated_files/mathacc.h  \
 mcc_generated_files/examples/../i2c_master.h 

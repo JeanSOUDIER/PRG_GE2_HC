@@ -54,6 +54,7 @@ void SYSTEM_Initialize(void)
     OSCILLATOR_Initialize();
     PWM3_Initialize();
     TMR2_Initialize();
+    MATHACC_Initialize();
     EUSART_Initialize();
 }
 

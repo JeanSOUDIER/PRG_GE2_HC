@@ -56,6 +56,7 @@
 #include "i2c_master.h"
 #include "pwm3.h"
 #include "tmr2.h"
+#include "mathacc.h"
 #include "eusart.h"
 
 
