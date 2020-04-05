@@ -10883,18 +10883,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mathacc.c: 62: PID1CON = 0x85;
 "62
 [e = _PID1CON -> -> 133 `i `uc ]
-[; ;mathacc.c: 65: PID1K1H = (uint8_t) ((10 & 0xFF00) >> 8);
+[; ;mathacc.c: 65: PID1K1H = (uint8_t) ((2 & 0xFF00) >> 8);
 "65
-[e = _PID1K1H -> >> & -> -> 10 `i `ui -> 65280 `ui -> 8 `i `uc ]
-[; ;mathacc.c: 66: PID1K1L = (uint8_t) (10 & 0x00FF);
+[e = _PID1K1H -> >> & -> -> 2 `i `ui -> 65280 `ui -> 8 `i `uc ]
+[; ;mathacc.c: 66: PID1K1L = (uint8_t) (2 & 0x00FF);
 "66
-[e = _PID1K1L -> & -> 10 `i -> 255 `i `uc ]
-[; ;mathacc.c: 67: PID1K2H = (uint8_t) ((-10 & 0xFF00) >> 8);
+[e = _PID1K1L -> & -> 2 `i -> 255 `i `uc ]
+[; ;mathacc.c: 67: PID1K2H = (uint8_t) ((-2 & 0xFF00) >> 8);
 "67
-[e = _PID1K2H -> >> & -> -U -> 10 `i `ui -> 65280 `ui -> 8 `i `uc ]
-[; ;mathacc.c: 68: PID1K2L = (uint8_t) (-10 & 0x00FF);
+[e = _PID1K2H -> >> & -> -U -> 2 `i `ui -> 65280 `ui -> 8 `i `uc ]
+[; ;mathacc.c: 68: PID1K2L = (uint8_t) (-2 & 0x00FF);
 "68
-[e = _PID1K2L -> & -U -> 10 `i -> 255 `i `uc ]
+[e = _PID1K2L -> & -U -> 2 `i -> 255 `i `uc ]
 [; ;mathacc.c: 69: PID1K3H = (uint8_t) ((0 & 0xFF00) >> 8);
 "69
 [e = _PID1K3H -> >> & -> -> 0 `i `ui -> 65280 `ui -> 8 `i `uc ]

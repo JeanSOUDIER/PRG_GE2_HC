@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.45\dat\en_msgs.txt -cs \
   -h+dist/default/production\PIC.X.production.sym \
   --cmf=dist/default/production\PIC.X.production.cmf -z -Q16F1619 \
-  -oC:\Users\xoxox\AppData\Local\Temp\sdug.2 \
+  -oC:\Users\xoxox\AppData\Local\Temp\skd4.2 \
   -Mdist/default/production/PIC.X.production.map -E1 -ver=XC8 \
   -ASTACK=0207Ch-023efh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -31,7 +31,7 @@ Linker command line:
   -ppowerup=CODE -pcinit=CODE -pfunctab=ENTRY -ACONFIG=08007h-08009h \
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\xoxox\AppData\Local\Temp\sdug.obj \
+  C:\Users\xoxox\AppData\Local\Temp\skd4.obj \
   dist/default/production\PIC.X.production.obj 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 16F1619
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\xoxox\AppData\Local\Temp\sdug.obj
+C:\Users\xoxox\AppData\Local\Temp\skd4.obj
                 end_init                             38       38        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        3    1000E       0
@@ -717,8 +717,8 @@ _Angle                                         dataBANK0    00060
 _BAUD1CON                                      (abs)        0019F
 _BORCON                                        (abs)        00116
 _CCPTMRSbits                                   (abs)        0029E
-_CptBat                                        bssBANK0     00036
-_Data                                          bssBANK0     00038
+_CptBat                                        bssBANK0     00035
+_Data                                          bssBANK0     00037
 _EUSART_DefaultErrorHandler                    text131      00DF7
 _EUSART_DefaultFramingErrorHandler             text130      00DF3
 _EUSART_DefaultOverrunErrorHandler             text129      00E3C
@@ -734,7 +734,7 @@ _EUSART_SetFramingErrorHandler                 text16       00EB9
 _EUSART_SetOverrunErrorHandler                 text15       00EBF
 _EUSART_SetRxInterruptHandler                  text14       00EC5
 _EUSART_Write                                  text126      00EEB
-_G                                             bssBANK0     00035
+_G                                             bssBANK0     00034
 _I2C_CallbackReturnReset                       text50       00EA7
 _I2C_CallbackReturnReset$intlevel0             text50       00EAB
 _I2C_CallbackReturnStop                        text51       00EA1
@@ -859,7 +859,7 @@ _PWM3DCH                                       (abs)        00618
 _PWM3DCL                                       (abs)        00617
 _PWM3_Initialize                               text8        00F9F
 _PWM3_LoadDutyValue                            text73       00749
-_Pos                                           bssBANK0     00032
+_Pos                                           bssBANK0     00038
 _PosUart                                       bssBANK0     00031
 _RA2PPS                                        (abs)        00E92
 _RB4PPS                                        (abs)        00E9C
@@ -887,7 +887,7 @@ _SSPDATPPS                                     (abs)        00E21
 _SYSTEM_Initialize                             text5        0075F
 _StateBat                                      dataBANK0    0005F
 _StateLeds                                     bssBANK0     00030
-_StateToggle                                   bssBANK0     00033
+_StateToggle                                   bssBANK0     00032
 _T2CLKCON                                      (abs)        0001E
 _T2CON                                         (abs)        0001C
 _T2CONbits                                     (abs)        0001C
@@ -914,9 +914,9 @@ _TRISC                                         (abs)        0008E
 _TX1REG                                        (abs)        0019A
 _TX1STA                                        (abs)        0019E
 _TX1STAbits                                    (abs)        0019E
-_Type                                          bssBANK0     00037
+_Type                                          bssBANK0     00036
 _Validation                                    dataBANK0    00061
-_Vitesse                                       bssBANK0     00034
+_Vitesse                                       bssBANK0     00033
 _WPUA                                          (abs)        0020C
 _WPUB                                          (abs)        0020D
 _WPUC                                          (abs)        0020E

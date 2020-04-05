@@ -62,10 +62,10 @@ void MATHACC_Initialize(void)
     PID1CON = 0x85;
     
     
-    PID1K1H = (uint8_t) ((10 & 0xFF00) >> 8);
-    PID1K1L = (uint8_t)  (10 & 0x00FF);
-    PID1K2H = (uint8_t) ((-10 & 0xFF00) >> 8);
-    PID1K2L = (uint8_t)  (-10 & 0x00FF);
+    PID1K1H = (uint8_t) ((2 & 0xFF00) >> 8);
+    PID1K1L = (uint8_t)  (2 & 0x00FF);
+    PID1K2H = (uint8_t) ((-2 & 0xFF00) >> 8);
+    PID1K2L = (uint8_t)  (-2 & 0x00FF);
     PID1K3H = (uint8_t) ((0 & 0xFF00) >> 8);
     PID1K3L = (uint8_t)  (0 & 0x00FF);
 

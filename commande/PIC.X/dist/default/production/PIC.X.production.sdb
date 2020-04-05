@@ -370,7 +370,7 @@ S_bat_high 1
 ]
 [u S157 . 1 `S143 1 . 1 0 `S152 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES157  1 e 1 @11 ]
-[s S1462 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1532 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -378,8 +378,8 @@ S_bat_high 1
 `uc 1 RA5 1 0 :1:5 
 ]
 "442
-[u S1469 . 1 `S1462 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1469  1 e 1 @12 ]
+[u S1539 . 1 `S1532 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1539  1 e 1 @12 ]
 [s S196 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -555,7 +555,7 @@ S_bat_high 1
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2623
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1504 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1574 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -563,13 +563,13 @@ S_bat_high 1
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2638
-[u S1511 . 1 `S1504 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1511  1 e 1 @268 ]
+[u S1581 . 1 `S1574 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1581  1 e 1 @268 ]
 "2673
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2712
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S1481 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1551 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -579,8 +579,8 @@ S_bat_high 1
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2729
-[u S1490 . 1 `S1481 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1490  1 e 1 @270 ]
+[u S1560 . 1 `S1551 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1560  1 e 1 @270 ]
 "3048
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3323
@@ -781,6 +781,7 @@ S_bat_high 1
 "22973
 [v _RB7PPS RB7PPS `VEuc  1 e 1 @3743 ]
 "54 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+[v _Pos Pos `uc  1 e 1 0 ]
 [v _Data Data `uc  1 e 1 0 ]
 [v _Type Type `uc  1 e 1 0 ]
 [v _Validation Validation `uc  1 e 1 0 ]
@@ -789,7 +790,6 @@ S_bat_high 1
 [v _Vitesse Vitesse `uc  1 e 1 0 ]
 [v _Angle Angle `uc  1 e 1 0 ]
 [v _StateToggle StateToggle `uc  1 e 1 0 ]
-[v _Pos Pos `uc  1 e 1 0 ]
 "55
 [v _PosUart PosUart `E12301  1 e 1 0 ]
 "56
