@@ -15129,8 +15129,8 @@ I2C_Initialize();
 PIN_MANAGER_Initialize();
 OSCILLATOR_Initialize();
 PWM3_Initialize();
-TMR2_Initialize();
 MATHACC_Initialize();
+TMR2_Initialize();
 EUSART_Initialize();
 }
 

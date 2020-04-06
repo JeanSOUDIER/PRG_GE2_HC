@@ -15132,7 +15132,6 @@ void I2C_ReadNBytes(i2c_address_t address, uint8_t *data, size_t len);
 void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t len);
 
 # 19 "def.h"
-void DelayMsPerso(uint8_t temps);
 void MyTimer2ISR(void);
 void MyUART_ISR(void);
 
@@ -15141,17 +15140,19 @@ typedef enum {S_Idle, S_Data, S_Check} state;
 typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
 typedef enum {S_bat_low, S_bat_high} state_bat;
 
-# 53 "main.c"
-uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, TestBlink = 0, Pos;
+# 54 "main.c"
+uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, StateToggle = 0, Pos;
 state PosUart = S_Idle;
 state_led StateLeds = S_leds_off;
 state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
-TestBlink = ~TestBlink;
-if(TestBlink) {
+StateToggle = ~StateToggle;
+if(StateToggle) {
 PWM3_LoadDutyValue(((Pos)>>3)+50);
-G -= I2C_Read1ByteRegister(0x68, 0x48);
+
+G -= I2C_Read1ByteRegister(0x68, 0x47);
+
 MATHACC_PIDController(Angle,G);
 } else {
 PWM3_LoadDutyValue(((Pos)>>3)+50);
@@ -15188,7 +15189,8 @@ StateBat = S_bat_low;
 
 I2C_Write1ByteRegister(0x40, 101, 0);
 
-}}
+}
+}
 }
 
 void MyUART_ISR(void) {
@@ -15266,8 +15268,10 @@ SYSTEM_Initialize();
 do { LATCbits.LATC5 = 1; } while(0);
 do { LATAbits.LATA5 = 1; } while(0);
 
+
 I2C_Write1ByteRegister(0x68, 0x26, 0x02);
 I2C_Write1ByteRegister(0x68, 0x27, 0x10);
+
 
 TMR2_SetInterruptHandler(MyTimer2ISR);
 TMR2_WriteTimer(255);

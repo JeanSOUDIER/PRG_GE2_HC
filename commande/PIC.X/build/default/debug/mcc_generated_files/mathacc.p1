@@ -62,7 +62,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PID1OUTHH `Vuc ~T0 @X0 0 e@1433 ]
 "10648
 [v _PID1OUTU `Vuc ~T0 @X0 0 e@1434 ]
-"58 mcc_generated_files/mathacc.c
+"57 mcc_generated_files/mathacc.c
 [v _Pos `uc ~T0 @X0 0 e ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -10871,277 +10871,277 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mathacc.h: 287: void MATHACC_ClearResult(void);
 [; ;mathacc.h: 296: void MATHACC_Error_ISR( void );
 [; ;mathacc.h: 305: void MATHACC_PID_ISR( void );
-[; ;mathacc.c: 58: extern uint8_t Pos;
-"60 mcc_generated_files/mathacc.c
+[; ;mathacc.c: 57: extern uint8_t Pos;
+"58 mcc_generated_files/mathacc.c
 [v _MATHACC_Initialize `(v ~T0 @X0 1 ef ]
-"61
+"59
 {
-[; ;mathacc.c: 60: void MATHACC_Initialize(void)
-[; ;mathacc.c: 61: {
+[; ;mathacc.c: 58: void MATHACC_Initialize(void)
+[; ;mathacc.c: 59: {
 [e :U _MATHACC_Initialize ]
 [f ]
-[; ;mathacc.c: 64: PID1CON = 0x85;
-"64
+[; ;mathacc.c: 62: PID1CON = 0x85;
+"62
 [e = _PID1CON -> -> 133 `i `uc ]
-[; ;mathacc.c: 67: PID1K1H = (uint8_t) ((10 & 0xFF00) >> 8);
+[; ;mathacc.c: 65: PID1K1H = (uint8_t) ((2 & 0xFF00) >> 8);
+"65
+[e = _PID1K1H -> >> & -> -> 2 `i `ui -> 65280 `ui -> 8 `i `uc ]
+[; ;mathacc.c: 66: PID1K1L = (uint8_t) (2 & 0x00FF);
+"66
+[e = _PID1K1L -> & -> 2 `i -> 255 `i `uc ]
+[; ;mathacc.c: 67: PID1K2H = (uint8_t) ((-2 & 0xFF00) >> 8);
 "67
-[e = _PID1K1H -> >> & -> -> 10 `i `ui -> 65280 `ui -> 8 `i `uc ]
-[; ;mathacc.c: 68: PID1K1L = (uint8_t) (10 & 0x00FF);
+[e = _PID1K2H -> >> & -> -U -> 2 `i `ui -> 65280 `ui -> 8 `i `uc ]
+[; ;mathacc.c: 68: PID1K2L = (uint8_t) (-2 & 0x00FF);
 "68
-[e = _PID1K1L -> & -> 10 `i -> 255 `i `uc ]
-[; ;mathacc.c: 69: PID1K2H = (uint8_t) ((-10 & 0xFF00) >> 8);
+[e = _PID1K2L -> & -U -> 2 `i -> 255 `i `uc ]
+[; ;mathacc.c: 69: PID1K3H = (uint8_t) ((0 & 0xFF00) >> 8);
 "69
-[e = _PID1K2H -> >> & -> -U -> 10 `i `ui -> 65280 `ui -> 8 `i `uc ]
-[; ;mathacc.c: 70: PID1K2L = (uint8_t) (-10 & 0x00FF);
-"70
-[e = _PID1K2L -> & -U -> 10 `i -> 255 `i `uc ]
-[; ;mathacc.c: 71: PID1K3H = (uint8_t) ((0 & 0xFF00) >> 8);
-"71
 [e = _PID1K3H -> >> & -> -> 0 `i `ui -> 65280 `ui -> 8 `i `uc ]
-[; ;mathacc.c: 72: PID1K3L = (uint8_t) (0 & 0x00FF);
-"72
+[; ;mathacc.c: 70: PID1K3L = (uint8_t) (0 & 0x00FF);
+"70
 [e = _PID1K3L -> & -> 0 `i -> 255 `i `uc ]
-[; ;mathacc.c: 74: PIR5bits.PID1DIF = 0;
-"74
+[; ;mathacc.c: 72: PIR5bits.PID1DIF = 0;
+"72
 [e = . . _PIR5bits 0 0 -> -> 0 `i `uc ]
-[; ;mathacc.c: 75: PIR5bits.PID1EIF = 0;
-"75
+[; ;mathacc.c: 73: PIR5bits.PID1EIF = 0;
+"73
 [e = . . _PIR5bits 0 1 -> -> 0 `i `uc ]
-[; ;mathacc.c: 76: PIE5bits.PID1DIE = 1;
-"76
+[; ;mathacc.c: 74: PIE5bits.PID1DIE = 1;
+"74
 [e = . . _PIE5bits 0 0 -> -> 1 `i `uc ]
-[; ;mathacc.c: 77: PIE5bits.PID1EIE = 1;
-"77
+[; ;mathacc.c: 75: PIE5bits.PID1EIE = 1;
+"75
 [e = . . _PIE5bits 0 1 -> -> 1 `i `uc ]
-[; ;mathacc.c: 78: }
-"78
+[; ;mathacc.c: 76: }
+"76
 [e :UE 1212 ]
 }
-"80
+"78
 [v _MATHACC_PIDController `(v ~T0 @X0 1 ef2`i`i ]
-"81
+"79
 {
-[; ;mathacc.c: 80: void MATHACC_PIDController(int16_t setpoint, int16_t input)
-[; ;mathacc.c: 81: {
+[; ;mathacc.c: 78: void MATHACC_PIDController(int16_t setpoint, int16_t input)
+[; ;mathacc.c: 79: {
 [e :U _MATHACC_PIDController ]
-"80
+"78
 [v _setpoint `i ~T0 @X0 1 r1 ]
 [v _input `i ~T0 @X0 1 r2 ]
-"81
+"79
 [f ]
-[; ;mathacc.c: 82: PID1SETH = (uint8_t) (((uint16_t)setpoint & 0xFF00) >> 8);
-"82
+[; ;mathacc.c: 80: PID1SETH = (uint8_t) (((uint16_t)setpoint & 0xFF00) >> 8);
+"80
 [e = _PID1SETH -> >> & -> _setpoint `ui -> 65280 `ui -> 8 `i `uc ]
-[; ;mathacc.c: 83: PID1SETL = (uint8_t) (setpoint & 0x00FF);
-"83
+[; ;mathacc.c: 81: PID1SETL = (uint8_t) (setpoint & 0x00FF);
+"81
 [e = _PID1SETL -> & _setpoint -> 255 `i `uc ]
-[; ;mathacc.c: 84: PID1INH = (uint8_t) (((uint16_t)input & 0xFF00) >> 8);
-"84
+[; ;mathacc.c: 82: PID1INH = (uint8_t) (((uint16_t)input & 0xFF00) >> 8);
+"82
 [e = _PID1INH -> >> & -> _input `ui -> 65280 `ui -> 8 `i `uc ]
-[; ;mathacc.c: 85: PID1INL = (uint8_t) (input & 0x00FF);
-"85
+[; ;mathacc.c: 83: PID1INL = (uint8_t) (input & 0x00FF);
+"83
 [e = _PID1INL -> & _input -> 255 `i `uc ]
-[; ;mathacc.c: 86: }
-"86
+[; ;mathacc.c: 84: }
+"84
 [e :UE 1213 ]
 }
-"89
+"87
 [v _MATHACC_Z1Get `(ul ~T0 @X0 1 ef ]
-"90
+"88
 {
-[; ;mathacc.c: 89: uint32_t MATHACC_Z1Get(void)
-[; ;mathacc.c: 90: {
+[; ;mathacc.c: 87: uint32_t MATHACC_Z1Get(void)
+[; ;mathacc.c: 88: {
 [e :U _MATHACC_Z1Get ]
 [f ]
-"91
+"89
 [v _value `ul ~T0 @X0 1 a ]
-[; ;mathacc.c: 91: uint32_t value = 0;
+[; ;mathacc.c: 89: uint32_t value = 0;
 [e = _value -> -> -> 0 `i `l `ul ]
-[; ;mathacc.c: 93: value = (uint32_t)PID1Z1L & 0x000000FF;
-"93
+[; ;mathacc.c: 91: value = (uint32_t)PID1Z1L & 0x000000FF;
+"91
 [e = _value & -> _PID1Z1L `ul -> -> -> 255 `i `l `ul ]
-[; ;mathacc.c: 94: value = (value | ((uint32_t)PID1Z1H << 8)) & 0x0000FFFF;
-"94
+[; ;mathacc.c: 92: value = (value | ((uint32_t)PID1Z1H << 8)) & 0x0000FFFF;
+"92
 [e = _value & | _value << -> _PID1Z1H `ul -> 8 `i -> -> 65535 `ui `ul ]
-[; ;mathacc.c: 95: value = (value | ((uint32_t)PID1Z1U << 16)) & 0x0001FFFF;
-"95
+[; ;mathacc.c: 93: value = (value | ((uint32_t)PID1Z1U << 16)) & 0x0001FFFF;
+"93
 [e = _value & | _value << -> _PID1Z1U `ul -> 16 `i -> -> 131071 `l `ul ]
-[; ;mathacc.c: 97: return value;
-"97
+[; ;mathacc.c: 95: return value;
+"95
 [e ) _value ]
 [e $UE 1214  ]
-[; ;mathacc.c: 98: }
-"98
+[; ;mathacc.c: 96: }
+"96
 [e :UE 1214 ]
 }
-"100
+"98
 [v _MATHACC_Z2Get `(ul ~T0 @X0 1 ef ]
-"101
+"99
 {
-[; ;mathacc.c: 100: uint32_t MATHACC_Z2Get(void)
-[; ;mathacc.c: 101: {
+[; ;mathacc.c: 98: uint32_t MATHACC_Z2Get(void)
+[; ;mathacc.c: 99: {
 [e :U _MATHACC_Z2Get ]
 [f ]
-"102
+"100
 [v _value `ul ~T0 @X0 1 a ]
-[; ;mathacc.c: 102: uint32_t value = 0;
+[; ;mathacc.c: 100: uint32_t value = 0;
 [e = _value -> -> -> 0 `i `l `ul ]
-[; ;mathacc.c: 104: value = (uint32_t)PID1Z2L & 0x000000FF;
-"104
+[; ;mathacc.c: 102: value = (uint32_t)PID1Z2L & 0x000000FF;
+"102
 [e = _value & -> _PID1Z2L `ul -> -> -> 255 `i `l `ul ]
-[; ;mathacc.c: 105: value = (value | ((uint32_t)PID1Z2H << 8)) & 0x0000FFFF;
-"105
+[; ;mathacc.c: 103: value = (value | ((uint32_t)PID1Z2H << 8)) & 0x0000FFFF;
+"103
 [e = _value & | _value << -> _PID1Z2H `ul -> 8 `i -> -> 65535 `ui `ul ]
-[; ;mathacc.c: 106: value = (value | ((uint32_t)PID1Z2U << 16)) & 0x0001FFFF;
-"106
+[; ;mathacc.c: 104: value = (value | ((uint32_t)PID1Z2U << 16)) & 0x0001FFFF;
+"104
 [e = _value & | _value << -> _PID1Z2U `ul -> 16 `i -> -> 131071 `l `ul ]
-[; ;mathacc.c: 108: return value;
-"108
+[; ;mathacc.c: 106: return value;
+"106
 [e ) _value ]
 [e $UE 1215  ]
-[; ;mathacc.c: 109: }
-"109
+[; ;mathacc.c: 107: }
+"107
 [e :UE 1215 ]
 }
-"111
+"109
 [v _MATHACC_LoadZ1 `(v ~T0 @X0 1 ef1`ul ]
-"112
+"110
 {
-[; ;mathacc.c: 111: void MATHACC_LoadZ1(uint32_t value)
-[; ;mathacc.c: 112: {
+[; ;mathacc.c: 109: void MATHACC_LoadZ1(uint32_t value)
+[; ;mathacc.c: 110: {
 [e :U _MATHACC_LoadZ1 ]
-"111
+"109
 [v _value `ul ~T0 @X0 1 r1 ]
-"112
+"110
 [f ]
-[; ;mathacc.c: 113: PID1Z1L = (0x000000FF & value);
-"113
+[; ;mathacc.c: 111: PID1Z1L = (0x000000FF & value);
+"111
 [e = _PID1Z1L -> & -> -> -> 255 `i `l `ul _value `uc ]
-[; ;mathacc.c: 114: PID1Z1H = ((0x0000FF00 & value)>>8);
-"114
+[; ;mathacc.c: 112: PID1Z1H = ((0x0000FF00 & value)>>8);
+"112
 [e = _PID1Z1H -> >> & -> -> 65280 `ui `ul _value -> 8 `i `uc ]
-[; ;mathacc.c: 115: PID1Z1U = ((0x00010000 & value)>>16);
-"115
+[; ;mathacc.c: 113: PID1Z1U = ((0x00010000 & value)>>16);
+"113
 [e = _PID1Z1U -> >> & -> -> 65536 `l `ul _value -> 16 `i `uc ]
-[; ;mathacc.c: 116: }
-"116
+[; ;mathacc.c: 114: }
+"114
 [e :UE 1216 ]
 }
-"118
+"116
 [v _MATHACC_LoadZ2 `(v ~T0 @X0 1 ef1`ul ]
-"119
+"117
 {
-[; ;mathacc.c: 118: void MATHACC_LoadZ2(uint32_t value)
-[; ;mathacc.c: 119: {
+[; ;mathacc.c: 116: void MATHACC_LoadZ2(uint32_t value)
+[; ;mathacc.c: 117: {
 [e :U _MATHACC_LoadZ2 ]
-"118
+"116
 [v _value `ul ~T0 @X0 1 r1 ]
-"119
+"117
 [f ]
-[; ;mathacc.c: 120: PID1Z2L = (0x000000FF & value);
-"120
+[; ;mathacc.c: 118: PID1Z2L = (0x000000FF & value);
+"118
 [e = _PID1Z2L -> & -> -> -> 255 `i `l `ul _value `uc ]
-[; ;mathacc.c: 121: PID1Z2H = ((0x0000FF00 & value)>>8);
-"121
+[; ;mathacc.c: 119: PID1Z2H = ((0x0000FF00 & value)>>8);
+"119
 [e = _PID1Z2H -> >> & -> -> 65280 `ui `ul _value -> 8 `i `uc ]
-[; ;mathacc.c: 122: PID1Z2U = ((0x00010000 & value)>>16);
-"122
+[; ;mathacc.c: 120: PID1Z2U = ((0x00010000 & value)>>16);
+"120
 [e = _PID1Z2U -> >> & -> -> 65536 `l `ul _value -> 16 `i `uc ]
-[; ;mathacc.c: 123: }
-"123
+[; ;mathacc.c: 121: }
+"121
 [e :UE 1217 ]
 }
-"125
+"123
 [v _MATHACC_ResultGet `(S1211 ~T0 @X0 1 ef ]
-"126
+"124
 {
-[; ;mathacc.c: 125: MATHACCResult MATHACC_ResultGet(void)
-[; ;mathacc.c: 126: {
+[; ;mathacc.c: 123: MATHACCResult MATHACC_ResultGet(void)
+[; ;mathacc.c: 124: {
 [e :U _MATHACC_ResultGet ]
 [f ]
-"127
+"125
 [v _data `S1211 ~T0 @X0 1 a ]
-[; ;mathacc.c: 127: MATHACCResult data;
-[; ;mathacc.c: 129: data.byteLL = PID1OUTLL;
-"129
+[; ;mathacc.c: 125: MATHACCResult data;
+[; ;mathacc.c: 127: data.byteLL = PID1OUTLL;
+"127
 [e = . _data 0 _PID1OUTLL ]
-[; ;mathacc.c: 130: data.byteLH = PID1OUTLH;
-"130
+[; ;mathacc.c: 128: data.byteLH = PID1OUTLH;
+"128
 [e = . _data 1 _PID1OUTLH ]
-[; ;mathacc.c: 131: data.byteHL = PID1OUTHL;
-"131
+[; ;mathacc.c: 129: data.byteHL = PID1OUTHL;
+"129
 [e = . _data 2 _PID1OUTHL ]
-[; ;mathacc.c: 132: data.byteHH = PID1OUTHH;
-"132
+[; ;mathacc.c: 130: data.byteHH = PID1OUTHH;
+"130
 [e = . _data 3 _PID1OUTHH ]
-[; ;mathacc.c: 133: data.byteU = PID1OUTU;
-"133
+[; ;mathacc.c: 131: data.byteU = PID1OUTU;
+"131
 [e = . _data 4 _PID1OUTU ]
-[; ;mathacc.c: 135: return data;
-"135
+[; ;mathacc.c: 133: return data;
+"133
 [e ) _data ]
 [e $UE 1218  ]
-[; ;mathacc.c: 136: }
-"136
+[; ;mathacc.c: 134: }
+"134
 [e :UE 1218 ]
 }
-"138
+"136
 [v _MATHACC_ClearResult `(v ~T0 @X0 1 ef ]
-"139
+"137
 {
-[; ;mathacc.c: 138: void MATHACC_ClearResult(void)
-[; ;mathacc.c: 139: {
+[; ;mathacc.c: 136: void MATHACC_ClearResult(void)
+[; ;mathacc.c: 137: {
 [e :U _MATHACC_ClearResult ]
 [f ]
-[; ;mathacc.c: 140: PID1OUTLL = 0;
-"140
+[; ;mathacc.c: 138: PID1OUTLL = 0;
+"138
 [e = _PID1OUTLL -> -> 0 `i `uc ]
-[; ;mathacc.c: 141: PID1OUTLH = 0;
-"141
+[; ;mathacc.c: 139: PID1OUTLH = 0;
+"139
 [e = _PID1OUTLH -> -> 0 `i `uc ]
-[; ;mathacc.c: 142: PID1OUTHL = 0;
-"142
+[; ;mathacc.c: 140: PID1OUTHL = 0;
+"140
 [e = _PID1OUTHL -> -> 0 `i `uc ]
-[; ;mathacc.c: 143: PID1OUTHH = 0;
-"143
+[; ;mathacc.c: 141: PID1OUTHH = 0;
+"141
 [e = _PID1OUTHH -> -> 0 `i `uc ]
-[; ;mathacc.c: 144: PID1OUTU = 0;
-"144
+[; ;mathacc.c: 142: PID1OUTU = 0;
+"142
 [e = _PID1OUTU -> -> 0 `i `uc ]
-[; ;mathacc.c: 145: }
-"145
+[; ;mathacc.c: 143: }
+"143
 [e :UE 1219 ]
 }
-"147
+"145
 [v _MATHACC_Error_ISR `(v ~T0 @X0 1 ef ]
-"148
+"146
 {
-[; ;mathacc.c: 147: void MATHACC_Error_ISR( void )
-[; ;mathacc.c: 148: {
+[; ;mathacc.c: 145: void MATHACC_Error_ISR( void )
+[; ;mathacc.c: 146: {
 [e :U _MATHACC_Error_ISR ]
 [f ]
-[; ;mathacc.c: 149: PIR5bits.PID1EIF = 0;
-"149
+[; ;mathacc.c: 147: PIR5bits.PID1EIF = 0;
+"147
 [e = . . _PIR5bits 0 1 -> -> 0 `i `uc ]
-[; ;mathacc.c: 152: }
-"152
+[; ;mathacc.c: 150: }
+"150
 [e :UE 1220 ]
 }
-"154
+"152
 [v _MATHACC_PID_ISR `(v ~T0 @X0 1 ef ]
-"155
+"153
 {
-[; ;mathacc.c: 154: void MATHACC_PID_ISR( void )
-[; ;mathacc.c: 155: {
+[; ;mathacc.c: 152: void MATHACC_PID_ISR( void )
+[; ;mathacc.c: 153: {
 [e :U _MATHACC_PID_ISR ]
 [f ]
-[; ;mathacc.c: 156: PIR5bits.PID1DIF = 0;
-"156
+[; ;mathacc.c: 154: PIR5bits.PID1DIF = 0;
+"154
 [e = . . _PIR5bits 0 0 -> -> 0 `i `uc ]
-[; ;mathacc.c: 157: Pos = PID1OUTLL;
+[; ;mathacc.c: 155: Pos = PID1OUTHL;
+"155
+[e = _Pos _PID1OUTHL ]
+[; ;mathacc.c: 157: }
 "157
-[e = _Pos _PID1OUTLL ]
-[; ;mathacc.c: 159: }
-"159
 [e :UE 1221 ]
 }

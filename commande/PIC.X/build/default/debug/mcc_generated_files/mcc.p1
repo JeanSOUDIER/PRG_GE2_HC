@@ -7,10 +7,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
 "102 mcc_generated_files/pwm3.h
 [v _PWM3_Initialize `(v ~T0 @X0 0 ef ]
-"325 mcc_generated_files/tmr2.h
-[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
 "122 mcc_generated_files/mathacc.h
 [v _MATHACC_Initialize `(v ~T0 @X0 0 ef ]
+"325 mcc_generated_files/tmr2.h
+[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
 "116 mcc_generated_files/eusart.h
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "2254 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
@@ -10999,12 +10999,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 55: PWM3_Initialize();
 "55
 [e ( _PWM3_Initialize ..  ]
-[; ;mcc.c: 56: TMR2_Initialize();
+[; ;mcc.c: 56: MATHACC_Initialize();
 "56
-[e ( _TMR2_Initialize ..  ]
-[; ;mcc.c: 57: MATHACC_Initialize();
-"57
 [e ( _MATHACC_Initialize ..  ]
+[; ;mcc.c: 57: TMR2_Initialize();
+"57
+[e ( _TMR2_Initialize ..  ]
 [; ;mcc.c: 58: EUSART_Initialize();
 "58
 [e ( _EUSART_Initialize ..  ]
