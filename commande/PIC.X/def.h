@@ -18,8 +18,9 @@
 
 void MyTimer2ISR(void);
 void MyUART_ISR(void);
+void MyDelay(void);
 
 
 typedef enum {S_Idle, S_Data, S_Check} state;
-typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
+typedef enum {S_leds_cligno, S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
 typedef enum {S_bat_low, S_bat_high} state_bat;

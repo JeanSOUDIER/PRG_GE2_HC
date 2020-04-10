@@ -162,6 +162,23 @@
 #define RB7_SetAnalogMode()         do { ANSELBbits.ANSB7 = 1; } while(0)
 #define RB7_SetDigitalMode()        do { ANSELBbits.ANSB7 = 0; } while(0)
 
+// get/set LED_AR aliases
+#define LED_AR_TRIS                 TRISCbits.TRISC4
+#define LED_AR_LAT                  LATCbits.LATC4
+#define LED_AR_PORT                 PORTCbits.RC4
+#define LED_AR_WPU                  WPUCbits.WPUC4
+#define LED_AR_OD                   ODCONCbits.ODC4
+#define LED_AR_SetHigh()            do { LATCbits.LATC4 = 1; } while(0)
+#define LED_AR_SetLow()             do { LATCbits.LATC4 = 0; } while(0)
+#define LED_AR_Toggle()             do { LATCbits.LATC4 = ~LATCbits.LATC4; } while(0)
+#define LED_AR_GetValue()           PORTCbits.RC4
+#define LED_AR_SetDigitalInput()    do { TRISCbits.TRISC4 = 1; } while(0)
+#define LED_AR_SetDigitalOutput()   do { TRISCbits.TRISC4 = 0; } while(0)
+#define LED_AR_SetPullup()          do { WPUCbits.WPUC4 = 1; } while(0)
+#define LED_AR_ResetPullup()        do { WPUCbits.WPUC4 = 0; } while(0)
+#define LED_AR_SetPushPull()        do { ODCONCbits.ODC4 = 0; } while(0)
+#define LED_AR_SetOpenDrain()       do { ODCONCbits.ODC4 = 1; } while(0)
+
 // get/set CMD_EN aliases
 #define CMD_EN_TRIS                 TRISCbits.TRISC5
 #define CMD_EN_LAT                  LATCbits.LATC5

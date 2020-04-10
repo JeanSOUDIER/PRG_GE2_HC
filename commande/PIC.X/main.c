@@ -53,7 +53,7 @@
 //déclaration des varaibles
 uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, StateToggle = 0, Pos;
 state PosUart = S_Idle;
-state_led StateLeds = S_leds_off;
+state_led StateLeds = S_leds_cligno;
 state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
@@ -131,6 +131,9 @@ void MyUART_ISR(void) {
                     } else if(Type == 'L') {
                         StateLeds++;
                         switch(StateLeds) {
+                            case S_leds_cligno:
+                                //do nothing
+                                break;
                             case S_leds_off:
                                 LED_R_SetLow();
                                 LED_L_SetLow();
@@ -150,7 +153,7 @@ void MyUART_ISR(void) {
                             default:
                                 LED_R_SetLow();
                                 LED_L_SetLow();
-                                StateLeds = S_leds_off;
+                                StateLeds = S_leds_cligno;
                                 break;
                         }
                     } else {
@@ -172,9 +175,36 @@ void MyUART_ISR(void) {
     }
 }
 
+void MyDelay(void) {
+    uint8_t i;
+    for(i=0;i<5;i++) {
+        if(100-Vitesse > 4) {
+            LED_AR_SetLow();
+        } else {
+            LED_AR_SetHigh();
+        }
+        if(StateLeds == S_leds_cligno) {
+            if(Angle > 102) {
+                LED_R_Toggle();
+                LED_L_SetLow();
+            } else if(Angle < 98) {
+                LED_R_SetLow();
+                LED_L_Toggle();
+            } else {
+                LED_R_SetLow();
+                LED_L_SetLow();
+            }
+        }
+        __delay_ms(100);
+    }
+}
+
 void main(void) {
     SYSTEM_Initialize();    //initialisation du système
     
+    LED_AR_SetHigh();
+    LED_R_SetLow();
+    LED_L_SetLow();
     CMD_EN_SetHigh();       //allumage du régulateur
     STATE_SetHigh();        //allumage de la LED utilisateur
     
@@ -196,12 +226,14 @@ void main(void) {
         if(BAT_GetValue()) {       //test batterrie
             if(Validation) {       //test du compteur de messages
                 STATE_Toggle();    //si tout vas bien clignotement lent
-                __delay_ms(500);
+                MyDelay();
             } else {
                 STATE_Toggle();   //non connecté, clignotement rapide
+                LED_AR_SetHigh();
                 __delay_ms(100);
             }
         } else {
+            LED_AR_SetHigh();
             STATE_SetHigh();      //pas de batterrie, allumé fixe
         }
     }
