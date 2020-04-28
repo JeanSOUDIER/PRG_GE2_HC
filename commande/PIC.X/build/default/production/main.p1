@@ -11105,9 +11105,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "61
 [e $ ! != -> _StateToggle `i -> -> -> 0 `i `uc `i 1216  ]
 {
-[; ;main.c: 62: PWM3_LoadDutyValue(((Pos)>>3)+50);
+[; ;main.c: 62: PWM3_LoadDutyValue(((Angle)>>3)+50);
 "62
-[e ( _PWM3_LoadDutyValue (1 -> + >> -> _Pos `i -> 3 `i -> 50 `i `ui ]
+[e ( _PWM3_LoadDutyValue (1 -> + >> -> _Angle `i -> 3 `i -> 50 `i `ui ]
 [; ;main.c: 64: G -= I2C_Read1ByteRegister(0x68, 0x47);
 "64
 [e =- _G ( _I2C_Read1ByteRegister (2 , -> -> 104 `i `uc -> -> 71 `i `uc ]
@@ -11120,9 +11120,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1217  ]
 [e :U 1216 ]
 {
-[; ;main.c: 68: PWM3_LoadDutyValue(((Pos)>>3)+50);
+[; ;main.c: 68: PWM3_LoadDutyValue(((Angle)>>3)+50);
 "68
-[e ( _PWM3_LoadDutyValue (1 -> + >> -> _Pos `i -> 3 `i -> 50 `i `ui ]
+[e ( _PWM3_LoadDutyValue (1 -> + >> -> _Angle `i -> 3 `i -> 50 `i `ui ]
 [; ;main.c: 69: if(PORTAbits.RA4) {
 "69
 [e $ ! != -> . . _PORTAbits 0 4 `i -> -> -> 0 `i `Vuc `i 1218  ]

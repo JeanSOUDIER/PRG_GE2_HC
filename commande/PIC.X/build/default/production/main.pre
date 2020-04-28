@@ -15150,13 +15150,13 @@ state_bat StateBat = S_bat_high;
 void MyTimer2ISR(void) {
 StateToggle = ~StateToggle;
 if(StateToggle) {
-PWM3_LoadDutyValue(((Pos)>>3)+50);
+PWM3_LoadDutyValue(((Angle)>>3)+50);
 
 G -= I2C_Read1ByteRegister(0x68, 0x47);
 
 MATHACC_PIDController(Angle,G);
 } else {
-PWM3_LoadDutyValue(((Pos)>>3)+50);
+PWM3_LoadDutyValue(((Angle)>>3)+50);
 if(PORTAbits.RA4) {
 CptBat = 0;
 if(StateBat == S_bat_low) {

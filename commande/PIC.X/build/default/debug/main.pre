@@ -14611,10 +14611,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 232 "mcc_generated_files/pin_manager.h"
+# 249 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 244
+# 261
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
@@ -15134,28 +15134,29 @@ void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t
 # 19 "def.h"
 void MyTimer2ISR(void);
 void MyUART_ISR(void);
+void MyDelay(void);
 
 
 typedef enum {S_Idle, S_Data, S_Check} state;
-typedef enum {S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
+typedef enum {S_leds_cligno, S_leds_off, S_led_r, S_led_l, S_leds_on} state_led;
 typedef enum {S_bat_low, S_bat_high} state_bat;
 
 # 54 "main.c"
 uint8_t Data, Type, Validation = 4, CptBat = 0, G = 0, Vitesse = 0, Angle = 45, StateToggle = 0, Pos;
 state PosUart = S_Idle;
-state_led StateLeds = S_leds_off;
+state_led StateLeds = S_leds_cligno;
 state_bat StateBat = S_bat_high;
 
 void MyTimer2ISR(void) {
 StateToggle = ~StateToggle;
 if(StateToggle) {
-PWM3_LoadDutyValue(((Pos)>>3)+50);
+PWM3_LoadDutyValue(((Angle)>>3)+50);
 
 G -= I2C_Read1ByteRegister(0x68, 0x47);
 
 MATHACC_PIDController(Angle,G);
 } else {
-PWM3_LoadDutyValue(((Pos)>>3)+50);
+PWM3_LoadDutyValue(((Angle)>>3)+50);
 if(PORTAbits.RA4) {
 CptBat = 0;
 if(StateBat == S_bat_low) {
@@ -15221,6 +15222,9 @@ EUSART_Write('{');
 } else if(Type == 'L') {
 StateLeds++;
 switch(StateLeds) {
+case S_leds_cligno:
+
+break;
 case S_leds_off:
 do { LATCbits.LATC6 = 0; } while(0);
 do { LATCbits.LATC7 = 0; } while(0);
@@ -15240,7 +15244,7 @@ break;
 default:
 do { LATCbits.LATC6 = 0; } while(0);
 do { LATCbits.LATC7 = 0; } while(0);
-StateLeds = S_leds_off;
+StateLeds = S_leds_cligno;
 break;
 }
 } else {
@@ -15262,9 +15266,36 @@ break;
 }
 }
 
+void MyDelay(void) {
+uint8_t i;
+for(i=0;i<5;i++) {
+if(100-Vitesse > 4) {
+do { LATCbits.LATC4 = 0; } while(0);
+} else {
+do { LATCbits.LATC4 = 1; } while(0);
+}
+if(StateLeds == S_leds_cligno) {
+if(Angle > 102) {
+do { LATCbits.LATC6 = ~LATCbits.LATC6; } while(0);
+do { LATCbits.LATC7 = 0; } while(0);
+} else if(Angle < 98) {
+do { LATCbits.LATC6 = 0; } while(0);
+do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0);
+} else {
+do { LATCbits.LATC6 = 0; } while(0);
+do { LATCbits.LATC7 = 0; } while(0);
+}
+}
+_delay((unsigned long)((100)*(4000000/4000.0)));
+}
+}
+
 void main(void) {
 SYSTEM_Initialize();
 
+do { LATCbits.LATC4 = 1; } while(0);
+do { LATCbits.LATC6 = 0; } while(0);
+do { LATCbits.LATC7 = 0; } while(0);
 do { LATCbits.LATC5 = 1; } while(0);
 do { LATAbits.LATA5 = 1; } while(0);
 
@@ -15286,12 +15317,14 @@ while (1) {
 if(PORTAbits.RA4) {
 if(Validation) {
 do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
-_delay((unsigned long)((500)*(4000000/4000.0)));
+MyDelay();
 } else {
 do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+do { LATCbits.LATC4 = 1; } while(0);
 _delay((unsigned long)((100)*(4000000/4000.0)));
 }
 } else {
+do { LATCbits.LATC4 = 1; } while(0);
 do { LATAbits.LATA5 = 1; } while(0);
 }
 }

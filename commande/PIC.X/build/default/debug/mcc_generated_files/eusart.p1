@@ -10953,9 +10953,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.c: 97: TX1STA = 0x24;
 "97
 [e = _TX1STA -> -> 36 `i `uc ]
-[; ;eusart.c: 100: SPBRGL = 0x08;
+[; ;eusart.c: 100: SPBRGL = 0x67;
 "100
-[e = _SPBRGL -> -> 8 `i `uc ]
+[e = _SPBRGL -> -> 103 `i `uc ]
 [; ;eusart.c: 103: SPBRGH = 0x00;
 "103
 [e = _SPBRGH -> -> 0 `i `uc ]

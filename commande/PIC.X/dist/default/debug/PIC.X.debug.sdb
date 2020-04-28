@@ -101,20 +101,21 @@ TMR2_PWM3_OUT 13
 TMR2_PWM4_OUT 14
 ]
 "55 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
-[e E12301 . `uc
+[e E12303 . `uc
 S_Idle 0
 S_Data 1
 S_Check 2
 ]
 "56
-[e E12306 . `uc
-S_leds_off 0
-S_led_r 1
-S_led_l 2
-S_leds_on 3
+[e E12308 . `uc
+S_leds_cligno 0
+S_leds_off 1
+S_led_r 2
+S_led_l 3
+S_leds_on 4
 ]
 "57
-[e E12312 . `uc
+[e E12315 . `uc
 S_bat_low 0
 S_bat_high 1
 ]
@@ -126,7 +127,9 @@ S_bat_high 1
 [v _MyTimer2ISR MyTimer2ISR `(v  1 e 1 0 ]
 "106
 [v _MyUART_ISR MyUART_ISR `(v  1 e 1 0 ]
-"175
+"178
+[v _MyDelay MyDelay `(v  1 e 1 0 ]
+"202
 [v _main main `(v  1 e 1 0 ]
 "83 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -370,7 +373,7 @@ S_bat_high 1
 ]
 [u S157 . 1 `S143 1 . 1 0 `S152 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES157  1 e 1 @11 ]
-[s S1532 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1533 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -378,8 +381,8 @@ S_bat_high 1
 `uc 1 RA5 1 0 :1:5 
 ]
 "442
-[u S1539 . 1 `S1532 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1539  1 e 1 @12 ]
+[u S1540 . 1 `S1533 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1540  1 e 1 @12 ]
 [s S196 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -555,7 +558,7 @@ S_bat_high 1
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2623
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1574 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1581 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -563,13 +566,13 @@ S_bat_high 1
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2638
-[u S1581 . 1 `S1574 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1581  1 e 1 @268 ]
+[u S1588 . 1 `S1581 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1588  1 e 1 @268 ]
 "2673
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2712
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S1551 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1552 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -579,8 +582,8 @@ S_bat_high 1
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2729
-[u S1560 . 1 `S1551 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1560  1 e 1 @270 ]
+[u S1561 . 1 `S1552 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1561  1 e 1 @270 ]
 "3048
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3323
@@ -791,11 +794,11 @@ S_bat_high 1
 [v _Angle Angle `uc  1 e 1 0 ]
 [v _StateToggle StateToggle `uc  1 e 1 0 ]
 "55
-[v _PosUart PosUart `E12301  1 e 1 0 ]
+[v _PosUart PosUart `E12303  1 e 1 0 ]
 "56
-[v _StateLeds StateLeds `E12306  1 e 1 0 ]
+[v _StateLeds StateLeds `E12308  1 e 1 0 ]
 "57
-[v _StateBat StateBat `E12312  1 e 1 0 ]
+[v _StateBat StateBat `E12315  1 e 1 0 ]
 "63 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
 "64
@@ -833,10 +836,10 @@ S_bat_high 1
 [v _I2C_Status I2C_Status `S513  1 e 29 0 ]
 "58 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-"175 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+"202 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"208
+"240
 } 0
 "150 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/tmr2.c
 [v _TMR2_WriteTimer TMR2_WriteTimer `(v  1 e 1 0 ]
@@ -935,6 +938,13 @@ S_bat_high 1
 {
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 14 ]
 "231
+} 0
+"178 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\main.c
+[v _MyDelay MyDelay `(v  1 e 1 0 ]
+{
+"179
+[v MyDelay@i i `uc  1 a 1 19 ]
+"200
 } 0
 "91 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/examples/i2c_master_example.c
 [v _I2C_Write1ByteRegister I2C_Write1ByteRegister `(v  1 e 1 0 ]
@@ -1574,7 +1584,7 @@ S_bat_high 1
 {
 "107
 [v MyUART_ISR@c c `uc  1 a 1 5 ]
-"173
+"176
 } 0
 "162 D:\école\GE4\PRG_GE2_HC\commande\PIC.X\mcc_generated_files/eusart.c
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]

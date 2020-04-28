@@ -59,13 +59,13 @@ state_bat StateBat = S_bat_high;
 void MyTimer2ISR(void) {
     StateToggle = ~StateToggle; //changement de l'état test tout les 20 ms
     if(StateToggle) {
-        PWM3_LoadDutyValue(((Pos)>>3)+50);  //changement du rapport cyclique (environ entre 31 - 63)
+        PWM3_LoadDutyValue(((Angle)>>3)+50);  //changement du rapport cyclique (environ entre 31 - 63)
         #ifdef I2C1
         G -= I2C_Read1ByteRegister(ADDR_MPU, GYRO_Z_REG_H); //lecture du registre haut du capteur
         #endif
         MATHACC_PIDController(Angle,G); //lancement du PID interne
     } else {
-        PWM3_LoadDutyValue(((Pos)>>3)+50);
+        PWM3_LoadDutyValue(((Angle)>>3)+50);
         if(BAT_GetValue()) { //si batterrie chargé
             CptBat = 0;      //compteur batterie = 0
             if(StateBat == S_bat_low) { //si l'état batterie est à bas (front montant sur l'état baterrie)
