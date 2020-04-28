@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mlt LC_NUMERIC="fr_FR" version="6.13.0" title="Shotcut version 18.12.23" producer="main_bin">
+  <profile description="HD 1080p 25 fps" width="1920" height="1080" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="16" display_aspect_den="9" frame_rate_num="25" frame_rate_den="1" colorspace="709"/>
+  <playlist id="main_bin">
+    <property name="xml_retain">1</property>
+  </playlist>
+  <producer id="black" in="00:00:00,000" out="00:04:43,920">
+    <property name="length">7099</property>
+    <property name="eof">pause</property>
+    <property name="resource">black</property>
+    <property name="aspect_ratio">1</property>
+    <property name="mlt_service">color</property>
+    <property name="mlt_image_format">rgb24</property>
+    <property name="set.test_audio">0</property>
+  </producer>
+  <playlist id="background">
+    <entry producer="black" in="00:00:00,000" out="00:04:43,920"/>
+  </playlist>
+  <producer id="producer0" title="Anonymous Submission" in="00:00:00,000" out="00:05:00,400">
+    <property name="length">00:05:00:11</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/xoxox/Downloads/video-1588067785.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">81603945aa18ac177e05bbf5ca2bf9c5</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">video-1588067785.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588067785.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <playlist id="playlist0">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V1</property>
+    <entry producer="producer0" in="00:00:05,360" out="00:03:14,960"/>
+  </playlist>
+  <producer id="producer1" title="Anonymous Submission" in="00:00:00,000" out="00:04:38,840">
+    <property name="length">00:04:38:22</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/xoxox/Downloads/video-1588067396.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">4f0cf90bdb8848948627feb8770df411</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">video-1588067396.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588067396.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <filter id="filter0" out="00:01:08,280">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineRotate</property>
+      <property name="transition.fix_rotate_x">0</property>
+      <property name="transition.scale_x">1000</property>
+      <property name="transition.ox">0</property>
+      <property name="transition.oy">0</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.scale_y">1000</property>
+    </filter>
+  </producer>
+  <producer id="producer2" title="Anonymous Submission" in="00:00:00,000" out="00:04:38,840">
+    <property name="length">00:04:38:22</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/xoxox/Downloads/video-1588067396.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">4f0cf90bdb8848948627feb8770df411</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">video-1588067396.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588067396.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <filter id="filter1" in="00:01:08,320" out="00:03:09,600">
+      <property name="mlt_service">crop</property>
+      <property name="center">0</property>
+      <property name="center_bias">0</property>
+      <property name="top">250</property>
+      <property name="bottom">250</property>
+      <property name="left">0</property>
+      <property name="right">0</property>
+    </filter>
+    <filter id="filter2" in="00:01:08,320" out="00:03:09,600">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineRotate</property>
+      <property name="transition.fix_rotate_x">0</property>
+      <property name="transition.scale_x">1</property>
+      <property name="transition.ox">0</property>
+      <property name="transition.oy">0</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.scale_y">1</property>
+    </filter>
+    <filter id="filter3" in="00:01:08,320" out="00:03:09,600">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">13 -5 540 1080 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00,000</property>
+      <property name="shotcut:animOut">00:00:00,000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </producer>
+  <producer id="producer3" title="Anonymous Submission" in="00:00:00,000" out="00:04:38,840">
+    <property name="length">00:04:38:22</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/xoxox/Downloads/video-1588067396.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">4f0cf90bdb8848948627feb8770df411</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">video-1588067396.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588067396.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <filter id="filter4" in="00:03:09,640" out="00:03:20,240">
+      <property name="mlt_service">crop</property>
+      <property name="center">0</property>
+      <property name="center_bias">0</property>
+      <property name="top">250</property>
+      <property name="bottom">250</property>
+      <property name="left">0</property>
+      <property name="right">0</property>
+    </filter>
+    <filter id="filter5" in="00:03:09,640" out="00:03:20,240">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineRotate</property>
+      <property name="transition.fix_rotate_x">0</property>
+      <property name="transition.scale_x">1000</property>
+      <property name="transition.ox">0</property>
+      <property name="transition.oy">0</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.scale_y">1000</property>
+    </filter>
+    <filter id="filter6" in="00:03:09,640" out="00:03:20,240">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">13 -5 540 1080 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00,000</property>
+      <property name="shotcut:animOut">00:00:00,000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </producer>
+  <producer id="producer4" title="Anonymous Submission" in="00:00:00,000" out="00:04:38,840">
+    <property name="length">00:04:38:22</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/xoxox/Downloads/video-1588067396.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">4f0cf90bdb8848948627feb8770df411</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">video-1588067396.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588067396.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <filter id="filter7" in="00:03:38,240" out="00:04:16,440">
+      <property name="mlt_service">crop</property>
+      <property name="center">0</property>
+      <property name="center_bias">0</property>
+      <property name="top">250</property>
+      <property name="bottom">250</property>
+      <property name="left">0</property>
+      <property name="right">0</property>
+    </filter>
+    <filter id="filter8" in="00:03:38,240" out="00:04:16,440">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineRotate</property>
+      <property name="transition.fix_rotate_x">0</property>
+      <property name="transition.scale_x">1000</property>
+      <property name="transition.ox">0</property>
+      <property name="transition.oy">0</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.scale_y">1000</property>
+    </filter>
+    <filter id="filter9" in="00:03:38,240" out="00:04:16,440">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">13 -5 540 1080 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00,000</property>
+      <property name="shotcut:animOut">00:00:00,000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </producer>
+  <producer id="producer5" title="Anonymous Submission" in="00:00:00,000" out="00:04:38,840">
+    <property name="length">00:04:38:22</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/xoxox/Downloads/video-1588067396.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">4f0cf90bdb8848948627feb8770df411</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">video-1588067396.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588067396.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <filter id="filter10" in="00:04:18,440" out="00:04:35,520">
+      <property name="mlt_service">crop</property>
+      <property name="center">0</property>
+      <property name="center_bias">0</property>
+      <property name="top">250</property>
+      <property name="bottom">250</property>
+      <property name="left">0</property>
+      <property name="right">0</property>
+    </filter>
+    <filter id="filter11" in="00:04:18,440" out="00:04:35,520">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineRotate</property>
+      <property name="transition.fix_rotate_x">0</property>
+      <property name="transition.scale_x">1000</property>
+      <property name="transition.ox">0</property>
+      <property name="transition.oy">0</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.scale_y">1000</property>
+    </filter>
+    <filter id="filter12" in="00:04:18,440" out="00:04:35,520">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">13 -5 540 1080 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00,000</property>
+      <property name="shotcut:animOut">00:00:00,000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </producer>
+  <producer id="producer6" title="Anonymous Submission" in="00:00:00,000" out="00:04:38,840">
+    <property name="length">00:04:38:22</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/xoxox/Downloads/video-1588067396.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">4f0cf90bdb8848948627feb8770df411</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">video-1588067396.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588067396.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <filter id="filter13" in="00:03:20,280" out="00:03:36,400">
+      <property name="mlt_service">crop</property>
+      <property name="center">0</property>
+      <property name="center_bias">0</property>
+      <property name="top">250</property>
+      <property name="bottom">250</property>
+      <property name="left">0</property>
+      <property name="right">0</property>
+    </filter>
+    <filter id="filter14" in="00:03:20,280" out="00:03:36,400">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineRotate</property>
+      <property name="transition.fix_rotate_x">0</property>
+      <property name="transition.scale_x">1</property>
+      <property name="transition.ox">0</property>
+      <property name="transition.oy">0</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.scale_y">1</property>
+    </filter>
+    <filter id="filter15" in="00:03:20,280" out="00:03:36,400">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">13 -5 540 1080 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00,000</property>
+      <property name="shotcut:animOut">00:00:00,000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </producer>
+  <producer id="producer7" title="Anonymous Submission" in="00:00:00,000" out="00:04:38,840">
+    <property name="length">00:04:38:22</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/xoxox/Downloads/video-1588067396.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">4f0cf90bdb8848948627feb8770df411</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">video-1588067396.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588067396.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <filter id="filter16" in="00:04:35,560" out="00:04:38,840">
+      <property name="mlt_service">crop</property>
+      <property name="center">0</property>
+      <property name="center_bias">0</property>
+      <property name="top">250</property>
+      <property name="bottom">250</property>
+      <property name="left">0</property>
+      <property name="right">0</property>
+    </filter>
+    <filter id="filter17" in="00:04:35,560" out="00:04:38,840">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineRotate</property>
+      <property name="transition.fix_rotate_x">0</property>
+      <property name="transition.scale_x">1000</property>
+      <property name="transition.ox">0</property>
+      <property name="transition.oy">0</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.scale_y">1000</property>
+    </filter>
+    <filter id="filter18" in="00:04:35,560" out="00:04:38,840">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">13 -5 540 1080 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00,000</property>
+      <property name="shotcut:animOut">00:00:00,000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </producer>
+  <playlist id="playlist1">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V2</property>
+    <entry producer="producer1" in="00:00:00,000" out="00:01:08,280"/>
+    <entry producer="producer2" in="00:01:08,320" out="00:03:09,600"/>
+    <entry producer="producer3" in="00:03:09,640" out="00:03:20,240"/>
+    <entry producer="producer4" in="00:03:38,240" out="00:04:16,440"/>
+    <entry producer="producer5" in="00:04:18,440" out="00:04:35,520"/>
+    <blank length="00:00:08,840"/>
+    <entry producer="producer6" in="00:03:20,280" out="00:03:36,400"/>
+    <entry producer="producer7" in="00:04:35,560" out="00:04:38,840"/>
+  </playlist>
+  <producer id="producer8" title="Anonymous Submission" in="00:00:00,000" out="00:01:21,360">
+    <property name="length">2035</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:\Users\xoxox\Downloads\video-1588082904.mp4</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+    <property name="video_delay">0</property>
+    <property name="shotcut:hash">0890828700c8da2e1d0e21778be116b6</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:caption">video-1588082904.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588082904.mp4</property>
+  </producer>
+  <playlist id="playlist2">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V3</property>
+    <blank length="00:03:09,640"/>
+    <entry producer="producer8" in="00:00:14,360" out="00:00:59,960"/>
+  </playlist>
+  <producer id="producer10" title="Anonymous Submission" in="00:00:00,000" out="00:01:38,560">
+    <property name="length">00:01:38:15</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:\Users\xoxox\Desktop\ice_video_20200428-160431.webm</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+    <property name="video_delay">0</property>
+    <property name="shotcut:hash">bda3f23c01cc43955fadbd1872f35d38</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">ice_video_20200428-160431.webm</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Desktop\ice_video_20200428-160431.webm</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer11" title="Anonymous Submission" in="00:00:00,000" out="00:01:38,560">
+    <property name="length">00:01:38:15</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:\Users\xoxox\Desktop\ice_video_20200428-160431.webm</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+    <property name="video_delay">0</property>
+    <property name="shotcut:hash">bda3f23c01cc43955fadbd1872f35d38</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">ice_video_20200428-160431.webm</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Desktop\ice_video_20200428-160431.webm</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <playlist id="playlist3">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V4</property>
+    <blank length="00:03:21,480"/>
+    <entry producer="producer10" in="00:00:17,160" out="00:00:30,880"/>
+    <blank length="00:00:20,160"/>
+    <entry producer="producer11" in="00:00:46,480" out="00:01:15,760"/>
+  </playlist>
+  <producer id="producer12" title="Anonymous Submission" in="00:00:00,000" out="00:01:11,960">
+    <property name="length">00:01:12:00</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:\Users\xoxox\Downloads\video-1588082949.mp4</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+    <property name="video_delay">0</property>
+    <property name="shotcut:hash">fe10aef1460e9e7939b49db7488ac5d2</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">video-1588082949.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588082949.mp4</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <filter id="filter19" in="00:00:02,320" out="00:00:48,080">
+      <property name="mlt_service">crop</property>
+      <property name="center">0</property>
+      <property name="center_bias">0</property>
+      <property name="top">540</property>
+      <property name="bottom">540</property>
+      <property name="left">0</property>
+      <property name="right">75</property>
+    </filter>
+    <filter id="filter20" in="00:00:02,320" out="00:00:48,080">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineRotate</property>
+      <property name="transition.fix_rotate_x">0</property>
+      <property name="transition.scale_x">1</property>
+      <property name="transition.ox">0</property>
+      <property name="transition.oy">0</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.scale_y">1</property>
+    </filter>
+    <filter id="filter21" in="00:00:02,320" out="00:00:48,080">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-5 0 540 1080 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00,000</property>
+      <property name="shotcut:animOut">00:00:00,000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </producer>
+  <playlist id="playlist4">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V5</property>
+    <blank length="00:03:09,640"/>
+    <entry producer="producer12" in="00:00:02,320" out="00:00:48,080"/>
+  </playlist>
+  <producer id="producer9" title="Anonymous Submission" in="00:00:00,000" out="00:01:21,360">
+    <property name="length">2035</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:\Users\xoxox\Downloads\video-1588082904.mp4</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+    <property name="video_delay">0</property>
+    <property name="shotcut:hash">0890828700c8da2e1d0e21778be116b6</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:caption">video-1588082904.mp4</property>
+    <property name="shotcut:detail">C:\Users\xoxox\Downloads\video-1588082904.mp4</property>
+    <filter id="filter22" in="00:01:00,000" out="00:01:21,360">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineRotate</property>
+      <property name="transition.fix_rotate_x">0</property>
+      <property name="transition.scale_x">2</property>
+      <property name="transition.ox">0</property>
+      <property name="transition.oy">0</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.scale_y">2</property>
+    </filter>
+    <filter id="filter23" in="00:01:00,000" out="00:01:21,360">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">470 -262 1920 1103 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00,000</property>
+      <property name="shotcut:animOut">00:00:00,000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </producer>
+  <playlist id="playlist5">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V6</property>
+    <blank length="00:03:55,280"/>
+    <entry producer="producer9" in="00:01:00,000" out="00:01:21,360"/>
+  </playlist>
+  <tractor id="tractor0" title="Shotcut version 18.12.23" global_feed="1" in="00:00:00,000" out="00:04:43,920">
+    <property name="shotcut">1</property>
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">1</property>
+    <property name="shotcut:scaleFactor">0,505502</property>
+    <property name="shotcut:trackHeight">50</property>
+    <track producer="background"/>
+    <track producer="playlist0" hide="audio"/>
+    <track producer="playlist1"/>
+    <track producer="playlist2"/>
+    <track producer="playlist3"/>
+    <track producer="playlist4"/>
+    <track producer="playlist5"/>
+    <transition id="transition0">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition1">
+      <property name="a_track">1</property>
+      <property name="b_track">2</property>
+      <property name="version">0,9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="disable">1</property>
+    </transition>
+    <transition id="transition2">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition3">
+      <property name="a_track">1</property>
+      <property name="b_track">2</property>
+      <property name="version">0,9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="disable">0</property>
+    </transition>
+    <transition id="transition4">
+      <property name="a_track">0</property>
+      <property name="b_track">3</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition5">
+      <property name="a_track">1</property>
+      <property name="b_track">3</property>
+      <property name="version">0,9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="disable">0</property>
+    </transition>
+    <transition id="transition6">
+      <property name="a_track">0</property>
+      <property name="b_track">4</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition7">
+      <property name="a_track">1</property>
+      <property name="b_track">4</property>
+      <property name="version">0,9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="disable">0</property>
+    </transition>
+    <transition id="transition8">
+      <property name="a_track">0</property>
+      <property name="b_track">5</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition9">
+      <property name="a_track">1</property>
+      <property name="b_track">5</property>
+      <property name="version">0,9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="disable">0</property>
+    </transition>
+    <transition id="transition10">
+      <property name="a_track">0</property>
+      <property name="b_track">6</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition11">
+      <property name="a_track">1</property>
+      <property name="b_track">6</property>
+      <property name="version">0,9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="disable">0</property>
+    </transition>
+  </tractor>
+</mlt>
