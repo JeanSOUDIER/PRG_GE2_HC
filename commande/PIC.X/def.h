@@ -9,8 +9,8 @@
 #define FILTER_REG      0x26
 #define GYRO_SCALE_REG  0x27
 
-#define FILTER_92HZ     0x02 //0x05
-#define SCALE           0x10 //8G
+#define FILTER_92HZ     0x02
+#define SCALE           0x10 //Correspond à 8G
 
 #define ADDR_DSPIC      0x40
 

@@ -3,7 +3,7 @@
 #include "init.h"
 
 void InitPin(void) {
-    LATC = 0x0000;      //on eteint les sorties des PORTC et E
+    LATC = 0x0000;          //on eteint les sorties des PORTC et E => LED et PWMs
     LATE = 0x0000;
     TRISC = ~(1<<STATE);    //on affecte les entrées et sorties
     TRISB = (1<<RET_C)|(1<<CUR);
@@ -29,8 +29,7 @@ void InitPWM(void) {
     PTPER = Fcy/FPWM - 1; //25kHz
     
     PWMCON1 = 0x0700;   //activation de la PWM
-    //OVDCON = 0x0000;
-    OVDCON = 0x0210;    //module moteur avec capteurs
+    OVDCON = 0x0000;  //module moteur avec capteurs
     PDC1 = START_VALUE;
     PDC3 = START_VALUE;
     PDC3 = START_VALUE;
@@ -64,12 +63,6 @@ void InitI2C(void) {
     IEC0bits.SI2CIE = 1;
 }
 
-void InitSPI(void) {
-    SPI1CON = 0x4080;
-    SPI1BUF = 0x0000;
-    SPI1STAT = 0x8000;
-}
-
 void Init(void) {
     InitPin();
     InitAdc();
@@ -77,6 +70,5 @@ void Init(void) {
     InitTMR3();
     InitCN();
     InitI2C();
-    //InitSPI();
 }
 

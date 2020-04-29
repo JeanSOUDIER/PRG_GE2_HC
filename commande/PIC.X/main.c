@@ -162,7 +162,7 @@ void MyUART_ISR(void) {
                         EUSART_Write('q');
                     }
                 } else {
-                    EUSART_Write('$');
+                    EUSART_Write('$');  //on envoi des checksum d'erreur en retour
                     EUSART_Write('C');
                     EUSART_Write('g');
                 }

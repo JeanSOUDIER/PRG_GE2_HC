@@ -34,12 +34,17 @@
 #include "init.h"
 #include "ISR.h"
 
-#define Fcy 32000000
-#define __delay_ms(x) __delay32(Fcy*14/x)
+#define Fcy 32000000                        //Fréquence de l'horlogue interne
+#define __delay_ms(x) __delay32(Fcy*14/x)   //Delay perso
 #define LED_ON()        LATC = (1<<STATE)
 #define LED_OFF()       LATC = 0x0000;
 #define START_MOTOR()   PWMCON1 = 0x0777;
 #define STOP_MOTOR()    PWMCON1 = 0x0700;
-#define LIM_CUR         1000
 
-typedef enum {Idle, ErrRec, ErrCur} state;
+#define LIM_CUR         1000 //Limite de courant
+#define LIM_VIT         20   //Limite de vitesse pour lancer le moteur
+#define LIM_FREQ        1200 //Limite du mode pas à pas, 6000 tr/min * 20 ms (T3) * 10 (pôles) = 1200
+#define PAS_RAMPE       9    //Pente de la rampe de vitesse, 0.6 s = 256*0.02*Incrément => pour une rampe en 0.6 s, il faut incrémenter par pas de 9
+
+typedef enum {Idle, ErrRec, ErrCur} state; //Type de variable pour la LED
+typedef enum {ComparateursOff, ComparateursOn} stateComp; //Type de variable pour les comparateurs
