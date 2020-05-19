@@ -1,0 +1,72 @@
+
+    Informations système
+                Etat:   Calcul terminé.
+                Produit:   Flow Simulation 2017 SP2.0. Build: 3731
+                Nom de l'ordinateur:   DESKTOP-JEAN
+                Nom d'utilisateur:   xoxox
+                Processeurs:   Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz
+                Mémoire:   16256 Mo / 134217727 Mo
+                Système d'exploitation:   Windows 10 (or higher) (Version 10.0.18362)
+                Version CAO:   SOLIDWORKS 2017 SP2.0
+                Vitesse UC:   2801 (2800) MHz
+
+    Informations générales
+                Modèle:   AssMot.SLDASM
+                Nom du projet:   Projet(1)
+                Chemin du projet:   D:\école\GE4\PRG_GE2_HC\CAO_meca\hovercraft\1
+                Système d'unités:   SI (m-kg-s)
+                Type d'analyse:   Externe (sans exclure les espaces intérieurs)
+                Exclure les cavités sans conditions d'écoulement :   Activé
+                Système de coordonnées:   Système de coordonnées global
+                Axe de référence:   Z
+
+    Caractéristiques physiques
+                Conduction thermique dans les solides:   Désactivé
+                Transitoire:   Désactivé
+                Effets gravitationnels:   Désactivé
+                Type d'écoulement:   Laminaire et turbulent
+                Ecoulement à nombre de Mach élevé:   Désactivé
+                Humidité:   Désactivé
+                Rugosité par défaut:   0 micromètre
+                Conditions par défaut des parois:   Paroi adiabatique
+
+    Domaine de calcul
+
+        Taille
+                X min:   -170.000 mm
+                X max:   150.000 mm
+                Y min:   -134.321 mm
+                Y max:   150.000 mm
+                Z min:   -37.261 mm
+                Z max:   168.793 mm
+
+    Calcul du maillage
+
+        Dimensions du maillage basique
+                Nombre de cellules suivant X:   18
+                Nombre de cellules suivant Y:   29
+                Nombre de cellules suivant Z:   35
+
+        Nombre de cellules
+                Cellules:   22646
+                Cellules fluides:   22646
+                Cellules irrégulières:   0
+                Cellules ajustées:   0
+                Niveau de raffinement maximal:   2
+
+    Objectifs
+                
+                Nom   	Unité   	Valeur   	Progression   	Critères   	Delta   	Utiliser pour la convergence 
+
+    Informations générales
+                Itérations:   223
+                Temps de calcul:   97 s
+
+        Log
+                Génération du maillage démarrée	0:   09:43:25 , May 15
+                Génération du maillage terminée avec succès	0:   09:43:28 , May 15
+                Préparation des données pour le calcul	0:   09:43:28 , May 15
+                Calcul démarré	0:   09:43:29 , May 15
+                Le calcul a convergé puisque les critères suivants sont respectés:	222:   09:45:06 , May 15
+                    Transfert max. atteint	222:   
+                Calcul terminé	223:   09:45:07 , May 15
