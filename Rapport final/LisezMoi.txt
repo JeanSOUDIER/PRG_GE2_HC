@@ -1,0 +1,13 @@
+Mecanique
+	Mise_En_Plan (les PDFs des plans de l'aéroglisseur)
+	Pieces_3D (les fichiers objets des pièces à imprimer en 3D "*.stl", les fichiers machines "*.gcode" et une README.txt pour les paramètres car les fichiers machines sont pour une PRUSA I3 MK3 MMU2)
+	Vues (Des images des vues 3D)
+PCB (les PCBs des 4 cartes)
+Programmation
+	DsPIC.X (le projet MPLABX du DsPIC30F2010)
+	PIC.X (le projet MPLABX du PIC16F1619)
+Simulations
+	Proteus (les fichiers de simulation proteus des systèmes de LEDs, de la mesure de courant et de la protection de la batterie)
+	simu_asserv (les fichiers MATLAB et Simulink de la simulation de l'asservissement du servomoteur "asserv_ge2M.m")
+	PSIM (les fichiers de simulation PSIM du régulateur de l'onduleur)
+>Le rapport au format PDF
