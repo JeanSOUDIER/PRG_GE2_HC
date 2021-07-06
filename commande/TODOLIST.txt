@@ -1,3 +1,0 @@
-DsPIC
-- I2C (pb)
-- OSC ?
